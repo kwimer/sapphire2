@@ -59,7 +59,7 @@ module Tmdb
 
       # Images Import
       data['images'].each do |type, images|
-        images.each { |data| Image.add(movie, type, data) }
+        images.each { |image| Image.add(movie, data, type, image) }
       end
 
       # Videos Import

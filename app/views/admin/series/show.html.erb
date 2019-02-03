@@ -15,18 +15,13 @@
 
 <% @series.seasons.each do |season| %>
   <h2><%= season.title %></h2>
-  <% season.credits.select('credits.*, position').group_by(&:credit_type).each do |credit_type, credits| %>
-    <h4><%= credit_type %></h4>
-    <% credits.sort_by(&:position).each do |credit| %>
-      <div>
-        <%= credit.position %><%= credit.person.name %>
-        <%= credit.character %>
-        <%= credit.job %>
-        <%= credit.department %>
-      </div>
-    <% end %>
-  <% end %>
   <% season.episodes.each do |episode| %>
-    <div><%= still_tag(episode) %><%= episode.number %>. <%= episode.title %>(<%= episode.id %>)</div>
+    <div class="media mb-3">
+      <%= imdb_image_tag(episode.still, class: 'mr-3') %>
+      <div class="media-body">
+        <h5 class="mt-0"><%= episode.title %></h5>
+        <%= episode.summary %>
+      </div>
+    </div>
   <% end %>
 <% end %>

@@ -37,7 +37,7 @@ module Tmdb
 
       # Images Import
       data['images'].each do |type, images|
-        images.each { |data| Image.add(person, type, data) }
+        images.each { |image| Image.add(person, data, type, image) }
       end
 
       return person

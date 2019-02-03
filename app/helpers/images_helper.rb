@@ -53,6 +53,8 @@ module ImagesHelper
              'w185'
            when 'posters'
              'w92'
+           when 'stills'
+             'w227_and_h127_bestv2'
            when 'backdrops'
              'w1280'
            end if size.nil?

@@ -1,4 +1,4 @@
-<%= imdb_image_tag(@movie.backdrop, class: 'backdrop') %>
+<%= backdrop_tag(@movie) %>
 <h1><%= @movie.title %></h1>
 
 
@@ -25,7 +25,6 @@
 <% end %>
 
 <style>
-    .backdrop {height: 200px;}
     .cast-photo {width: 150px;}
     .cast-photo img {
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
