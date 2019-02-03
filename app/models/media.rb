@@ -9,4 +9,8 @@ class Media < ApplicationRecord
   has_many :images, as: :media
   has_many :videos, as: :media
 
+  has_one :backdrop, -> { where(image_type: 'backdrops', primary: true) }, class_name: 'Image'
+  has_one :poster, -> { where(image_type: 'posters', primary: true) }, class_name: 'Image'
+  has_one :still, -> { where(image_type: 'stills', primary: true) }, class_name: 'Image'
+
 end

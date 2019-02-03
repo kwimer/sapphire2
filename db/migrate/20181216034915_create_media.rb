@@ -1,7 +1,7 @@
 class CreateMedia < ActiveRecord::Migration[5.2]
   def change
-    create_table :media do |t|
-      t.belongs_to :parent, polymorphic: true, index: true
+    create_table :media, id: :uuid do |t|
+      t.belongs_to :parent, polymorphic: true, type: :uuid, index: true
       t.string :type
       t.integer :number
       t.string :production_code

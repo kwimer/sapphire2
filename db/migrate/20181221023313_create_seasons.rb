@@ -1,7 +1,7 @@
 class CreateSeasons < ActiveRecord::Migration[5.2]
   def change
-    create_table :seasons do |t|
-      t.belongs_to :series
+    create_table :seasons, id: :uuid do |t|
+      t.belongs_to :series, type: :uuid, index: true
       # t.string :title
       # t.string :summary
       t.integer :number

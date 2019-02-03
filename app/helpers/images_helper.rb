@@ -42,18 +42,15 @@ module ImagesHelper
   #
 
   def still_tag(media)
-    image = media.images.where(image_type: 'still').first
-    image_tag"https://image.tmdb.org/t/p/w92#{image.key}", alt: media.title if image
+    image_tag"https://image.tmdb.org/t/p/w92#{media.still.key}", alt: media.title if media.still
   end
 
   def backdrop_tag(media)
-    image = media.images.where(image_type: 'backdrops').first
-    image_tag"https://image.tmdb.org/t/p/w780#{image.key}", alt: media.title if image
+    image_tag"https://image.tmdb.org/t/p/w780#{media.backdrop.key}", alt: media.title if media.backdrop
   end
 
   def poster_tag(media, options = {})
-    image = media.images.where(image_type: 'posters').first
-    image_tag"https://image.tmdb.org/t/p/w92#{image.key}", options.merge(alt: media.title)
+    image_tag"https://image.tmdb.org/t/p/w92#{media.poster.key}", options.merge(alt: media.title) if media.poster
   end
 
 end

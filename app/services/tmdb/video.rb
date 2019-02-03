@@ -14,7 +14,7 @@ module Tmdb
 
     def self.add(media, data)
       # Import Video
-      video = ::Video.where(source: data['source'], key: data['key']).first_or_initialize
+      video = ::Video.where(source: data['site'], key: data['key']).first_or_initialize
       video.media = media
       MAPPING.each { |key, col| video.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
       video.save!
