@@ -1,11 +1,11 @@
-<%= backdrop_tag(@movie) %>
+<%= tmdb_image_tag(@movie.backdrop, class: 'backdrop') %>
 <h1><%= @movie.title %></h1>
 
 
 <h4>Cast</h4>
 <% @movie.cast_credits.each do |credit| %>
   <figure class="figure cast-photo">
-    <%= imdb_image_tag(credit.person.photo, class: 'figure-img img-fluid rounded') %>
+    <%= tmdb_image_tag(credit.person.photo, class: 'figure-img img-fluid rounded') %>
     <figcaption class="figure-caption text-nowrap text-truncate">
       <%= credit.person.name %><br>
       <small><%= credit.character %></small>
@@ -16,18 +16,10 @@
 <h4>Crew</h4>
 <% @movie.crew_credits.each do |credit| %>
   <figure class="figure cast-photo">
-    <%= imdb_image_tag(credit.person.photo, class: 'figure-img img-fluid rounded') %>
+    <%= tmdb_image_tag(credit.person.photo, class: 'figure-img img-fluid rounded') %>
     <figcaption class="figure-caption text-nowrap text-truncate">
       <%= credit.person.name %><br>
       <small><%= credit.job %></small>
     </figcaption>
   </figure>
 <% end %>
-
-<style>
-    .cast-photo {width: 150px;}
-    .cast-photo img {
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
-    }
-</style>

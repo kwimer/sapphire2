@@ -1,1 +1,15 @@
 @import "bootstrap";
+
+
+main {margin-top: 56px;}
+.poster {
+  width: 120px;
+}
+.backdrop {
+  height:200px;
+}
+.cast-photo {width: 138px;}
+.cast-photo img {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}

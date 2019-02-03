@@ -1,4 +1,4 @@
-<%= backdrop_tag(@series) %>
+<%= tmdb_image_tag(@series.backdrop, class: 'backdrop') %>
 <h1><%= @series.title %></h1>
 
 <% @series.credits.select('credits.*, position').group_by(&:credit_type).each do |credit_type, credits| %>
@@ -17,7 +17,7 @@
   <h2><%= season.title %></h2>
   <% season.episodes.each do |episode| %>
     <div class="media mb-3">
-      <%= imdb_image_tag(episode.still, class: 'mr-3') %>
+      <%= tmdb_image_tag(episode.still, class: 'mr-3') %>
       <div class="media-body">
         <h5 class="mt-0"><%= episode.title %></h5>
         <%= episode.summary %>
