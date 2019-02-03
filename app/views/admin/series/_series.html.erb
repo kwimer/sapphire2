@@ -1,0 +1,8 @@
+<div class="media">
+  <%= poster_tag series, class: 'mr-3' %>
+  <div class="media-body">
+    <h5 class="mt-0"><%= link_to series.title, admin_series_path(series) %></h5>
+    <p><%= series.summary %></p>
+    <span class="badge badge-pill badge-secondary"><%= series.tmdb_id %></span>
+  </div>
+</div>

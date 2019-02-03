@@ -1,0 +1,3 @@
+class Movie < Media
+
+end

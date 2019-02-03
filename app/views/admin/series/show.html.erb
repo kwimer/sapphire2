@@ -1,0 +1,32 @@
+<%= backdrop_tag(@series) %>
+<h1><%= @series.title %></h1>
+
+<% @series.credits.select('credits.*, position').group_by(&:credit_type).each do |credit_type, credits| %>
+  <h4><%= credit_type %></h4>
+  <% credits.each do |credit| %>
+    <div>
+      <%= credit.position %><%= credit.person.name %>
+      <%= credit.character %>
+      <%= credit.job %>
+      <%= credit.department %>
+    </div>
+  <% end %>
+<% end %>
+
+<% @series.seasons.each do |season| %>
+  <h2><%= season.title %></h2>
+  <% season.credits.select('credits.*, position').group_by(&:credit_type).each do |credit_type, credits| %>
+    <h4><%= credit_type %></h4>
+    <% credits.sort_by(&:position).each do |credit| %>
+      <div>
+        <%= credit.position %><%= credit.person.name %>
+        <%= credit.character %>
+        <%= credit.job %>
+        <%= credit.department %>
+      </div>
+    <% end %>
+  <% end %>
+  <% season.episodes.each do |episode| %>
+    <div><%= still_tag(episode) %><%= episode.number %>. <%= episode.title %>(<%= episode.id %>)</div>
+  <% end %>
+<% end %>
