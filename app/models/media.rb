@@ -2,6 +2,9 @@ class Media < ApplicationRecord
 
   extend Mobility
   translates :title, :summary, :tagline
+
+  extend FriendlyId
+
   include ExternalIds
 
   alias_attribute :name, :title

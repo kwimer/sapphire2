@@ -16,6 +16,7 @@ gem 'oj'
 
 # Model
 gem 'active_record_upsert'
+gem 'friendly_id'
 gem 'jsonb_accessor'
 gem 'kaminari'
 gem 'mobility'

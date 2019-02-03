@@ -83,6 +83,8 @@ GEM
     execjs (2.7.0)
     ffi (1.9.25)
     formatador (0.2.5)
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
     fugit (1.1.8)
       et-orbi (~> 1.1, >= 1.1.7)
       raabro (~> 1.1)
@@ -315,6 +317,7 @@ DEPENDENCIES
   bootstrap
   cocoon
   coffee-rails
+  friendly_id
   guard
   guard-bundler
   guard-migrate

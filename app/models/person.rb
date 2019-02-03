@@ -1,5 +1,8 @@
 class Person < ApplicationRecord
 
+  extend FriendlyId
+  friendly_id :name
+
   include ExternalIds
 
   has_many :credits

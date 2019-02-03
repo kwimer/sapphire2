@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_023313) do
+ActiveRecord::Schema.define(version: 2019_02_03_160750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -76,8 +76,10 @@ ActiveRecord::Schema.define(version: 2018_12_21_023313) do
     t.jsonb "external_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["external_ids"], name: "index_media_on_external_ids", using: :gin
     t.index ["parent_type", "parent_id"], name: "index_media_on_parent_type_and_parent_id"
+    t.index ["slug"], name: "index_media_on_slug", unique: true
   end
 
   create_table "media_credits", force: :cascade do |t|
@@ -103,7 +105,9 @@ ActiveRecord::Schema.define(version: 2018_12_21_023313) do
     t.jsonb "external_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["external_ids"], name: "index_people_on_external_ids", using: :gin
+    t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
   create_table "seasons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
