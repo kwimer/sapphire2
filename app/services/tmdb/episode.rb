@@ -5,13 +5,13 @@ module Tmdb
       air_date: :start_date,
       episode_number: :number,
       name: :title,
-      overview: :summary,
+      overview: :tmdb_summary,
       id: :tmdb_id,
       production_code: :production_code,
-      season_number: nil,
-      still_path: nil,
-      vote_average: :tmdb_vote_average,
-      vote_count: :tmdb_vote_count
+      season_number: :season_number,
+      still_path: :tmdb_still_path,
+      vote_average: :tmdb_rating,
+      vote_count: :tmdb_votes
     }
 
     def self.add(series, season, number)
@@ -34,14 +34,14 @@ module Tmdb
       end
 
       # Images Import
-      data['images'].each do |type, images|
-        images.each { |image| Image.add(episode, data, type, image) }
-      end
+      # data['images'].each do |type, images|
+      #   images.each { |image| Image.add(episode, data, type, image) }
+      # end
 
       # Videos Import
-      data['videos']['results'].each do |video|
-        Video.add(episode, video)
-      end
+      # data['videos']['results'].each do |video|
+      #   Video.add(episode, video)
+      # end
 
       return episode
     end

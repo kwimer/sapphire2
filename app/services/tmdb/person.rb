@@ -13,10 +13,10 @@ module Tmdb
       biography: :biography,
       popularity: nil,
       place_of_birth: :birth_location,
-      profile_path: nil,
-      adult: :adult,
+      profile_path: :tmdb_profile_path,
+      adult: nil,
       imdb_id: nil,
-      homepage: :url
+      homepage: nil
     }
 
     def self.import(id)
@@ -36,9 +36,9 @@ module Tmdb
       end
 
       # Images Import
-      data['images'].each do |type, images|
-        images.each { |image| Image.add(person, data, type, image) }
-      end
+      # data['images'].each do |type, images|
+      #   images.each { |image| Image.add(person, data, type, image) }
+      # end
 
       return person
     end

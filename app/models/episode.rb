@@ -1,11 +1,13 @@
 class Episode < Media
 
-  friendly_id :season_number_and_title
-
   belongs_to :parent, polymorphic: true
 
-  def season_number_and_title
-    "S#{'%02i' % parent.number}E#{'%02i' % number} #{title}"
+  jsonb_accessor :extra_fields,
+                 production_code: :string,
+                 season_number: :integer
+
+  def name
+    "S#{'%02i' % season_number}E#{'%02i' % number} #{title}"
   end
 
 end

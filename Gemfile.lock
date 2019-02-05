@@ -189,6 +189,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    normalizr (0.3.1)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -222,6 +223,7 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.2)
       sprockets-rails (>= 2.0.0)
+    rails-assets-autosize (4.0.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -337,12 +339,14 @@ DEPENDENCIES
   kaminari
   letter_opener
   mobility
+  normalizr
   oj
   pg
   pry-rails
   puma
   rack-timeout
   rails (= 5.2.2)
+  rails-assets-autosize!
   sassc-rails
   sidekiq
   sidekiq-cron

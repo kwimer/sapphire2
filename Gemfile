@@ -20,6 +20,7 @@ gem 'friendly_id'
 gem 'jsonb_accessor'
 gem 'kaminari'
 gem 'mobility'
+gem 'normalizr'
 
 # Controller
 gem 'inherited_resources'
@@ -29,18 +30,19 @@ gem 'active_link_to'
 gem 'cocoon'
 gem 'simple_form'
 
-# Assets
+# Templates
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'sassc-rails'
 gem 'uglifier'
 
+# Assets
 gem 'sprockets-rails'
 gem 'bootstrap'
 gem 'jquery-rails'
 
 source 'https://rails-assets.org' do
-
+  gem 'rails-assets-autosize'
 end
 
 # Jobs

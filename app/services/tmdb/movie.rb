@@ -2,8 +2,8 @@ module Tmdb
   module Movie
 
     MAPPING = {
-      adult: :adult,
-      backdrop_path: nil,
+      adult: nil,
+      backdrop_path: :tmdb_backdrop_path,
       belongs_to_collection: nil,
       budget: nil,
       genres: {
@@ -15,9 +15,9 @@ module Tmdb
       imdb_id: :imdb_id,
       original_language: :original_language,
       original_title: :original_title,
-      overview: :summary,
+      overview: :tmdb_summary,
       popularity: nil,
-      poster_path: nil,
+      poster_path: :tmdb_poster_path,
       production_companies: {
         id: :tmdb_id,
         logo_path: nil,
@@ -39,8 +39,8 @@ module Tmdb
       tagline: :tagline,
       title: :title,
       video: nil,
-      vote_average: :tmdb_vote_average,
-      vote_count: :tmdb_vote_count
+      vote_average: :tmdb_rating,
+      vote_count: :tmdb_votes
     }
 
     def self.import(id)
@@ -48,6 +48,7 @@ module Tmdb
       # Movie Import
       sleep 0.2
       data = Tmdb::Api.movie(id)
+      return if data['adult']
       movie = ::Movie.external_ids_where(tmdb_id: id.to_s).first_or_initialize
       MAPPING.each { |key, col| movie.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
       movie.save!
@@ -58,14 +59,14 @@ module Tmdb
       end
 
       # Images Import
-      data['images'].each do |type, images|
-        images.each { |image| Image.add(movie, data, type, image) }
-      end
+      # data['images'].each do |type, images|
+      #   images.each { |image| Image.add(movie, data, type, image) }
+      # end
 
       # Videos Import
-      data['videos']['results'].each do |video|
-        Video.add(movie, video)
-      end
+      # data['videos']['results'].each do |video|
+      #   Video.add(movie, video)
+      # end
 
       # Credits Import
       data['credits'].each do |type, credits|

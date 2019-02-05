@@ -1,13 +1,14 @@
 class Media < ApplicationRecord
 
   extend Mobility
-  translates :title, :summary, :tagline
+  translates :title, :summary, :detail, :tmdb_summary, :tagline
+  normalize_attributes :summary, :detail
 
   extend FriendlyId
+  friendly_id :name
 
-  include ExternalFields
-
-  alias_attribute :name, :title
+  include ExternalIds
+  include ExternalScores
 
   has_many :media_credits, as: :media
   has_many :credits, through: :media_credits
@@ -20,5 +21,13 @@ class Media < ApplicationRecord
   has_one :backdrop, -> { where(image_type: 'backdrops', primary: true) }, class_name: 'Image'
   has_one :poster, -> { where(image_type: 'posters', primary: true) }, class_name: 'Image'
   has_one :still, -> { where(image_type: 'stills', primary: true) }, class_name: 'Image'
+
+  def name
+    title
+  end
+
+  def synopsis
+    summary || tmdb_summary
+  end
 
 end

@@ -10,20 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_043443) do
+ActiveRecord::Schema.define(version: 2018_12_21_023313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-
-  create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "headquarters"
-    t.string "origin_country"
-    t.jsonb "external_ids"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["external_ids"], name: "index_companies_on_external_ids", using: :gin
-  end
 
   create_table "credits", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "media_type"
@@ -60,24 +51,22 @@ ActiveRecord::Schema.define(version: 2019_02_05_043443) do
   create_table "media", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "parent_type"
     t.uuid "parent_id"
-    t.string "type"
-    t.integer "number"
-    t.string "production_code"
     t.string "original_title"
     t.string "original_language"
+    t.string "slug"
+    t.string "type"
     t.date "start_date"
     t.date "end_date"
     t.string "status"
     t.string "media_type"
-    t.boolean "adult"
-    t.boolean "in_production"
     t.integer "runtime"
+    t.integer "number"
     t.jsonb "translations"
+    t.jsonb "extra_fields"
     t.jsonb "external_ids"
+    t.jsonb "external_scores"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
-    t.jsonb "external_scores"
     t.index ["external_ids"], name: "index_media_on_external_ids", using: :gin
     t.index ["external_scores"], name: "index_media_on_external_scores", using: :gin
     t.index ["parent_type", "parent_id"], name: "index_media_on_parent_type_and_parent_id"
@@ -95,21 +84,18 @@ ActiveRecord::Schema.define(version: 2019_02_05_043443) do
 
   create_table "people", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
+    t.string "slug"
     t.string "aka", array: true
     t.integer "gender"
     t.date "birth_date"
     t.string "birth_location"
     t.date "death_date"
     t.string "role"
-    t.string "url"
-    t.boolean "adult"
     t.text "biography"
     t.jsonb "external_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
     t.index ["external_ids"], name: "index_people_on_external_ids", using: :gin
-    t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
   create_table "seasons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

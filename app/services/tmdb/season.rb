@@ -18,9 +18,9 @@ module Tmdb
         vote_count: nil,
       },
       name: :title,
-      overview: :summary,
+      overview: :tmdb_summary,
       id: :tmdb_id,
-      poster_path: nil,
+      poster_path: :tmdb_poster_path,
       season_number: :number
     }
 
@@ -39,14 +39,14 @@ module Tmdb
       end
 
       # Images Import
-      data['images'].each do |type, images|
-        images.each { |image| Image.add(season, data, type, image) }
-      end
+      # data['images'].each do |type, images|
+      #   images.each { |image| Image.add(season, data, type, image) }
+      # end
 
       # Videos Import
-      data['videos']['results'].each do |video|
-        Video.add(season, video)
-      end
+      # data['videos']['results'].each do |video|
+      #   Video.add(season, video)
+      # end
 
       # Credits Import
       data['credits'].each do |type, credits|

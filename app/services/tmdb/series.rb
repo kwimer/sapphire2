@@ -2,7 +2,7 @@ module Tmdb
   module Series
 
     MAPPING = {
-      backdrop_path: nil,
+      backdrop_path: :tmdb_backdrop_path,
       created_by: {
         id: :tmdb_id,
         credit_id: nil,
@@ -17,7 +17,7 @@ module Tmdb
       },
       homepage: nil,
       id: :tmdb_id,
-      in_production: :in_production,
+      in_production: nil,
       languages: nil,
       last_air_date: :end_date,
       last_episode_to_air: nil,
@@ -34,9 +34,9 @@ module Tmdb
       origin_country: nil,
       original_language: :original_language,
       original_name: :original_title,
-      overview: :summary,
+      overview: :tmdb_summary,
       popularity: nil,
-      poster_path: nil,
+      poster_path: :tmdb_poster_path,
       production_companies: {
         id: :tmdb_id,
         logo_path: nil,
@@ -48,14 +48,14 @@ module Tmdb
         episode_count: :episode_count,
         id: :tmdb_id,
         name: :name,
-        overview: :summary,
+        overview: :tmdb_summary,
         poster_path: nil,
         season_number: :number
       },
       status: :status,
       type: :media_type,
-      vote_average: :tmdb_vote_average,
-      vote_count: :tmdb_vote_count
+      vote_average: :tmdb_rating,
+      vote_count: :tmdb_votes
     }
 
     def self.import(id)
@@ -73,14 +73,14 @@ module Tmdb
       end
 
       # Images Import
-      data['images'].each do |type, images|
-        images.each { |image| Image.add(series, data, type, image) }
-      end
+      # data['images'].each do |type, images|
+      #   images.each { |image| Image.add(series, data, type, image) }
+      # end
 
       # Videos Import
-      data['videos']['results'].each do |video|
-        Video.add(series, video)
-      end
+      # data['videos']['results'].each do |video|
+      #   Video.add(series, video)
+      # end
 
       # Credits Import
       data['credits'].each do |type, credits|

@@ -1,4 +1,4 @@
-module ExternalFields
+module ExternalIds
 
   extend ActiveSupport::Concern
 
@@ -8,12 +8,12 @@ module ExternalFields
                    imdb_id: :string,
                    instagram_id: :string,
                    tmdb_id: :string,
+                   tmdb_backdrop_path: :string,
+                   tmdb_poster_path: :string,
+                   tmdb_profile_path: :string,
+                   tmdb_still_path: :string,
                    tvdb_id: :string,
                    twitter_id: :string
-
-    jsonb_accessor :external_scores,
-                   tmdb_vote_count: :float,
-                   tmdb_vote_average: :float
   end
 
 end
