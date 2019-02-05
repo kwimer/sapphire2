@@ -47,7 +47,8 @@ end
 gem 'sidekiq'
   gem 'sidekiq-cron'
   gem 'sidekiq-failures'
-  gem 'sinatra', require: false
+  gem 'sidekiq-limit_fetch'
+    gem 'sinatra', require: false
 
 group :development do
   # Performance
