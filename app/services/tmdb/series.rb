@@ -54,8 +54,8 @@ module Tmdb
       },
       status: :status,
       type: :media_type,
-      vote_average: nil,
-      vote_count: nil
+      vote_average: :tmdb_vote_average,
+      vote_count: :tmdb_vote_count
     }
 
     def self.import(id)

@@ -3,7 +3,7 @@ class Person < ApplicationRecord
   extend FriendlyId
   friendly_id :name
 
-  include ExternalIds
+  include ExternalFields
 
   has_many :credits
 

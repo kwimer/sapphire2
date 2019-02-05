@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_03_160750) do
+ActiveRecord::Schema.define(version: 2019_02_05_043443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -77,9 +77,11 @@ ActiveRecord::Schema.define(version: 2019_02_03_160750) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.jsonb "external_scores"
     t.index ["external_ids"], name: "index_media_on_external_ids", using: :gin
+    t.index ["external_scores"], name: "index_media_on_external_scores", using: :gin
     t.index ["parent_type", "parent_id"], name: "index_media_on_parent_type_and_parent_id"
-    t.index ["slug"], name: "index_media_on_slug", unique: true
+    t.index ["slug", "parent_id"], name: "index_media_on_slug_and_parent_id", unique: true
   end
 
   create_table "media_credits", force: :cascade do |t|

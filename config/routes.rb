@@ -4,4 +4,8 @@ Rails.application.routes.draw do
     resources :series
     root to: "movies#index"
   end
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
 end

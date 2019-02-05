@@ -2,7 +2,7 @@ class Season < ApplicationRecord
 
   extend Mobility
   translates :title, :summary
-  include ExternalIds
+  include ExternalFields
 
   belongs_to :series
   has_many :episodes, -> { order(:number) }, as: :parent

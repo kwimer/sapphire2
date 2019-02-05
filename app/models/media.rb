@@ -5,7 +5,7 @@ class Media < ApplicationRecord
 
   extend FriendlyId
 
-  include ExternalIds
+  include ExternalFields
 
   alias_attribute :name, :title
 

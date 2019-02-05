@@ -1,6 +1,6 @@
 class Video < ApplicationRecord
 
-  include ExternalIds
+  include ExternalFields
 
   belongs_to :media, polymorphic: true
 

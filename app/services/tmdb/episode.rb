@@ -10,8 +10,8 @@ module Tmdb
       production_code: :production_code,
       season_number: nil,
       still_path: nil,
-      vote_average: nil,
-      vote_count: nil
+      vote_average: :tmdb_vote_average,
+      vote_count: :tmdb_vote_count
     }
 
     def self.add(series, season, number)
