@@ -67,3 +67,7 @@ group :development do
   # Debugging
   gem 'pry-rails'
 end
+
+group :development, :test do
+  gem 'dotenv-rails'
+end

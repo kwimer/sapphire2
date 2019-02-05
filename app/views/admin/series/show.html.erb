@@ -19,6 +19,7 @@
     <div class="media mb-3">
       <%= tmdb_image_tag(episode.still, class: 'mr-3') %>
       <div class="media-body">
+        <%= content_tag :span, episode.tmdb_vote_average, class: 'badge badge-pill badge-warning float-right' %>
         <h5 class="mt-0"><%= episode.title %></h5>
         <%= episode.summary %>
       </div>

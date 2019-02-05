@@ -3,7 +3,7 @@ module Tmdb
   module Api
 
     BASE_URL = "https://api.themoviedb.org"
-    API_KEY = "f4419b0656f23b5d715f70601dcd3e90"
+    API_KEY = ENV["TMDB_API_KEY"]
 
     class << self
 

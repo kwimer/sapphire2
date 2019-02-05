@@ -22,7 +22,7 @@
 
 /public/assets
 .byebug_history
-.powder
+.env
 .ruby-version
 
 .idea/
