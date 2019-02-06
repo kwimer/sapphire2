@@ -16,11 +16,15 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "awards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "awards", force: :cascade do |t|
+    t.string "media_type"
+    t.uuid "media_id"
+    t.uuid "festival_id"
+    t.integer "year"
+    t.string "award_type"
+    t.string "award_name"
+    t.index ["festival_id"], name: "index_awards_on_festival_id"
+    t.index ["media_type", "media_id"], name: "index_awards_on_media_type_and_media_id"
   end
 
   create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -47,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["person_id"], name: "index_credits_on_person_id"
   end
 
+  create_table "festivals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "media_type"
     t.uuid "media_id"
@@ -64,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   end
 
   create_table "media", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.boolean "active", default: false, null: false
     t.uuid "season_id"
     t.string "original_title"
     t.string "original_language"
@@ -87,21 +99,11 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["slug", "season_id"], name: "index_media_on_slug_and_season_id", unique: true
   end
 
-  create_table "media_awards", force: :cascade do |t|
-    t.string "media_type"
-    t.uuid "media_id"
-    t.uuid "award_id"
-    t.integer "year"
-    t.string "award_type"
-    t.string "award_name"
-    t.index ["award_id"], name: "index_media_awards_on_award_id"
-    t.index ["media_type", "media_id"], name: "index_media_awards_on_media_type_and_media_id"
-  end
-
   create_table "media_categories", force: :cascade do |t|
     t.string "media_type"
     t.uuid "media_id"
     t.uuid "category_id"
+    t.index ["category_id", "media_type", "media_id"], name: "index_media_categories_on_unique", unique: true
     t.index ["category_id"], name: "index_media_categories_on_category_id"
     t.index ["media_type", "media_id"], name: "index_media_categories_on_media_type_and_media_id"
   end
@@ -111,6 +113,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.uuid "media_id"
     t.uuid "credit_id"
     t.integer "position"
+    t.index ["credit_id", "media_type", "media_id"], name: "index_media_credits_on_unique", unique: true
     t.index ["credit_id"], name: "index_media_credits_on_credit_id"
     t.index ["media_type", "media_id"], name: "index_media_credits_on_media_type_and_media_id"
   end

@@ -1,6 +1,7 @@
 class CreateMedia < ActiveRecord::Migration[5.2]
   def change
     create_table :media, id: :uuid do |t|
+      t.boolean :active, null: false, default: false
       t.belongs_to :season, type: :uuid, index: true
       t.string :original_title
       t.string :original_language

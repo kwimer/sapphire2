@@ -18,5 +18,7 @@ class CreateCredits < ActiveRecord::Migration[5.2]
       t.integer :position
     end
 
+    add_index :media_credits, [:credit_id, :media_type, :media_id], unique: true, name: :index_media_credits_on_unique
+
   end
 end

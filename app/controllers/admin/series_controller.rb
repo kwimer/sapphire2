@@ -7,7 +7,7 @@ class Admin::SeriesController < Admin::ApplicationController
 
   def series_params
     params.require(:series).permit(
-        :summary, :detail
+        :summary, :detail, category_ids: []
     )
   end
 

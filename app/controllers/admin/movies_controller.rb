@@ -7,7 +7,7 @@ class Admin::MoviesController < Admin::ApplicationController
 
   def movie_params
     params.require(:movie).permit(
-        :summary, :detail, media_categories_attributes: [:id, :category_id, :_destroy]
+        :summary, :detail, category_ids: []
     )
   end
 

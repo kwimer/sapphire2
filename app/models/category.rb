@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   alias_attribute  :category_parent_id,:parent_id
 
   belongs_to :parent, class_name: 'Category', optional: true
-  has_many :categories, foreign_key: :parent_id
+  has_many :categories, -> { order(:slug) }, foreign_key: :parent_id
 
   validates_uniqueness_of :name
 

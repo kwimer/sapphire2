@@ -1,0 +1,8 @@
+<%= simple_form_for resource, url: form_resource_path do |f| %>
+  <%= f.input :year %>
+  <%= f.input :media_id, collection: Movie.all %>
+  <%= f.hidden_field :media_type, value: 'Movie' %>
+  <%= f.input :award_type, collection: %w(nominee winner) %>
+  <%= f.input :award_name %>
+  <%= f.submit %>
+<% end %>

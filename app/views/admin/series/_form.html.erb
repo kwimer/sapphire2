@@ -1,5 +1,8 @@
 <%= simple_form_for resource, url: form_resource_path do |f| %>
   <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
   <%= f.input :detail, as: :text %>
+
+  <%= render 'admin/categories/categories_form', f: f %>
+
   <%= f.submit %>
 <% end %>

@@ -1,5 +1,6 @@
 class Series < Media
 
+  include Categories
   include Importer
   friendly_id :name
 

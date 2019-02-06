@@ -13,5 +13,7 @@ class CreateCategories < ActiveRecord::Migration[5.2]
       t.belongs_to :category, type: :uuid
     end
 
+    add_index :media_categories, [:category_id, :media_type, :media_id], unique: true, name: :index_media_categories_on_unique
+
   end
 end

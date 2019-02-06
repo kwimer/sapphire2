@@ -1,0 +1,12 @@
+<% Category.root.each do |category| %>
+  <% @category = category %>
+  <h4><%= category.name.pluralize %></h4>
+  <div class="mb-4">
+    <%= f.simple_fields_for :media_categories, f.object.media_categories.in_category(category) do |media_category| %>
+      <%= render 'media_category_fields', f: media_category %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add category', f, :media_categories %>
+    </div>
+  </div>
+<% end %>
