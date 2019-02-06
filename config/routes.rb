@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     end
     resources :festivals, except: :show do
       resources :awards
-      get '/' => 'awards#index'
     end
     resources :movies
     resources :series
