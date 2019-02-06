@@ -19,14 +19,15 @@ module Tmdb
       # Episode Import
       sleep 0.2
       data = Tmdb::Api.episode(series.tmdb_id, season.number, number)
-      episode = ::Episode.where(parent: season, number: number).first_or_initialize
+      episode = ::Episode.where(season: season, number: number).first_or_initialize
       MAPPING.each { |key, col| episode.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
-      episode.save!
 
       # External Ids Import
       data['external_ids'].each do |key, val|
         episode.send("#{key}=", val) if val && episode.respond_to?(key)
       end
+
+      episode.save!
 
       # Credits Import
       data['credits'].each do |type, credits|

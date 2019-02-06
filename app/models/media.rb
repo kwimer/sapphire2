@@ -5,13 +5,17 @@ class Media < ApplicationRecord
   normalize_attributes :summary, :detail
 
   extend FriendlyId
-  friendly_id :name
 
   include ExternalIds
   include ExternalScores
 
+  has_many :media_categories
+  has_many :categories, through: :media_categories
+
   has_many :media_credits, as: :media
   has_many :credits, through: :media_credits
+
+
   has_many :images, as: :media
   has_many :videos, as: :media
 

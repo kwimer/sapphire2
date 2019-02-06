@@ -1,0 +1,4 @@
+<div class="media">
+  <%= link_to_if category.root?, category.name, admin_category_categories_path(category) %>
+  <small>(<%= link_to 'edit', edit_resource_path(category) %>)</small>
+</div>

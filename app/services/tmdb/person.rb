@@ -28,12 +28,13 @@ module Tmdb
       data = Tmdb::Api.person(id)
       return unless data
       MAPPING.each { |key, col| person.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
-      person.save!
 
       # External Ids Import
       data['external_ids'].each do |key, val|
         person.send("#{key}=", val) if val && person.respond_to?(key)
       end
+
+      person.save!
 
       # Images Import
       # data['images'].each do |type, images|

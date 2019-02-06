@@ -1,16 +1,16 @@
 class CreateMedia < ActiveRecord::Migration[5.2]
   def change
     create_table :media, id: :uuid do |t|
-      t.belongs_to :parent, polymorphic: true, type: :uuid, index: true
+      t.belongs_to :season, type: :uuid, index: true
       t.string :original_title
       t.string :original_language
       t.string :slug
       t.string :type
       t.date :start_date
       t.date :end_date
+      t.integer :runtime
       t.string :status
       t.string :media_type
-      t.integer :runtime
       t.integer :number
       t.jsonb :translations
       # t.string :title
@@ -23,7 +23,7 @@ class CreateMedia < ActiveRecord::Migration[5.2]
       t.jsonb :external_scores, index: {using: :gin}
       t.timestamps
     end
-    add_index :media, [:slug, :parent_id], unique: true
+    add_index :media, [:slug, :season_id], unique: true
 
   end
 end

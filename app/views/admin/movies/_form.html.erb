@@ -1,5 +1,18 @@
 <%= simple_form_for resource, url: form_resource_path do |f| %>
   <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
   <%= f.input :detail, as: :text %>
+
+
+  <% Category.root.each do |category| %>
+    <% @category = category %>
+    <h4><%= category.name.pluralize %></h4>
+    <div id="categories">
+      <%= f.simple_fields_for :media_categories, f.object.media_categories.in_category(category) do |media_category| %>
+        <%= render 'media_category_fields', f: media_category %>
+        <%= link_to_add_association 'add category', f, :media_categories %>
+      <% end %>
+    </div>
+  <% end %>
+
   <%= f.submit %>
 <% end %>

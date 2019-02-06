@@ -5,11 +5,11 @@ module Tmdb
       _id: nil,
       air_date: :start_date,
       episodes: {
-        air_date: :start_date,
-        episode_number: :number,
-        id: :tmdb_id,
-        name: :title,
-        overview: :summary,
+        air_date: nil,
+        episode_number: nil,
+        id: nil,
+        name: nil,
+        overview: nil,
         production_code: nil,
         season_number: nil,
         show_id: nil,
@@ -31,12 +31,13 @@ module Tmdb
       data = Tmdb::Api.season(series.tmdb_id, number)
       season = ::Season.where(series: series, number: number).first_or_initialize
       MAPPING.each { |key, col| season.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
-      season.save!
 
       # External Ids Import
       data['external_ids'].each do |key, val|
         season.send("#{key}=", val) if val && season.respond_to?(key)
       end
+
+      season.save!
 
       # Images Import
       # data['images'].each do |type, images|

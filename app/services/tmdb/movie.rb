@@ -51,11 +51,21 @@ module Tmdb
       return if data['adult']
       movie = ::Movie.external_ids_where(tmdb_id: id.to_s).first_or_initialize
       MAPPING.each { |key, col| movie.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
-      movie.save!
+      movie.languages = data['spoken_languages'].map{|l| l['iso_639_1']}
+      movie.countries = data['production_countries'].map{|l| l['iso_3166_1']}
 
       # External Ids Import
       data['external_ids'].each do |key, val|
         movie.send("#{key}=", val) if val && movie.respond_to?(key)
+      end
+
+      movie.save!
+
+      # Genres
+      genre_category = ::Category.root.where(name: 'Genre').first_or_create!
+      data['genres'].each do |genre|
+        category = ::Category.where(parent: genre_category, name: genre['name']).first_or_create!
+        ::MediaCategory.where(category: category, media: movie).first_or_create!
       end
 
       # Images Import

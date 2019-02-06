@@ -9,16 +9,16 @@ module Tmdb
         name: :title,
         profile_path: nil
       },
-      episode_run_time: nil,
+      episode_run_time: :episode_runtimes,
       first_air_date: :start_date,
       genres: {
-        id: :tmdb_id,
+        id: nil,
         name: :name
       },
       homepage: nil,
       id: :tmdb_id,
-      in_production: nil,
-      languages: nil,
+      in_production: :in_production,
+      languages: :languages,
       last_air_date: :end_date,
       last_episode_to_air: nil,
       name: :title,
@@ -31,7 +31,7 @@ module Tmdb
       },
       number_of_episodes: nil,
       number_of_seasons: nil,
-      origin_country: nil,
+      origin_country: :countries,
       original_language: :original_language,
       original_name: :original_title,
       overview: :tmdb_summary,
@@ -65,11 +65,19 @@ module Tmdb
       data = Tmdb::Api.series(id)
       series = ::Series.external_ids_where(tmdb_id: id.to_s).first_or_initialize
       MAPPING.each { |key, col| series.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
-      series.save!
 
       # External Ids Import
       data['external_ids'].each do |key, val|
         series.send("#{key}=", val) if val && series.respond_to?(key)
+      end
+
+      series.save!
+
+      # Genres
+      genre_category = ::Category.root.where(name: 'Genre').first_or_create!
+      data['genres'].each do |genre|
+        category = ::Category.where(parent: genre_category, name: genre['name']).first_or_create!
+        ::MediaCategory.where(category: category, media: series).first_or_create!
       end
 
       # Images Import
