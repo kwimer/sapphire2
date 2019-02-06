@@ -1,5 +1,5 @@
 <%= simple_form_for resource, url: form_resource_path do |f| %>
-  <%= f.input_field :active, data: {toggle: 'toggle', on: 'Active', off: 'Inactive', onstyle: 'primary', offstyle: 'default', size: 'mini'} %>
+  <%= f.input :active %>
   <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
   <%= f.input :detail, as: :text %>
 
