@@ -6,10 +6,10 @@
     </div>
   </div>
   <div class="card-body">
-    <h5 class="card-title">
+    <h5 class="card-title text-nowrap text-truncate">
       <%= link_to media.title, edit_resource_path(media), class: "text-fiord-blue" %>
     </h5>
     <p class="card-text d-inline-block mb-3"><%= media.synopsis.truncate(50, separator: /\s/) %></p>
-    <span class="text-muted"><%= media.start_date %></span>
+    <span class="text-muted small"><%= media.start_date %>&nbsp;</span>
   </div>
 </div>

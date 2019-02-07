@@ -11,6 +11,9 @@
 .card-media {
   width: 240px;
   float: left;
+  .card-text {
+    min-height: 38px;
+  }
 }
 
 .card-post__author-avatar {
