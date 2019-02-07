@@ -9,7 +9,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def collection_title
-    parent? ? parent.name : 'Parent Categories'
+    parent? ? parent.name.pluralize : 'Parent Categories'
   end
 
   protected
