@@ -21,6 +21,7 @@ gem 'jsonb_accessor'
 gem 'kaminari'
 gem 'mobility'
 gem 'normalizr'
+gem 'textacular'
 
 # Controller
 gem 'inherited_resources'
@@ -38,11 +39,12 @@ gem 'uglifier'
 
 # Assets
 gem 'sprockets-rails'
-gem 'bootstrap'
+gem 'bootstrap', '4.1.3'
 gem 'jquery-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'
+  gem 'rails-assets-selectize'
 end
 
 # Jobs

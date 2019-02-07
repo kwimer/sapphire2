@@ -7,6 +7,11 @@ class Admin::MoviesController < Admin::ApplicationController
     super || 'Media'
   end
 
+  def search
+    @movies = params[:q].try(:strip).blank? ? [] : Movie.search_query(params[:q]).limit(10)
+    render json: @movies.map(&:as_option)
+  end
+
   private
 
   def movie_params

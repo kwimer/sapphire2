@@ -1,5 +1,7 @@
 //@import 'bootstrap';
 @import "shards-dashboard/shards-dashboards";
+@import "selectize/selectize";
+@import "selectize-bootstrap4/selectize.bootstrap4.scss";
 
 .table > tbody > tr > td {
   vertical-align: middle;

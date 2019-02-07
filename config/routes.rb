@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :festivals, except: :show do
       resources :awards
     end
-    resources :movies
+    resources :movies do
+      collection do
+        get :search
+      end
+    end
     resources :series
     root to: "movies#index"
   end
