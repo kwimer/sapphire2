@@ -16,4 +16,18 @@ module ExternalIds
                    twitter_id: :string
   end
 
+  def tmdb_url
+    case type
+    when 'Movie'
+      "https://www.themoviedb.org/movie/#{tmdb_id}"
+    when 'Series'
+      "https://www.themoviedb.org/tv/#{tmdb_id}"
+    when 'Season'
+      "https://www.themoviedb.org/tv/#{series.tmdb_id}/season/#{number}"
+    when 'Episode'
+      "https://www.themoviedb.org/tv/#{series.tmdb_id}/season/#{number}"
+    end
+
+  end
+
 end

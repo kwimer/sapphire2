@@ -43,7 +43,6 @@ gem 'jquery-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'
-  gem 'rails-assets-bootstrap-toggle'
 end
 
 # Jobs

@@ -1,4 +1,10 @@
-<div>
-  <%= link_to_if category.root?, category.name, admin_category_categories_path(category) %>
-  <small>(<%= link_to 'edit', edit_resource_path(category) %>)</small>
-</div>
+<tr>
+  <td>
+    <%= link_to_if category.root?, category.name, admin_category_categories_path(category) %>
+  </td>
+  <td class="text-right">
+    <div class="btn-group btn-group-sm">
+      <%= link_to icon_tag('edit'), edit_resource_path(category), class: 'btn btn-white' %>
+    </div>
+  </td>
+</tr>

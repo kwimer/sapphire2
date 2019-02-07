@@ -1,9 +1,28 @@
 <%= simple_form_for resource, url: form_resource_path do |f| %>
-  <%= f.input :active %>
-  <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
-  <%= f.input :detail, as: :text %>
 
-  <%= render 'admin/categories/categories_form', f: f %>
+      <div class="card card-small mb-3">
+        <div class="card-body p-0">
 
-  <%= f.submit %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item p-3">
+              <div class="custom-control custom-toggle mb-1 float-right">
+                <%= f.input_field :active, class: 'custom-control-input' %>
+                <%= f.label :active, class: 'custom-control-label' %>
+              </div>
+            </li>
+            <li class="list-group-item p-3">
+              <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
+              <%= f.input :detail, as: :text %>
+            </li>
+            <%= render 'admin/categories/categories_form', f: f %>
+          </ul>
+          <div class="card-footer border-top">
+            <%= f.submit class: 'btn btn-sm btn-accent ml-auto d-table mr-3' %>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
 <% end %>

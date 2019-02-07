@@ -1,9 +1,1 @@
-<div class="media">
-  <%= tmdb_image_tag movie, :poster, class: 'poster mr-3' %>
-  <div class="media-body">
-    <%= content_tag :span, movie.tmdb_rating, class: 'badge badge-pill badge-warning float-right' %>
-    <h5 class="mt-0"><%= link_to movie.title, edit_resource_path(movie) %></h5>
-    <p><%= movie.synopsis %></p>
-    <span class="badge badge-pill badge-secondary">TMBD: <%= movie.tmdb_id %></span>
-  </div>
-</div>
+<%= render 'media', media: movie %>

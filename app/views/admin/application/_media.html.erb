@@ -1,0 +1,15 @@
+<div class="card card-small card-post card-media mb-3 ml-3">
+  <div class="card-post__image" style="background-image: url('<%= tmdb_image_src(media, :backdrop) %>');">
+    <%= link_to media.tmdb_id, media.tmdb_url, class: "badge badge-pill badge-dark", target: '_blank' %>
+    <!--    <div class="card-post__author d-flex">-->
+    <!--      <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('<%#= tmdb_image_src(media, :poster) %>');">Written by Anna Kunis</a>-->
+    <!--    </div>-->
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to media.title, edit_resource_path(media), class: "text-fiord-blue" %>
+    </h5>
+    <p class="card-text d-inline-block mb-3"><%= media.synopsis.truncate(50, separator: /\s/) %></p>
+    <span class="text-muted"><%= media.start_date %></span>
+  </div>
+</div>

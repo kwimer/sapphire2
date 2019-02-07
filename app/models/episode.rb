@@ -1,7 +1,7 @@
 class Episode < Media
 
   normalize_attributes :production_code
-  friendly_id :episode_code, use: :scoped, scope: [:season_id]
+  friendly_id :episode_code
 
   jsonb_accessor :extra_fields,
                  runtime: :integer,

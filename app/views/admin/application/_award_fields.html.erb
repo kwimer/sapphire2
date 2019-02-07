@@ -1,7 +1,0 @@
-<div class="nested-fields">
-  <%= f.input :year %>
-  <%= f.input :media_id, collection: Movie.all %>
-  <%= f.input :award_type, collection: %w(nominee winner) %>
-  <%= f.input :award_name %>
-  <%= link_to_remove_association "x", f %>
-</div>

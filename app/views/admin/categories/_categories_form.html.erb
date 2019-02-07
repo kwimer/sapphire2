@@ -1,6 +1,6 @@
 <% Category.root.each do |category| %>
-  <h4><%= category.name.pluralize %></h4>
-  <div class="mb-4">
-    <%= f.input :category_ids, collection: category.categories, as: :check_boxes %>
-  </div>
+  <li class="list-group-item p-4">
+    <h6 class="form-text"><%= category.name.pluralize %></h6>
+    <%= f.input :category_ids, collection: category.categories, as: :check_boxes, label: false %>
+  </li>
 <% end %>

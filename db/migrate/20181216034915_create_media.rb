@@ -9,7 +9,6 @@ class CreateMedia < ActiveRecord::Migration[5.2]
       t.string :type
       t.date :start_date
       t.date :end_date
-      t.integer :runtime
       t.string :status
       t.string :media_type
       t.integer :number
@@ -24,7 +23,7 @@ class CreateMedia < ActiveRecord::Migration[5.2]
       t.jsonb :external_scores, index: {using: :gin}
       t.timestamps
     end
-    add_index :media, [:slug, :season_id], unique: true
+    add_index :media, [:slug, :type], unique: true
 
   end
 end

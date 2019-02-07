@@ -1,12 +1,11 @@
 module ImagesHelper
 
   def tmdb_image_tag(media, type, options = {})
-    image_path = media.send("tmdb_#{type}_path")
-    return unless image_path
-    image_tag tmdb_image_src(image_path, type), options.merge(alt: media.name)
+    image_tag tmdb_image_src(media, type), options.merge(alt: media.name)
   end
 
-  def tmdb_image_src(image_path, type)
+  def tmdb_image_src(media, type)
+    image_path = media.send("tmdb_#{type}_path")
     return unless image_path
     size = case type.to_sym
            when :profile

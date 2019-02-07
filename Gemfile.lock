@@ -224,7 +224,6 @@ GEM
       railties (= 5.2.2)
       sprockets-rails (>= 2.0.0)
     rails-assets-autosize (4.0.2)
-    rails-assets-bootstrap-toggle (2.2.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -348,7 +347,6 @@ DEPENDENCIES
   rack-timeout
   rails (= 5.2.2)
   rails-assets-autosize!
-  rails-assets-bootstrap-toggle!
   sassc-rails
   sidekiq
   sidekiq-cron

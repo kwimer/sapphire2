@@ -1,31 +1,25 @@
-@import "bootstrap";
-@import "bootstrap-toggle";
+@import 'bootstrap';
+@import "shards-dashboard/shards-dashboards";
 
-main {margin-top: 56px;}
-.poster {
-  width: 120px;
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
-.backdrop {
-  height:200px;
-}
-.cast-photo {width: 138px;}
-.cast-photo img {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+.table th, .table td {
+  padding: .75rem 1rem;
 }
 
-
-.toggle > .toggle-group {
-  background:white;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  color:#666;
+.card-media {
+  width: 240px;
+  float: left;
 }
-
-.toggle.off {
-  border-color: rgba(0, 0, 0, .25);
-}
-
-.toggle-handle {
-  background-color: white;
-  border: thin rgba(0, 0, 0, .25) solid;
-}
+//.poster {
+//  width: 120px;
+//}
+//.backdrop {
+//  height:200px;
+//}
+//.cast-photo {width: 138px;}
+//.cast-photo img {
+//  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+//  filter: grayscale(100%);
+//}

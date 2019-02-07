@@ -1,4 +1,10 @@
-<div>
-  <%= link_to festival.name, admin_festival_awards_path(festival) %>
-  <small>(<%= link_to "edit", edit_resource_path(festival) %>)</small>
-</div>
+<tr>
+  <td>
+    <%= link_to festival.name, admin_festival_awards_path(festival) %>
+  </td>
+  <td class="text-right">
+    <div class="btn-group btn-group-sm">
+      <%= link_to icon_tag('edit'), edit_resource_path(festival), class: 'btn btn-white' %>
+    </div>
+  </td>
+</tr>

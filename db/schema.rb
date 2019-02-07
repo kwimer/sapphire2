@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "parent_id"
     t.string "name"
-    t.string "slug"
+    t.string "code"
     t.index ["parent_id"], name: "index_categories_on_parent_id"
-    t.index ["slug", "parent_id"], name: "index_categories_on_slug_and_parent_id", unique: true
   end
 
   create_table "credits", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.string "type"
     t.date "start_date"
     t.date "end_date"
-    t.integer "runtime"
     t.string "status"
     t.string "media_type"
     t.integer "number"
@@ -96,7 +94,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["external_ids"], name: "index_media_on_external_ids", using: :gin
     t.index ["external_scores"], name: "index_media_on_external_scores", using: :gin
     t.index ["season_id"], name: "index_media_on_season_id"
-    t.index ["slug", "season_id"], name: "index_media_on_slug_and_season_id", unique: true
+    t.index ["slug", "type"], name: "index_media_on_slug_and_type", unique: true
   end
 
   create_table "media_categories", force: :cascade do |t|

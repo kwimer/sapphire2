@@ -74,7 +74,7 @@ module Tmdb
       series.save!
 
       # Genres
-      genre_category = ::Category.root.where(name: 'Genre').first_or_create!
+      genre_category = ::Category.root.where(code: 'genres').first_or_create!(name: 'Genres')
       data['genres'].each do |genre|
         category = ::Category.where(parent: genre_category, name: genre['name']).first_or_create!
         ::MediaCategory.where(category: category, media: series).first_or_create!

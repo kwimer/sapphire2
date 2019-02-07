@@ -1,12 +1,9 @@
 class Category < ApplicationRecord
 
-  extend FriendlyId
-  friendly_id :name, use: :scoped, scope: [:parent_id]
-
   alias_attribute  :category_parent_id,:parent_id
 
   belongs_to :parent, class_name: 'Category', optional: true
-  has_many :categories, -> { order(:slug) }, foreign_key: :parent_id
+  has_many :categories, -> { order('LOWER(name)') }, foreign_key: :parent_id
 
   validates_uniqueness_of :name
 

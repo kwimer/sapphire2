@@ -1,9 +1,0 @@
-<div class="nested-fields">
-  <% if f.object.persisted? %>
-    <%= f.object.category.name %>
-    <%= link_to_remove_association "x", f %>
-  <% else %>
-    <%= f.input :category_id, collection: @category.categories, label: false %>
-  <% end %>
-
-</div>

@@ -3,6 +3,10 @@ class Admin::SeriesController < Admin::ApplicationController
   inherit_resources
   actions :all, :except => [ :show, :destroy, :new, :create ]
 
+  def page_subtitle
+    super || 'Media'
+  end
+
   private
 
   def series_params
