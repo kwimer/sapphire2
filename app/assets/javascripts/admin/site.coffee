@@ -33,9 +33,6 @@ window.setupAutoComplete = ->
         self = @
         item = self.options[value]
         self.options = self.sifter.items = options
-        # just to make sure the returned data from type property
-        if item and 'additional_details' of item
-          $('#event_additional_details').val(item.additional_details)
       onItemAdd: ->
         self = @
         self.loadedSearches = {}

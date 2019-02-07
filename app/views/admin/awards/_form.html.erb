@@ -2,7 +2,7 @@
   <div class="card card-small mb-3">
     <div class="card-body">
       <%= f.input :year %>
-      <%= f.input :media_id, input_html: {data: {url: search_admin_movies_path}} %>
+      <%= f.input :media_id, collection: [f.object.movie].compact.map { |m| [m.name, m.id, data: {data: m.as_option.to_json}] }, input_html: {data: {url: search_admin_movies_path}} %>
       <%= f.hidden_field :media_type, value: 'Movie' %>
       <%= f.input :award_type, collection: %w(nominee winner) %>
       <%= f.input :award_name %>

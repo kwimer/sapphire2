@@ -1,4 +1,17 @@
-<div>
-  <%= link_to award.media.title, edit_resource_path(award) %><br>
-  <small><%= award.year %> <%= award.award_type %> <%= award.award_name %></small>
-</div>
+<td>
+  <%= award.year %>
+</td>
+<td>
+  <div><%= award.media.title %></div>
+</td>
+<td>
+  <% if award.award_type %>
+    <%= content_tag(:strong, award.award_type.titleize) %>:
+  <% end %>
+  <%= award.award_name %>
+</td>
+<td class="text-right">
+  <div class="btn-group btn-group-sm">
+    <%= link_to icon_tag('edit'), edit_resource_path(award), class: 'btn btn-white' %>
+  </div>
+</td>
