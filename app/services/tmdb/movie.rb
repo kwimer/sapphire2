@@ -59,6 +59,9 @@ module Tmdb
         movie.send("#{key}=", val) if val && movie.respond_to?(key)
       end
 
+      trailer = data['videos']['results'].find {|video| video['type'] == "Trailer" && video['site'] = 'YouTube'}
+      movie.youtube_trailer_id = trailer['key'] if trailer
+
       movie.save!
 
       # Genres
@@ -75,7 +78,7 @@ module Tmdb
 
       # Videos Import
       # data['videos']['results'].each do |video|
-      #   Video.add(movie, video)
+      #   Video.add(movie, video) if video['type']
       # end
 
       # Credits Import

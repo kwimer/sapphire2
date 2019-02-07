@@ -13,7 +13,8 @@ module ExternalIds
                    tmdb_profile_path: :string,
                    tmdb_still_path: :string,
                    tvdb_id: :string,
-                   twitter_id: :string
+                   twitter_id: :string,
+                   youtube_trailer_id: :string
   end
 
   def tmdb_url
