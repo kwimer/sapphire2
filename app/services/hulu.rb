@@ -46,7 +46,7 @@ module Hulu
             }
           end
         end if table.present?
-        results = {
+        {
             current_page: page,
             next_page: series.any? && list.at_css("a img[title='Go to the next page']").present? ? page+1 : nil,
             series: series
@@ -65,7 +65,7 @@ module Hulu
               hulu_url: link['href']
           } if link.present?
         end if table.present?
-        results = {
+        {
             current_page: page,
             next_page: movies.any? && list.at_css("a img[title='Go to the next page']").present? ? page+1 : nil,
             movies: movies
