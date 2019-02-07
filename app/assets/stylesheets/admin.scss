@@ -12,6 +12,20 @@
   width: 240px;
   float: left;
 }
+
+.card-post__author-avatar {
+  width: 37px;
+  height: 55.6px;
+  border-radius: 0;
+}
+.card-post--1 .card-post__author {
+  bottom: 6px;
+}
+
+//.card-post--1 .card-body {
+//  padding-top: 1.5625rem;
+//}
+
 //.poster {
 //  width: 120px;
 //}
