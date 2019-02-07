@@ -5,7 +5,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <%= stylesheet_link_tag    'admin', media: 'all' %>
   <%= javascript_include_tag 'admin' %>
 </head>
@@ -122,13 +122,7 @@
         </nav>
       </div>
 
-<!--      <div class="container-fluid px-0">-->
-<!--        <div class="alert alert-success alert-dismissible fade show m-0" role="alert">-->
-<!--          <strong>Ole!</strong> Your profile has been successfully updated! <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
-<!--          <span aria-hidden="true">×</span>-->
-<!--        </button>-->
-<!--        </div>-->
-<!--      </div>-->
+      <%= flash_tag %>
 
       <!-- / .main-navbar -->
       <div class="main-content-container container-fluid px-4">
