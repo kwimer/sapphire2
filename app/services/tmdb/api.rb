@@ -8,7 +8,7 @@ module Tmdb
     class << self
 
       def movie(id)
-        response = get("/3/movie/#{id}", append_to_response: "alternative_titles,credits,external_ids,images,keywords,releases,translations,videos")
+        response = get("/3/movie/#{id}", append_to_response: "alternative_titles,credits,external_ids,images,keywords,releases,translations,videos,release_dates")
       end
 
       def person(id)
@@ -20,7 +20,7 @@ module Tmdb
       end
 
       def season(id, season_number)
-        get("/3/tv/#{id}/season/#{season_number}", append_to_response: "credits,external_ids,images,videos")
+        get("/3/tv/#{id}/season/#{season_number}", append_to_response: "credits,external_ids,images,videos,content_ratings")
       end
 
       def episode(id, season_number, episode_number)

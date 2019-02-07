@@ -39,4 +39,8 @@ class Media < ApplicationRecord
     summary || tmdb_summary
   end
 
+  def year
+    start_date.year if start_date
+  end
+
 end

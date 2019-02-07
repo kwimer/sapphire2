@@ -7,6 +7,7 @@ class Movie < Media
   jsonb_accessor :extra_fields,
                  original_title: :string,
                  original_language: :string,
+                 rating: :string,
                  runtime: :integer,
                  languages: [:string, array: true],
                  countries: [:string, array: true]
@@ -41,10 +42,6 @@ class Movie < Media
 
   def name_with_year
     "#{title} (#{year})"
-  end
-
-  def year
-    start_date.year
   end
 
 end

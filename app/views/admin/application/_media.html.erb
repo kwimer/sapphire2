@@ -10,6 +10,6 @@
       <%= link_to media.title, edit_resource_path(media), class: "text-fiord-blue" %>
     </h5>
     <p class="card-text d-inline-block mb-3"><%= media.synopsis.try(:truncate, 50, separator: /\s/) %></p>
-    <span class="text-muted small"><%= media.start_date %>&nbsp;</span>
+    <span class="text-muted small"><%= [media.rating, media.year, media.try(:runtime) ? "#{media.runtime} minutes" : nil].compact.join(' | ') %>&nbsp;</span>
   </div>
 </div>

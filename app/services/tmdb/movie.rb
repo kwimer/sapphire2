@@ -59,8 +59,14 @@ module Tmdb
         movie.send("#{key}=", val) if val && movie.respond_to?(key)
       end
 
-      trailer = data['videos']['results'].find {|video| video['type'] == "Trailer" && video['site'] = 'YouTube'}
+      # Trailer
+      trailer = data['videos']['results'].find {|result| result['type'] == "Trailer" && result['site'] = 'YouTube'}
       movie.youtube_trailer_id = trailer['key'] if trailer
+
+      # Rating
+      release = data['release_dates']['results'].find {|result| result['iso_3166_1'] == "US"}
+      rating = release['release_dates'].find {|result| result['type'] == 3}
+      movie.rating = rating['certification'] if rating
 
       movie.save!
 

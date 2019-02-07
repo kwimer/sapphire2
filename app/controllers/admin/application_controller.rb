@@ -22,7 +22,7 @@ class Admin::ApplicationController < ActionController::Base
   def page_subtitle
     case params[:action]
     when 'index'
-      resource_class.model_name.human.pluralize if parent?
+      parent.class.model_name.human.pluralize if parent?
     when 'new', 'create', 'edit', 'update'
       resource_class.model_name.human.pluralize
     end

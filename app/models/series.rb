@@ -7,6 +7,7 @@ class Series < Media
   jsonb_accessor :extra_fields,
                  original_title: :string,
                  original_language: :string,
+                 rating: :string,
                  in_production: :boolean,
                  episode_runtimes: [:integer, array: true],
                  languages: [:string, array: true],

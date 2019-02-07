@@ -72,6 +72,10 @@ module Tmdb
         series.send("#{key}=", val) if val && series.respond_to?(key)
       end
 
+      # Rating
+      rating = data['content_ratings']['results'].find {|result| result['iso_3166_1'] == "US"}
+      series.rating = rating['rating'] if rating
+
       series.save!
 
       # Genres
