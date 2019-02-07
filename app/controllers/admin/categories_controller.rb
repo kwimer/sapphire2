@@ -8,6 +8,10 @@ class Admin::CategoriesController < Admin::ApplicationController
     @parent_category
   end
 
+  def page_subtitle
+    super || 'Settings'
+  end
+
   def collection_title
     parent? ? parent.name.pluralize : 'Parent Categories'
   end

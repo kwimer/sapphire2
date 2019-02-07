@@ -63,6 +63,7 @@ module Tmdb
       # Series Import
       sleep 0.2
       data = Tmdb::Api.series(id)
+      return if data.nil?
       series = ::Series.external_ids_where(tmdb_id: id.to_s).first_or_initialize
       MAPPING.each { |key, col| series.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
 

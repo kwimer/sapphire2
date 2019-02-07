@@ -4,6 +4,7 @@
 
 //= require autosize
 //= require cocoon
+//= require filterrific/filterrific-jquery
 //= require selectize/selectize_load
 //= require selectize/plugins/ajax_fix
 //= require selectize/plugins/no_results

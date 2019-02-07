@@ -48,7 +48,7 @@ module Tmdb
       # Movie Import
       sleep 0.2
       data = Tmdb::Api.movie(id)
-      return if data['adult']
+      return if data.nil? || data['adult']
       movie = ::Movie.external_ids_where(tmdb_id: id.to_s).first_or_initialize
       MAPPING.each { |key, col| movie.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
       movie.languages = data['spoken_languages'].map{|l| l['iso_639_1']}

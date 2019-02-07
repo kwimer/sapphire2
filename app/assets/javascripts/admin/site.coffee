@@ -1,6 +1,7 @@
 $ ->
   autosize($('textarea'))
   setupAutoComplete()
+  Filterrific.init()
 
 window.setupAutoComplete = ->
   $('[data-url]').each ->

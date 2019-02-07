@@ -7,6 +7,19 @@ class Admin::SeriesController < Admin::ApplicationController
     super || 'Media'
   end
 
+  protected
+
+  def collection
+    scope = end_of_association_chain
+    @series_filter ||= initialize_filterrific(
+        scope,
+        params[:movies],
+        select_options: {
+        },
+        ) or return
+    @series ||= @series_filter.find.page(params[:page]).per(24)
+  end
+
   private
 
   def series_params

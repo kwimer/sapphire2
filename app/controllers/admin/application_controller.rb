@@ -2,7 +2,7 @@ class Admin::ApplicationController < ActionController::Base
 
   layout 'admin'
   before_action :prepend_view_paths
-  helper_method :page_title, :page_subtitle, :collection_title
+  helper_method :page_title, :page_subtitle, :collection_title, :collection_name, :collection_filters
 
   def prepend_view_paths
     prepend_view_path "app/views/admin/application"
@@ -21,6 +21,8 @@ class Admin::ApplicationController < ActionController::Base
 
   def page_subtitle
     case params[:action]
+    when 'index'
+      resource_class.model_name.human.pluralize if parent?
     when 'new', 'create', 'edit', 'update'
       resource_class.model_name.human.pluralize
     end
@@ -28,6 +30,14 @@ class Admin::ApplicationController < ActionController::Base
 
   def collection_title
     resource_class.model_name.human.pluralize
+  end
+
+  def collection_name
+    send(:resources_configuration)[:self][:collection_name]
+  end
+
+  def collection_filters
+    resource_class.try(:filterrific_available_filters).try(:map, &:to_sym)
   end
 
 end

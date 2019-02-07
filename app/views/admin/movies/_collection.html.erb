@@ -1,3 +1,4 @@
-<div class="row clearfix">
-  <%= render collection %>
+<%= render 'filters' %>
+<div class="list" id="<%= collection_name %>">
+  <%= render 'list', collection: collection %>
 </div>

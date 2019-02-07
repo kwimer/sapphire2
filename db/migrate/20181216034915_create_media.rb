@@ -3,8 +3,7 @@ class CreateMedia < ActiveRecord::Migration[5.2]
     create_table :media, id: :uuid do |t|
       t.boolean :active, null: false, default: false
       t.belongs_to :season, type: :uuid, index: true
-      t.string :original_title
-      t.string :original_language
+      t.tsvector :tsv_title, index: {using: :gin}
       t.string :slug
       t.string :type
       t.date :start_date
@@ -17,6 +16,8 @@ class CreateMedia < ActiveRecord::Migration[5.2]
       # t.string :summary
       # t.string :tagline
       t.jsonb :extra_fields
+      # t.string :original_title
+      # t.string :original_language
       # t.integer :season_number
       # t.integer :production_code
       t.jsonb :external_ids, index: {using: :gin}

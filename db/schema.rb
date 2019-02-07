@@ -57,27 +57,10 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "media_type"
-    t.uuid "media_id"
-    t.boolean "primary", default: false, null: false
-    t.string "image_type"
-    t.string "source"
-    t.string "key"
-    t.integer "width"
-    t.integer "height"
-    t.string "language"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["media_type", "media_id"], name: "index_images_on_media_type_and_media_id"
-    t.index ["source", "key"], name: "index_images_on_source_and_key", unique: true
-  end
-
   create_table "media", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.boolean "active", default: false, null: false
     t.uuid "season_id"
-    t.string "original_title"
-    t.string "original_language"
+    t.tsvector "tsv_title"
     t.string "slug"
     t.string "type"
     t.date "start_date"
@@ -95,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["external_scores"], name: "index_media_on_external_scores", using: :gin
     t.index ["season_id"], name: "index_media_on_season_id"
     t.index ["slug", "type"], name: "index_media_on_slug_and_type", unique: true
+    t.index ["tsv_title"], name: "index_media_on_tsv_title", using: :gin
   end
 
   create_table "media_categories", force: :cascade do |t|
@@ -114,14 +98,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["credit_id", "media_type", "media_id"], name: "index_media_credits_on_unique", unique: true
     t.index ["credit_id"], name: "index_media_credits_on_credit_id"
     t.index ["media_type", "media_id"], name: "index_media_credits_on_media_type_and_media_id"
-  end
-
-  create_table "media_services", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "media_type"
-    t.uuid "media_id"
-    t.uuid "service_id"
-    t.index ["media_type", "media_id"], name: "index_media_services_on_media_type_and_media_id"
-    t.index ["service_id"], name: "index_media_services_on_service_id"
   end
 
   create_table "people", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -152,32 +128,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["external_ids"], name: "index_seasons_on_external_ids", using: :gin
     t.index ["series_id", "number"], name: "index_seasons_on_series_id_and_number", unique: true
     t.index ["series_id"], name: "index_seasons_on_series_id"
-  end
-
-  create_table "services", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.string "service_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "media_type"
-    t.uuid "media_id"
-    t.boolean "primary", default: false, null: false
-    t.string "name"
-    t.string "video_type"
-    t.string "source"
-    t.string "key"
-    t.integer "size"
-    t.string "language"
-    t.jsonb "external_ids"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["external_ids"], name: "index_videos_on_external_ids", using: :gin
-    t.index ["media_type", "media_id"], name: "index_videos_on_media_type_and_media_id"
-    t.index ["source", "key"], name: "index_videos_on_source_and_key", unique: true
   end
 
 end

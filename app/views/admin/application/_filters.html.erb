@@ -1,0 +1,13 @@
+<%= form_for_filterrific instance_variable_get("@#{collection_name}_filter"), as: collection_name do |f| %>
+  <div class="row mb-3" style="margin-top:-6px;">
+    <div class="col-md-6">
+      <% if collection_filters.include? :search_query %>
+        <div class="input-group input-group-seamless">
+          <span class="input-group-prepend"><span class="input-group-text"><%= icon_tag('search') %></span></span>
+          <%= f.text_field :search_query, placeholder: "Search #{resource_class.model_name.human.pluralize}", class: 'form-control filterrific-periodically-observed' %>
+          <a class="input-group-append"><span class="input-group-text"><%= icon_tag('clear') %></span></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

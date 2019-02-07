@@ -1,0 +1,7 @@
+<div class="mb-3">
+  <h6><%= page_entries_info collection %></h6>
+</div>
+<div class="row clearfix">
+  <%= render collection %>
+</div>
+<%= paginate collection, theme: 'twitter-bootstrap-4' if collection.respond_to?(:total_pages) %>

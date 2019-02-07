@@ -16,12 +16,14 @@ gem 'oj'
 
 # Model
 gem 'active_record_upsert'
+gem 'filterrific'
 gem 'friendly_id'
 gem 'jsonb_accessor'
 gem 'kaminari'
+  gem 'bootstrap4-kaminari-views'
 gem 'mobility'
 gem 'normalizr'
-gem 'textacular'
+gem 'pg_search'
 
 # Controller
 gem 'inherited_resources'
