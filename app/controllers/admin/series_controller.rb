@@ -1,6 +1,7 @@
 class Admin::SeriesController < Admin::ApplicationController
 
   inherit_resources
+  respond_to :js, only: :index
   actions :all, :except => [ :show, :destroy, :new, :create ]
 
   def page_subtitle
@@ -13,7 +14,7 @@ class Admin::SeriesController < Admin::ApplicationController
     scope = end_of_association_chain
     @series_filter ||= initialize_filterrific(
         scope,
-        params[:movies],
+        params[:series],
         select_options: {
         },
         ) or return
