@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
     resources :series
+    post :import, to: 'media#import'
     root to: "movies#index"
   end
 

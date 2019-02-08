@@ -6,6 +6,7 @@
   <%= display_meta_tags site: 'iGems.tv' %>
   <%= csrf_meta_tags %>
   <%#= csp_meta_tag %>
+  <%#= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -54,15 +55,11 @@
       <div class="main-navbar sticky-top bg-white">
         <!-- Main Navbar -->
         <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-          <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
-            <div class="input-group input-group-seamless ml-3">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fas fa-search"></i>
-                </div>
-              </div>
-              <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
-          </form>
+          <%= form_tag admin_import_path, id: 'search_form', class: 'main-navbar__search w-100 d-none d-md-flex d-lg-flex' do %>
+            <div class="search-bar input-group ml-3">
+              <%= text_field_tag :tmbd_import_id, nil, id: 'search_field', placeholder: 'Search', class: 'form-control', data: {url: api_search_path} %>
+            </div>
+          <% end %>
           <ul class="navbar-nav border-left flex-row ">
 <!--            <li class="nav-item border-right dropdown notifications">-->
 <!--              <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->

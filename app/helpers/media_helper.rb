@@ -2,7 +2,6 @@ module MediaHelper
 
 
   def media_details(media)
-
     case media.type
     when 'Movie'
       [media.rating, media.year, "#{media.runtime} minutes"].compact.join(' | ')

@@ -1,7 +1,6 @@
 //@import 'bootstrap';
 @import "shards-dashboard/shards-dashboards";
-@import "selectize/selectize";
-@import "selectize-bootstrap4/selectize.bootstrap4.scss";
+@import "admin/forms";
 
 .table > tbody > tr > td {
   vertical-align: middle;
@@ -25,6 +24,24 @@
 }
 .card-post--1 .card-post__author {
   bottom: 6px;
+}
+
+.page-header .poster {
+  height: 100px;
+  margin: 0 12px;
+  background: white;
+  margin-bottom: -70px;
+  position: relative;
+  z-index:10;
+  box-shadow: 0 0 0 0.125rem #fff, 0 0.1875rem 0.4375rem rgba(90, 97, 105, 0.5);
+}
+
+.card-small {
+  .detail {
+    position: relative;
+    top: -4px;
+    margin-left:74px;
+  }
 }
 
 //.card-post--1 .card-body {

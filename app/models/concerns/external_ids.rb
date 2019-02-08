@@ -17,6 +17,22 @@ module ExternalIds
                    youtube_trailer_id: :string
   end
 
+  def tmdb_image_path(type)
+    image_path = send("tmdb_#{type}_path")
+    return unless image_path
+    size = case type.to_sym
+           when :profile
+             'w138_and_h175_face'
+           when :poster
+             'w370_and_h556_bestv2'
+           when :still
+             'w227_and_h127_bestv2'
+           when :backdrop
+             'w1280'
+           end if size.nil?
+    "https://image.tmdb.org/t/p/#{size}#{image_path}"
+  end
+
   def tmdb_url
     case type
     when 'Movie'

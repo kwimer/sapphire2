@@ -2,6 +2,8 @@ $ ->
   autosize($('textarea'))
   setupAutoComplete()
   Filterrific.init()
+  $('#search_field').on 'change', ->
+    $(@).parents('form').submit()
 
 window.setupAutoComplete = ->
   $('[data-url]').each ->

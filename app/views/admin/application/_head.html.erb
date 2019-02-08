@@ -1,5 +1,6 @@
 <div class="page-header row no-gutters py-4">
   <div class="col-12 text-center text-sm-left mb-0">
+    <%= tmdb_image_tag resource, :poster, class: 'float-left poster' if resource.class.superclass.name == 'Media' %>
     <span class="text-uppercase page-subtitle"><%= page_subtitle %>&nbsp;</span>
     <h3 class="page-title"><%= title page_title %></h3>
   </div>

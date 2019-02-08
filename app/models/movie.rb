@@ -1,7 +1,5 @@
 class Movie < Media
 
-  include Categories
-  include Importer
   friendly_id :name_with_year
 
   jsonb_accessor :extra_fields,

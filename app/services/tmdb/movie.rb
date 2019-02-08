@@ -77,8 +77,10 @@ module Tmdb
 
       # Rating
       release = data['release_dates']['results'].find {|result| result['iso_3166_1'] == "US"}
-      rating = release['release_dates'].find {|result| !result['certification'].blank? }
-      movie.rating = rating['certification'] if rating
+      if release
+        rating = release['release_dates'].find {|result| !result['certification'].blank? }
+        movie.rating = rating['certification'] if rating
+      end
 
       movie.save!
 

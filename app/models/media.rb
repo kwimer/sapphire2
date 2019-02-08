@@ -3,9 +3,11 @@ class Media < ApplicationRecord
   extend FriendlyId
   extend Mobility
 
+  include Categories
   include Credits
   include ExternalIds
   include ExternalScores
+  include Importer
   include PgSearch
 
   alias_attribute :name, :title
@@ -24,7 +26,7 @@ class Media < ApplicationRecord
   after_save :set_tsv
 
   def tmdb_import_id
-    "#{type.downcase}/#{tmdb_id}"
+    "#{type.downcase}_#{tmdb_id}"
   end
 
   def as_tmdb_option(options={})

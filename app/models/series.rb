@@ -1,8 +1,5 @@
 class Series < Media
 
-  include Categories
-  include Importer
-
   friendly_id :name
 
   jsonb_accessor :extra_fields,
