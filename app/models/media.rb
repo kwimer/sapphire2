@@ -36,7 +36,7 @@ class Media < ApplicationRecord
         image: tmdb_image_path(:poster),
         name: name,
         description: year,
-        imported: persisted?
+        status: active? ? 'activated' : (persisted? ? 'imported' : nil)
     }
   end
 

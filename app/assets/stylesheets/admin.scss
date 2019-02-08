@@ -52,6 +52,14 @@
   color: grey;
 }
 
+.selectize-dropdown-content > div.activated::after {
+  font-family: "Material Icons";
+  content: "check_circle";
+  font-size: 20px;
+  margin-top:12px;
+  color: green;
+}
+
 //.card-post--1 .card-body {
 //  padding-top: 1.5625rem;
 //}
