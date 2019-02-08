@@ -3,9 +3,6 @@ $ ->
   setupAutoComplete()
   Filterrific.init()
 
-  $('#search_field').on 'change', ->
-    $(@).parents('form').submit()
-
   $('[data-clear]').on 'click', ->
     $(@).parents('.input-group').find('input').val('')
 
@@ -17,6 +14,7 @@ window.setupAutoComplete = ->
     input = $(@)
     multi = input.attr('multiple')
     data = input.data('data')
+    submit = input.data('submit')
     input.addClass('dropdown-arrow') if data
     options = input.data('data') || {}
     input.selectize
@@ -43,6 +41,7 @@ window.setupAutoComplete = ->
         self = @
         item = self.options[value]
         self.options = self.sifter.items = options
+        input.parents('form').submit() if submit
       onItemAdd: ->
         self = @
         self.loadedSearches = {}
