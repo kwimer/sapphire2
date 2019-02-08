@@ -31,6 +31,7 @@ gem 'inherited_resources'
 # View
 gem 'active_link_to'
 gem 'cocoon'
+gem 'meta-tags'
 gem 'simple_form'
 
 # Templates
