@@ -6,13 +6,14 @@ ruby '2.5.3'
 # Core
 gem 'rails', '5.2.2'
 gem 'bootsnap', require: false
+gem 'oj'
 gem 'pg'
 gem 'puma'
 gem 'rack-timeout'
 
 # Utils
 gem 'http'
-gem 'oj'
+gem 'rollbar'
 
 # Model
 gem 'counter_culture'
