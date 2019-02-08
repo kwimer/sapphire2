@@ -57,7 +57,7 @@
         <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
           <%= form_tag admin_import_path, id: 'search_form', class: 'main-navbar__search w-100 d-none d-md-flex d-lg-flex' do %>
             <div class="search-bar input-group ml-3">
-              <%= text_field_tag :tmbd_import_id, nil, id: 'search_field', placeholder: 'Search', class: 'form-control', data: {url: api_search_path} %>
+              <%= text_field_tag :tmbd_import_id, nil, id: 'search_field', placeholder: 'Search for media to import', class: 'form-control', data: {url: api_search_path} %>
             </div>
           <% end %>
           <ul class="navbar-nav border-left flex-row ">
