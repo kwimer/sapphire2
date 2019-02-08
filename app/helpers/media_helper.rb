@@ -1,6 +1,5 @@
 module MediaHelper
 
-
   def media_details(media)
     case media.type
     when 'Movie'

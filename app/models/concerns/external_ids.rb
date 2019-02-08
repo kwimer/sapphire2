@@ -19,7 +19,7 @@ module ExternalIds
 
   def tmdb_image_path(type)
     image_path = send("tmdb_#{type}_path")
-    return unless image_path
+    return ActionController::Base.helpers.image_path("defaults/#{self.class.name.underscore}_#{type}.jpg") unless image_path
     size = case type.to_sym
            when :profile
              'w138_and_h175_face'
