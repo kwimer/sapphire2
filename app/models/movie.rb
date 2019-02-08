@@ -29,6 +29,10 @@ class Movie < Media
     end
   }
 
+  def details
+    [rating, year, runtime ? "#{runtime} minutes" : nil].compact.join(' | ')
+  end
+
   def name_with_year
     "#{title} (#{year})"
   end

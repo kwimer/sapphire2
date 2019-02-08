@@ -35,7 +35,7 @@ class Media < ApplicationRecord
         type: type.downcase,
         image: tmdb_image_path(:poster),
         name: name,
-        description: year,
+        description: [type, year].compact.join(' | '),
         status: active? ? 'activated' : (persisted? ? 'imported' : nil)
     }
   end

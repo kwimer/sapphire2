@@ -35,4 +35,8 @@ class Series < Media
   has_many :seasons, -> { order(:number) }
   has_many :episodes, through: :seasons
 
+  def details
+    [rating, year, ActionController::Base.helpers.pluralize(seasons_count, 'season'), ActionController::Base.helpers.pluralize(episodes_count, 'episode')].compact.join(' | ')
+  end
+
 end

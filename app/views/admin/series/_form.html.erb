@@ -4,7 +4,7 @@
     <div class="card-body p-0">
       <ul class="list-group list-group-flush">
         <li class="list-group-item p-3">
-          <small class="detail"><%= media_details(resource) %></small>
+          <small class="detail"><%= resource.details %></small>
           <div class="custom-control custom-toggle mb-1 float-right">
             <%= f.input_field :active, class: 'custom-control-input' %>
             <%= f.label :active, class: 'custom-control-label' %>

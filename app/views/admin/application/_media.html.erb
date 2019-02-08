@@ -10,6 +10,6 @@
       <%= link_to media.title, edit_resource_path(media), class: "text-fiord-blue" %>
     </h5>
     <p class="card-text d-inline-block mb-3"><%= media.synopsis.try(:truncate, 50, separator: /\s/) %></p>
-    <span class="text-muted small"><%= media_details(media) %>&nbsp;</span>
+    <span class="text-muted small"><%= media.details %>&nbsp;</span>
   </div>
 </div>
