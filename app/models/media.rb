@@ -33,7 +33,7 @@ class Media < ApplicationRecord
     {
         id: tmdb_import_id,
         type: type.downcase,
-        image: "https://image.tmdb.org/t/p/w370_and_h556_bestv2#{tmdb_poster_path}",
+        image: tmdb_image_path(:poster),
         name: name,
         description: year,
         imported: persisted?
