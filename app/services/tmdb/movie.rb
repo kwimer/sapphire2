@@ -43,6 +43,18 @@ module Tmdb
       vote_count: :tmdb_votes
     }
 
+    def self.search(q)
+      return [] if q.blank?
+      response = Tmdb::Api.search_movies(q)
+      movies = []
+      response['results'].each do |data|
+        movie = ::Movie.external_ids_where(tmdb_id: data['id'].to_s).first_or_initialize
+        MAPPING.each { |key, col| movie.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
+        movies << movie
+      end
+      movies
+    end
+
     def self.import(id, full_import = false)
 
       # Movie Import

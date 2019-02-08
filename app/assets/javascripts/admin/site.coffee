@@ -22,7 +22,7 @@ window.setupAutoComplete = ->
       searchField: 'name'
       render:
         option: (item, escape) ->
-          """<div class="media"><img class="mr-2" src="#{item.image}" style="height: 42px;"><div class="media-body"><div><strong>#{item.name}</strong></div><small>#{item.description}</small></div></div>"""
+          """<div class="media my-1"><img class="mr-2" src="#{item.image}" style="width:30px;height:45px;"><div class="media-body py-1"><div><strong>#{item.name}</strong></div><small>#{item.description}</small></div></div>"""
       score: ->
         ->
           return 1

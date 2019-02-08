@@ -24,6 +24,7 @@ gem 'kaminari'
 gem 'mobility'
 gem 'normalizr'
 gem 'pg_search'
+gem 'virtus'
 
 # Controller
 gem 'inherited_resources'

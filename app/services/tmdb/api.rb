@@ -7,6 +7,18 @@ module Tmdb
 
     class << self
 
+      def search(q)
+        response = get("/3/search/multi", query: q)
+      end
+
+      def search_movies(q)
+        response = get("/3/search/movie", include_adult: false, query: q)
+      end
+
+      def search_series(q)
+        response = get("/3/search/tv", query: q)
+      end
+
       def movie(id)
         response = get("/3/movie/#{id}", append_to_response: "alternative_titles,credits,external_ids,images,keywords,releases,translations,videos,release_dates")
       end

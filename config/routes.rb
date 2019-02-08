@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  namespace :api do
+    get :search, to: 'search#index'
+  end
+
   namespace :admin do
     resources :categories do
       resources :categories

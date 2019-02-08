@@ -2,7 +2,7 @@ module Importer
 
   extend ActiveSupport::Concern
 
-  def reimport
+  def import
     TmdbImportWorker.perform_async(self.class.name.underscore, tmdb_id)
   end
 

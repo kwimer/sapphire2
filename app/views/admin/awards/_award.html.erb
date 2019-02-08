@@ -1,17 +1,19 @@
-<td>
-  <%= award.year %>
-</td>
-<td>
-  <div><%= award.movie.title %></div>
-</td>
-<td>
-  <% if award.award_type %>
-    <%= content_tag(:strong, award.award_type.titleize) %>:
-  <% end %>
-  <%= award.award_name %>
-</td>
-<td class="text-right">
-  <div class="btn-group btn-group-sm">
-    <%= link_to icon_tag('edit'), edit_resource_path(award), class: 'btn btn-white' %>
-  </div>
-</td>
+<tr>
+  <td>
+    <%= award.year %>
+  </td>
+  <td>
+    <div><%= award.movie.title %></div>
+  </td>
+  <td>
+    <% if award.award_type %>
+      <%= content_tag(:strong, award.award_type.titleize) %>:
+    <% end %>
+    <%= award.award_name %>
+  </td>
+  <td class="text-right">
+    <div class="btn-group btn-group-sm">
+      <%= link_to icon_tag('edit'), edit_resource_path(award), class: 'btn btn-white' %>
+    </div>
+  </td>
+</tr>
