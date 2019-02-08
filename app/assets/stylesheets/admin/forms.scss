@@ -4,6 +4,10 @@
   z-index: 2000;
 }
 
+.selectize-control.single .selectize-input:after{
+  display:none
+}
+
 .main-navbar__search, .main-sidebar__search {
   .selectize-input {
     border:none;
