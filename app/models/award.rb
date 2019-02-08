@@ -5,7 +5,7 @@ class Award < ApplicationRecord
 
   attr_accessor :tmdb_import_id
 
-  validates_presence_of :year, :tmdb_movie_id
+  validates_presence_of :year, :tmdb_import_id
   before_validation :import_media, on: :create
 
   def name
@@ -13,11 +13,11 @@ class Award < ApplicationRecord
   end
 
   def tmdb_import_id
-    @tmdb_id || movie.try(:tmdb_import_id)
+    @tmdb_import_id || movie.try(:tmdb_import_id)
   end
 
   def import_media
-    self.movie = Media.import(tmdb_import_id)
+    self.movie = Movie.import(tmdb_import_id)
   end
 
 end
