@@ -1,69 +1,17 @@
-@import "selectize/selectize.bootstrap4";
+@import "selectize/selectize.bootstrap3";
 
 .selectize-dropdown, .selectize-dropdown.form-control {
   z-index: 2000;
 }
 
 .search-bar {
-
   .selectize-input {
     border:none;
     box-shadow: none;
-    padding:21px 13px;
+    padding:20px 13px;
     padding-bottom: 10px;
     &.focus {
       box-shadow: none;
     }
   }
-}
-
-.input-group {
-
-  .selectize-dropdown, .selectize-dropdown.form-control {
-    position: absolute;
-    border-radius: 0.215rem;
-  }
-
-  .selectize-input,
-  .selectize-control.single .selectize-input.input-active {
-    display: block;
-  }
-
-  .form-control:not(:nth-child(2)).single .selectize-input {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  .form-control:not(:last-child) .selectize-input {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  .selectize-control.multi, .selectize-control.multiple {
-
-    .selectize-input > div {
-      display: block;
-      padding: 0.4rem .8rem;
-      border: 1px solid #e4eaec;
-      border-radius: 0.215rem;
-      background: #fff;
-      margin: 0 4px 4px 0;
-    }
-
-    .selectize-input.has-items {
-      padding: 4px 1px 4px 4px;
-    }
-
-    .selectize-input.has-items > input {
-      padding: 0.4rem .8rem !important;
-      display: block !important;
-      width: 100% !important;
-    }
-
-    .selectize-input .remove {
-      padding-top: 0.4rem;
-    }
-
-  }
-
 }
