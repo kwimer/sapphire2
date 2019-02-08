@@ -24,7 +24,6 @@ window.setupAutoComplete = ->
       searchField: 'name'
       render:
         option: (item, escape) ->
-          console.log(item)
           """<div class="media p-1 mx-1 #{item.status}"><img class="mr-2" src="#{item.image}" style="width:30px;height:45px;"><div class="media-body py-1"><div><strong>#{item.name}</strong></div><small>#{item.description}</small></div></div>"""
       score: ->
         ->
