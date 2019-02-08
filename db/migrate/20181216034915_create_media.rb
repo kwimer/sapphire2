@@ -1,6 +1,6 @@
 class CreateMedia < ActiveRecord::Migration[5.2]
   def change
-    create_table :media, id: :uuid do |t|
+    create_table :media do |t|
       t.string :type
       t.boolean :active, null: false, default: false
       t.string :slug

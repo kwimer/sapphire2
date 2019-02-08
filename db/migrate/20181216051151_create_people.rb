@@ -1,6 +1,6 @@
 class CreatePeople < ActiveRecord::Migration[5.2]
   def change
-    create_table :people, id: :uuid do |t|
+    create_table :people do |t|
       t.string :name
       t.string :slug, uniq: true
       t.string :aka, array: true

@@ -1,8 +1,8 @@
 class CreateEpisodes < ActiveRecord::Migration[5.2]
   def change
-    create_table :episodes, id: :uuid do |t|
-      t.belongs_to :series, type: :uuid, index: true
-      t.belongs_to :season, type: :uuid, index: true
+    create_table :episodes do |t|
+      t.belongs_to :series, index: true
+      t.belongs_to :season, index: true
       t.string :slug
       t.date :release_date
       t.integer :season_number
