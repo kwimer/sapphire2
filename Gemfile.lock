@@ -28,10 +28,6 @@ GEM
     active_link_to (1.0.5)
       actionpack
       addressable
-    active_record_upsert (0.9.4)
-      activerecord (>= 5.0, < 6.0)
-      arel (> 7.0, < 10.0)
-      pg (>= 0.18, < 2.0)
     activejob (5.2.2)
       activesupport (= 5.2.2)
       globalid (>= 0.3.6)
@@ -52,6 +48,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    after_commit_action (1.1.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     arel (9.0.0)
     autoprefixer-rails (9.4.7)
       execjs
@@ -76,6 +75,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
     connection_pool (2.2.2)
+    counter_culture (2.1.4)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      after_commit_action (~> 1.0)
     crass (1.0.4)
     diff-lcs (1.3)
     domain_name (0.5.20180417)
@@ -339,12 +342,12 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
-  active_record_upsert
   bootsnap
   bootstrap (= 4.1.3)
   bootstrap4-kaminari-views
   cocoon
   coffee-rails
+  counter_culture
   dotenv-rails
   filterrific
   friendly_id

@@ -2,7 +2,7 @@ module Tmdb
   module Episode
 
     MAPPING = {
-      air_date: :start_date,
+      air_date: :release_date,
       episode_number: :number,
       name: :title,
       overview: :tmdb_summary,
@@ -19,7 +19,7 @@ module Tmdb
       # Episode Import
       sleep 0.2
       data = Tmdb::Api.episode(series.tmdb_id, season.number, number)
-      episode = ::Episode.where(season: season, number: number).first_or_initialize
+      episode = ::Episode.where(series: series, season: season, number: number).first_or_initialize
       MAPPING.each { |key, col| episode.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
 
       # External Ids Import

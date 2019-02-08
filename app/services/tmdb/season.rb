@@ -3,7 +3,7 @@ module Tmdb
 
     MAPPING = {
       _id: nil,
-      air_date: :start_date,
+      air_date: :release_date,
       episodes: {
         air_date: nil,
         episode_number: nil,
@@ -31,6 +31,7 @@ module Tmdb
       data = Tmdb::Api.season(series.tmdb_id, number)
       season = ::Season.where(series: series, number: number).first_or_initialize
       MAPPING.each { |key, col| season.send("#{col}=", data[key.to_s]) if col.is_a?(Symbol) }
+      season.episodes_count = data['episodes'].size
 
       # External Ids Import
       data['external_ids'].each do |key, val|

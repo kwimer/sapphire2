@@ -5,8 +5,9 @@ class CreateSeasons < ActiveRecord::Migration[5.2]
       # t.string :title
       # t.string :summary
       t.integer :number
-      t.date :start_date
+      t.date :release_date
 
+      t.jsonb :extra_fields
       t.jsonb :external_ids, index: {using: :gin}
       t.jsonb :translations
 

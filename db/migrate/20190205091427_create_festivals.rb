@@ -7,7 +7,7 @@ class CreateFestivals < ActiveRecord::Migration[5.2]
     end
 
     create_table :awards do |t|
-      t.belongs_to :media, polymorphic: true, type: :uuid, index: true
+      t.belongs_to :movie, type: :uuid, index: true
       t.belongs_to :festival, type: :uuid
       t.integer :year
       t.string :award_type

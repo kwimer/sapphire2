@@ -17,14 +17,13 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   enable_extension "plpgsql"
 
   create_table "awards", force: :cascade do |t|
-    t.string "media_type"
-    t.uuid "media_id"
+    t.uuid "movie_id"
     t.uuid "festival_id"
     t.integer "year"
     t.string "award_type"
     t.string "award_name"
     t.index ["festival_id"], name: "index_awards_on_festival_id"
-    t.index ["media_type", "media_id"], name: "index_awards_on_media_type_and_media_id"
+    t.index ["movie_id"], name: "index_awards_on_movie_id"
   end
 
   create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -50,6 +49,27 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
     t.index ["person_id"], name: "index_credits_on_person_id"
   end
 
+  create_table "episodes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "series_id"
+    t.uuid "season_id"
+    t.string "slug"
+    t.date "release_date"
+    t.integer "season_number"
+    t.integer "number"
+    t.jsonb "translations"
+    t.jsonb "extra_fields"
+    t.jsonb "external_ids"
+    t.jsonb "external_scores"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["external_ids"], name: "index_episodes_on_external_ids", using: :gin
+    t.index ["external_scores"], name: "index_episodes_on_external_scores", using: :gin
+    t.index ["season_id"], name: "index_episodes_on_season_id"
+    t.index ["series_id", "season_id", "number"], name: "index_episodes_on_series_id_and_season_id_and_number", unique: true
+    t.index ["series_id"], name: "index_episodes_on_series_id"
+    t.index ["slug", "series_id"], name: "index_episodes_on_slug_and_series_id", unique: true
+  end
+
   create_table "festivals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -58,25 +78,21 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   end
 
   create_table "media", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.boolean "active", default: false, null: false
-    t.uuid "season_id"
-    t.tsvector "tsv_title"
-    t.string "slug"
     t.string "type"
-    t.date "start_date"
-    t.date "end_date"
+    t.boolean "active", default: false, null: false
+    t.string "slug"
+    t.date "release_date"
     t.string "status"
-    t.string "media_type"
-    t.integer "number"
+    t.tsvector "tsv_title"
     t.jsonb "translations"
     t.jsonb "extra_fields"
     t.jsonb "external_ids"
     t.jsonb "external_scores"
+    t.string "import_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["external_ids"], name: "index_media_on_external_ids", using: :gin
     t.index ["external_scores"], name: "index_media_on_external_scores", using: :gin
-    t.index ["season_id"], name: "index_media_on_season_id"
     t.index ["slug", "type"], name: "index_media_on_slug_and_type", unique: true
     t.index ["tsv_title"], name: "index_media_on_tsv_title", using: :gin
   end
@@ -120,7 +136,8 @@ ActiveRecord::Schema.define(version: 2019_02_06_022652) do
   create_table "seasons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "series_id"
     t.integer "number"
-    t.date "start_date"
+    t.date "release_date"
+    t.jsonb "extra_fields"
     t.jsonb "external_ids"
     t.jsonb "translations"
     t.datetime "created_at", null: false

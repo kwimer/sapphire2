@@ -2,13 +2,14 @@ class Season < ApplicationRecord
 
   extend Mobility
   translates :title, :summary, :tmdb_summary
+
+  include Credits
   include ExternalIds
 
+  jsonb_accessor :extra_fields,
+                 episodes_count: :integer
+
   belongs_to :series
-  has_many :episodes, -> { order(:number) }, as: :parent
-  has_many :media_credits, as: :media
-  has_many :credits, through: :media_credits
-  has_many :images, as: :media
-  has_many :videos, as: :media
+  has_many :episodes, -> { order(:number) }
 
 end

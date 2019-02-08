@@ -2,11 +2,15 @@ class Series < Media
 
   include Categories
   include Importer
+
   friendly_id :name
 
   jsonb_accessor :extra_fields,
                  original_title: :string,
                  original_language: :string,
+                 media_type: :string,
+                 seasons_count: :integer,
+                 episodes_count: :integer,
                  rating: :string,
                  in_production: :boolean,
                  episode_runtimes: [:integer, array: true],

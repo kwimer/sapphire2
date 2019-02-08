@@ -15,7 +15,7 @@ gem 'http'
 gem 'oj'
 
 # Model
-gem 'active_record_upsert'
+gem 'counter_culture'
 gem 'filterrific'
 gem 'friendly_id'
 gem 'jsonb_accessor'

@@ -28,7 +28,7 @@ module Tmdb
         iso_3166_1: nil,
         name: nil
       },
-      release_date: :start_date,
+      release_date: :release_date,
       revenue: nil,
       runtime: :runtime,
       spoken_languages: {
@@ -43,7 +43,7 @@ module Tmdb
       vote_count: :tmdb_votes
     }
 
-    def self.import(id)
+    def self.import(id, full_import = false)
 
       # Movie Import
       sleep 0.2
@@ -76,6 +76,8 @@ module Tmdb
         category = ::Category.where(parent: genre_category, name: genre['name']).first_or_create!
         ::MediaCategory.where(category: category, media: movie).first_or_create!
       end
+
+      return movie unless full_import
 
       # Images Import
       # data['images'].each do |type, images|

@@ -1,12 +1,12 @@
-class CreateMedia < ActiveRecord::Migration[5.2]
+class CreateEpisodes < ActiveRecord::Migration[5.2]
   def change
-    create_table :media, id: :uuid do |t|
-      t.string :type
-      t.boolean :active, null: false, default: false
+    create_table :episodes, id: :uuid do |t|
+      t.belongs_to :series, type: :uuid, index: true
+      t.belongs_to :season, type: :uuid, index: true
       t.string :slug
       t.date :release_date
-      t.string :status
-      t.tsvector :tsv_title, index: {using: :gin}
+      t.integer :season_number
+      t.integer :number
       t.jsonb :translations
       # t.string :title
       # t.string :summary
@@ -18,10 +18,9 @@ class CreateMedia < ActiveRecord::Migration[5.2]
       # t.integer :production_code
       t.jsonb :external_ids, index: {using: :gin}
       t.jsonb :external_scores, index: {using: :gin}
-      t.string :import_status
       t.timestamps
     end
-    add_index :media, [:slug, :type], unique: true
-
+    add_index :episodes, [:series_id, :season_id, :number], unique: true
+    add_index :episodes, [:slug, :series_id], unique: true
   end
 end

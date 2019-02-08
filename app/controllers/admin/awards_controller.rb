@@ -6,7 +6,7 @@ class Admin::AwardsController < Admin::ApplicationController
 
   def award_params
     params.require(:award).permit(
-        :year, :media_id, :media_type, :award_type, :award_name
+        :year, :movie_id, :award_type, :award_name
     )
   end
 

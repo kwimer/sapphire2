@@ -3,10 +3,12 @@ class Media < ApplicationRecord
   extend FriendlyId
   extend Mobility
 
+  include Credits
   include ExternalIds
   include ExternalScores
   include PgSearch
 
+  alias_attribute :name, :title
   translates :title, :summary, :detail, :tmdb_summary, :tagline
   normalize_attributes :summary, :detail
 
@@ -19,17 +21,7 @@ class Media < ApplicationRecord
                       }
                   }
 
-  has_many :media_categories
-  has_many :categories, through: :media_categories
-
-  has_many :media_credits, as: :media
-  has_many :credits, through: :media_credits
-
   after_save :set_tsv
-
-  def name
-    title
-  end
 
   def set_tsv
     Media.connection.execute("UPDATE media SET tsv_title = to_tsvector('simple', translations->'en'->>'title') WHERE id = '#{id}';")
@@ -40,7 +32,7 @@ class Media < ApplicationRecord
   end
 
   def year
-    start_date.year if start_date
+    release_date.year if release_date
   end
 
 end

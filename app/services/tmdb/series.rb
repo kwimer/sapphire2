@@ -10,7 +10,7 @@ module Tmdb
         profile_path: nil
       },
       episode_run_time: :episode_runtimes,
-      first_air_date: :start_date,
+      first_air_date: :release_date,
       genres: {
         id: nil,
         name: :name
@@ -19,7 +19,7 @@ module Tmdb
       id: :tmdb_id,
       in_production: :in_production,
       languages: :languages,
-      last_air_date: :end_date,
+      last_air_date: nil,
       last_episode_to_air: nil,
       name: :title,
       next_episode_to_air: nil,
@@ -29,8 +29,8 @@ module Tmdb
         logo_path: nil,
         origin_country: nil
       },
-      number_of_episodes: nil,
-      number_of_seasons: nil,
+      number_of_episodes: :episodes_count,
+      number_of_seasons: :seasons_count,
       origin_country: :countries,
       original_language: :original_language,
       original_name: :original_title,
@@ -58,7 +58,7 @@ module Tmdb
       vote_count: :tmdb_votes
     }
 
-    def self.import(id)
+    def self.import(id, full_import = false)
 
       # Series Import
       sleep 0.2
@@ -85,6 +85,8 @@ module Tmdb
         ::MediaCategory.where(category: category, media: series).first_or_create!
       end
 
+      return series unless full_import
+
       # Images Import
       # data['images'].each do |type, images|
       #   images.each { |image| Image.add(series, data, type, image) }
@@ -95,14 +97,14 @@ module Tmdb
       #   Video.add(series, video)
       # end
 
-      # Credits Import
-      data['credits'].each do |type, credits|
-        credits.each { |data| Credit.add(series, series, type, data) }
-      end
-
       # Seasons Import
       data['seasons'].each do |season|
         Season.add(series, season['season_number'])
+      end
+
+      # Credits Import
+      data['credits'].each do |type, credits|
+        credits.each { |data| Credit.add(series, series, type, data) }
       end
 
       return series
