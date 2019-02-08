@@ -31,15 +31,11 @@
           </a>
         </nav>
       </div>
-      <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-        <div class="input-group input-group-seamless ml-3">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <i class="fas fa-search"></i>
-            </div>
-          </div>
-          <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
-      </form>
+      <%= form_tag admin_import_path, id: 'search_form', class: 'main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none' do %>
+        <div class="input-group mx-5">
+          <%= text_field_tag :tmbd_import_id, nil, id: 'search_field', placeholder: 'Search for media to import', class: 'form-control', data: {url: api_search_path} %>
+        </div>
+      <% end %>
       <div class="nav-wrapper">
         <ul class="nav flex-column">
           <%= menu_item('Movies', admin_movies_path, 'movie') %>
@@ -55,7 +51,7 @@
         <!-- Main Navbar -->
         <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
           <%= form_tag admin_import_path, id: 'search_form', class: 'main-navbar__search w-100 d-none d-md-flex d-lg-flex' do %>
-            <div class="search-bar input-group mx-3">
+            <div class="input-group mx-3">
               <%= text_field_tag :tmbd_import_id, nil, id: 'search_field', placeholder: 'Search for media to import', class: 'form-control', data: {url: api_search_path} %>
             </div>
           <% end %>

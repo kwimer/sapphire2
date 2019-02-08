@@ -5,7 +5,7 @@
         <div class="input-group input-group-seamless">
           <span class="input-group-prepend"><span class="input-group-text"><%= icon_tag('search') %></span></span>
           <%= f.text_field :search_query, placeholder: "Search #{resource_class.model_name.human.pluralize}", class: 'form-control filterrific-periodically-observed' %>
-          <a class="input-group-append"><span class="input-group-text"><%= icon_tag('clear') %></span></a>
+          <a class="input-group-append cursor-pointer" data-clear="clear"><span class="input-group-text"><%= icon_tag('clear') %></span></a>
         </div>
       <% end %>
     </div>

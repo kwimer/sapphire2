@@ -2,6 +2,10 @@
 @import "shards-dashboard/shards-dashboards";
 @import "admin/forms";
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .table > tbody > tr > td {
   vertical-align: middle;
 }
