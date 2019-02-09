@@ -11,7 +11,6 @@
       <%= content_tag(:span, (media.tmdb_rating*10).to_i, class: "badge badge-pill badge-squared badge-success") if media.tmdb_rating %>
       <%= content_tag(:span, media.rt_rating, class: "badge badge-pill badge-squared badge-danger") if media.rt_rating %>
       <%= content_tag(:span, media.metacritic_rating, class: "badge badge-pill badge-squared badge-secondary") if media.metacritic_rating %>
-
     </div>
       <h5 class="card-title text-nowrap text-truncate">
       <%= link_to media.title, edit_resource_path(media), class: "text-fiord-blue" %>
