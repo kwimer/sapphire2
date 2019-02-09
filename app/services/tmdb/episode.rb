@@ -27,6 +27,8 @@ module Tmdb
         episode.send("#{key}=", val) if val && episode.respond_to?(key)
       end
 
+      episode.import_scores
+
       episode.save!
 
       # Credits Import

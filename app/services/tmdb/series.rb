@@ -76,6 +76,8 @@ module Tmdb
       rating = data['content_ratings']['results'].find {|result| result['iso_3166_1'] == "US"}
       series.rating = rating['rating'] if rating
 
+      series.import_scores
+
       series.save!
 
       # Genres

@@ -2,15 +2,18 @@ module Omdb
 
   module Api
 
-    #http://www.omdbapi.com/?i=tt3896198&apikey=xxx
-
     BASE_URL = "http://www.omdbapi.com"
     API_KEY = ENV["OMDB_API_KEY"]
 
     class << self
 
-      def movie(imdb_id)
-        response = get("/", i: imdb_id)
+      # http://www.omdbapi.com/?i=tt3896198&apikey=xxx
+      def find(imdb_id)
+        get("/", i: imdb_id)
+      end
+
+      def search()
+
       end
 
       private

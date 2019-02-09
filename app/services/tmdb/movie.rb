@@ -82,6 +82,8 @@ module Tmdb
         movie.rating = rating['certification'] if rating
       end
 
+      movie.import_scores
+
       movie.save!
 
       # Genres

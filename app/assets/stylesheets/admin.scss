@@ -1,4 +1,4 @@
-//@import 'bootstrap';
+@import 'bootstrap';
 @import "shards-dashboard/shards-dashboards";
 @import "admin/forms";
 
@@ -20,6 +20,18 @@
     min-height: 38px;
   }
 }
+
+.scores {
+  position: absolute; top:170px; left:70px;
+  span {
+    margin-right: 2px;
+    font-weight: normal;
+    font-size: 75%;
+    width:34px;
+    text-align:center;
+  }
+}
+
 
 .card-post__author-avatar {
   width: 37px;
