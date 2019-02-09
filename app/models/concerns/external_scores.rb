@@ -16,8 +16,8 @@ module ExternalScores
       return unless imdb_id
       data = Omdb::Api.find(imdb_id)
       return unless data
-      self.imdb_rating = data['imdbRating']
-      self.imdb_votes = data['imdbVotes']
+      self.imdb_rating = data['imdbRating'] == "N/A" ? nil : data['imdbRating']
+      self.imdb_votes = data['imdbVotes'] == "N/A" ? nil : data['imdbVotes']
       self.metacritic_rating = data['Metascore'] == "N/A" ? nil : data['Metascore']
       self.rt_rating = data['Ratings'].find{|r| r['Source'] == 'Rotten Tomatoes'}.try(:[], 'Value')
       return data
