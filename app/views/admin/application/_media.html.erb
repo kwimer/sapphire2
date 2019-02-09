@@ -8,8 +8,8 @@
   <div class="card-body">
     <div class="text-muted scores">
       <%= content_tag(:span, media.imdb_rating, class: "badge badge-pill badge-squared badge-warning") if media.imdb_rating %>
-      <%= content_tag(:span, "#{(media.tmdb_rating*10).to_i}%", class: "badge badge-pill badge-squared badge-success") if media.tmdb_rating %>
-      <%= content_tag(:span, "#{media.rt_rating}%", class: "badge badge-pill badge-squared badge-danger") if media.rt_rating %>
+      <%= content_tag(:span, (media.tmdb_rating*10).to_i, class: "badge badge-pill badge-squared badge-success") if media.tmdb_rating %>
+      <%= content_tag(:span, media.rt_rating, class: "badge badge-pill badge-squared badge-danger") if media.rt_rating %>
       <%= content_tag(:span, media.metacritic_rating, class: "badge badge-pill badge-squared badge-secondary") if media.metacritic_rating %>
 
     </div>
