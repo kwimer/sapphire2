@@ -8,7 +8,7 @@ class Admin::ListItemsController < Admin::ApplicationController
 
   def list_item_params
     params.require(:list_item).permit(
-        :tmdb_import_id, :detail
+        :position, :tmdb_import_id, :detail
     )
   end
 

@@ -1,6 +1,7 @@
 <%= simple_form_for resource, url: form_resource_path do |f| %>
   <div class="card card-small mb-3">
     <div class="card-body">
+      <%= f.input :position unless resource.new_record? %>
       <% if resource.persisted? %>
         <%= f.input :tmdb_import_id, disabled: true do %>
           <%= text_field_tag '', resource.media.name, class: "form-control string optional", disabled: true %>
