@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   def self.current
     current_user_id = RequestStore.store[:current_user_id]
-    User.find(id) if current_user_id
+    User.find(current_user_id) if current_user_id
   end
 
   def admin?
