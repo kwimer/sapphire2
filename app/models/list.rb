@@ -6,6 +6,6 @@ class List < ApplicationRecord
   user_stamp
   friendly_id :name
 
-  has_many :list_items, -> { order(:position) }
+  has_many :list_items, -> { order(:position) }, dependent: :destroy
 
 end

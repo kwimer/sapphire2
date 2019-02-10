@@ -2,7 +2,7 @@ class Admin::ListItemsController < Admin::ApplicationController
 
   inherit_resources
   belongs_to :list
-  actions :all, :except => [ :show, :destroy ]
+  actions :all, :except => [ :show ]
 
   private
 

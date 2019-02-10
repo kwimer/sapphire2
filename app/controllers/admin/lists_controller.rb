@@ -1,7 +1,7 @@
 class Admin::ListsController < Admin::ApplicationController
 
   inherit_resources
-  actions :all, :except => [ :show, :destroy ]
+  actions :all, :except => [ :show ]
 
   private
 

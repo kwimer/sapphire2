@@ -1,9 +1,11 @@
 <tr>
-  <td>
+  <td width="10">
     <%= award.year %>
   </td>
   <td>
-    <div><%= award.movie.title %></div>
+    <%= tmdb_image_tag(award.movie, :poster, class: 'poster mr-2 float-left') %>
+    <%= award.movie.name %>
+    <div class="small text-muted"><%= award.movie.details %></div>
   </td>
   <td>
     <% if award.award_type %>
