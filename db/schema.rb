@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_102321) do
+ActiveRecord::Schema.define(version: 2019_02_10_134912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,28 @@ ActiveRecord::Schema.define(version: 2019_02_10_102321) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "list_items", force: :cascade do |t|
+    t.bigint "list_id"
+    t.string "media_type"
+    t.bigint "media_id"
+    t.text "detail"
+    t.integer "position"
+    t.index ["list_id", "media_type", "media_id"], name: "index_list_items_on_list_id_and_media_type_and_media_id", unique: true
+    t.index ["list_id"], name: "index_list_items_on_list_id"
+    t.index ["media_type", "media_id"], name: "index_list_items_on_media_type_and_media_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.string "slug"
+    t.text "description"
+    t.integer "list_items_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "media", force: :cascade do |t|

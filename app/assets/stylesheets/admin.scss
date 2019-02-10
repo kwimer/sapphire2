@@ -32,6 +32,11 @@
   }
 }
 
+td .poster {
+  width: 32px;
+  box-shadow: 0 0 0 0.125rem #fff, 0 0.1875rem 0.4375rem rgba(90, 97, 105, 0.5);
+}
+
 
 .card-post__author-avatar {
   width: 37px;

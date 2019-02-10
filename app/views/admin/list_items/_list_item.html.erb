@@ -1,0 +1,16 @@
+<tr>
+  <td width="10">
+    <%= list_item.position %>.
+  </td>
+  <td>
+    <%= tmdb_image_tag(list_item.media, :poster, class: 'poster mr-2 float-left') %>
+    <%= list_item.media.name %>
+    <div class="small text-muted"><%= list_item.detail.truncate(50) %></div>
+    <div class="small text-muted"><%= list_item.media.details %></div>
+  </td>
+  <td class="text-right">
+    <div class="btn-group btn-group-sm">
+      <%= link_to icon_tag('edit'), edit_resource_path(list_item), class: 'btn btn-white' %>
+    </div>
+  </td>
+</tr>

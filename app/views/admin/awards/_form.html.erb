@@ -2,7 +2,13 @@
   <div class="card card-small mb-3">
     <div class="card-body">
       <%= f.input :year %>
-      <%= f.input :tmdb_import_id, label: 'Movie', collection: [f.object.movie].compact.map { |m| [m.name, m.tmdb_import_id, data: {data: m.as_tmdb_option.to_json}] }, input_html: {data: {url: api_search_path(type: 'movie')}} %>
+      <% if resource.persisted? %>
+        <%= f.input :tmdb_import_id, disabled: true do %>
+          <%= text_field_tag '', resource.movie.name, class: "form-control string optional", disabled: true %>
+        <% end %>
+      <% else %>
+        <%= f.input :tmdb_import_id, label: 'Movie', prompt: false, collection: [f.object.movie].compact.map { |m| [m.name, m.tmdb_import_id, data: {data: m.as_tmdb_option.to_json}] }, input_html: {data: {url: api_search_path(type: 'movie')}} %>
+      <% end %>
       <%= f.input :award_type, collection: %w(nominee winner) %>
       <%= f.input :award_name %>
     </div>

@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= link_to list.name, admin_list_list_items_path(list) %>
+    <div class="small text-muted"><%= pluralize list.list_items_count, "item" %></div>
+  </td>
+  <td class="text-right">
+    <div class="btn-group btn-group-sm">
+      <%= link_to icon_tag('edit'), edit_resource_path(list), class: 'btn btn-white' %>
+    </div>
+  </td>
+</tr>

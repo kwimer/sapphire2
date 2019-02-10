@@ -10,6 +10,11 @@ class User < ApplicationRecord
 
   before_create :set_admin
 
+  def self.current
+    current_user_id = RequestStore.store[:current_user_id]
+    User.find(id) if current_user_id
+  end
+
   def admin?
     role == 'admin'
   end

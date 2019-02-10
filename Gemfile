@@ -16,6 +16,7 @@ gem 'http'
 gem 'rollbar'
 
 # Model
+gem 'acts_as_list'
 gem 'counter_culture'
 gem 'devise'
 gem 'filterrific'
@@ -26,6 +27,7 @@ gem 'kaminari'
 gem 'mobility'
 gem 'normalizr'
 gem 'pg_search'
+gem 'request_store'
 gem 'virtus'
 
 # Controller

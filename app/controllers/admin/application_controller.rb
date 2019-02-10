@@ -32,7 +32,11 @@ class Admin::ApplicationController < ActionController::Base
     when 'index'
       parent.class.model_name.human.pluralize if parent?
     when 'new', 'create', 'edit', 'update'
-      resource_class.model_name.human.pluralize
+      if parent?
+        parent.name
+      else
+        resource_class.model_name.human.pluralize
+      end
     end
   end
 

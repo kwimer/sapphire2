@@ -6,7 +6,8 @@ class Award < ApplicationRecord
   attr_accessor :tmdb_import_id
   normalize_attributes :award_type, :award_name
 
-  validates_presence_of :year, :tmdb_import_id
+  validates :year, presence: true
+  validates :tmdb_import_id, presence: true, on: :create
   before_validation :import_media, on: :create
 
   def name

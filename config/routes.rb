@@ -6,18 +6,17 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories do
-      resources :categories
+    resources :movies
+    resources :series
+    resources :lists do
+      resources :list_items, path: :items
     end
     resources :festivals, except: :show do
       resources :awards
     end
-    resources :movies do
-      collection do
-        get :search
-      end
+    resources :categories do
+      resources :categories
     end
-    resources :series
     post :import, to: 'media#import'
     root to: "movies#index"
   end
