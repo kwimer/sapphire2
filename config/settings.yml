@@ -1,0 +1,9 @@
+defaults: &defaults
+  host: 'igems.test'
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  host: 'igems.herokuapp.com'

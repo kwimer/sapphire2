@@ -4,6 +4,7 @@ production:
   :concurrency: 10
 :queues:
   - default
-  - tmdb
+  - mailers
+  - import
 :limits:
   tmdb: 1

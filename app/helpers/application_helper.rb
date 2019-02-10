@@ -15,8 +15,9 @@ module ApplicationHelper
     active_link_to content, path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
   end
 
-  def icon_tag(icon)
-    content_tag(:i, icon, class: 'material-icons')
+  def icon_tag(icon, options = {})
+    options[:class] = ['material-icons', options[:class]].compact
+    content_tag(:i, icon, options)
   end
 
 end

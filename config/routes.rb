@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   namespace :api do
     get :search, to: 'search#index'
   end
@@ -21,7 +22,11 @@ Rails.application.routes.draw do
     root to: "movies#index"
   end
 
+  root to: 'pages#index'
+
   require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  authenticate :user, lambda { |user| user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 end

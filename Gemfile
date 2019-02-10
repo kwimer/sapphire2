@@ -17,6 +17,7 @@ gem 'rollbar'
 
 # Model
 gem 'counter_culture'
+gem 'devise'
 gem 'filterrific'
 gem 'friendly_id'
 gem 'jsonb_accessor'
@@ -69,9 +70,11 @@ group :development do
 
   # Guard
   gem 'guard'
-  gem 'guard-bundler'
-  gem 'guard-migrate'
-  gem 'guard-rspec', require: false
+    gem 'guard-bundler'
+    gem 'guard-migrate'
+    gem 'guard-pumadev'
+    gem 'guard-rspec', require: false
+    gem 'guard-sidekiq'
 
   # Debugging
   gem 'pry-rails'

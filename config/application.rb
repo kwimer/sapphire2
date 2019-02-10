@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 
 module Sapphire
   class Application < Rails::Application
+    require 'settings'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -29,6 +31,12 @@ module Sapphire
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use sidekiq as ActiveJob adapter
+    config.active_job.queue_adapter = :sidekiq
+
+    # ActionMailer
+    config.action_mailer.default_url_options = { host: Settings.host }
 
   end
 end

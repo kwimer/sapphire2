@@ -1,7 +1,15 @@
 class Admin::ApplicationController < ActionController::Base
 
   layout 'admin'
+
   before_action :prepend_view_paths
+  before_action :authenticate_user!
+  before_action :authenticate_admin!
+
+  def authenticate_admin!
+    redirect_to :root_path unless current_user.admin?
+  end
+
   helper_method :page_title, :page_subtitle, :collection_title, :collection_name, :collection_filters
 
   def prepend_view_paths
