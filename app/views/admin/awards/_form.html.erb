@@ -3,7 +3,7 @@
     <div class="card-body">
       <%= f.input :year %>
       <% if resource.persisted? %>
-        <%= f.input :tmdb_import_id, disabled: true do %>
+        <%= f.input :tmdb_import_id, label: 'Movie', disabled: true do %>
           <%= text_field_tag '', resource.movie.name, class: "form-control string optional", disabled: true %>
         <% end %>
       <% else %>
