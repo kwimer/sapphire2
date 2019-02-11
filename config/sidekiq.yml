@@ -7,4 +7,4 @@ production:
   - mailers
   - import
 :limits:
-  tmdb: 1
+  import: 1
