@@ -19,7 +19,7 @@ module ExternalScores
       self.imdb_rating = data['imdbRating'] == "N/A" ? nil : data['imdbRating']
       self.imdb_votes = data['imdbVotes'] == "N/A" ? nil : data['imdbVotes']
       self.metacritic_rating = data['Metascore'] == "N/A" ? nil : data['Metascore']
-      self.rt_rating = data['Ratings'].find{|r| r['Source'] == 'Rotten Tomatoes'}.try(:[], 'Value')
+      self.rt_rating = data['Ratings'].find{|r| r['Source'] == 'Rotten Tomatoes'}.try(:[], 'Value') if data['Ratings']
       return data
     end
 
