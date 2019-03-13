@@ -15,8 +15,34 @@ module Tmdb
         response = get("/3/search/movie", include_adult: false, query: q)
       end
 
+      def locate_movie(q, year)
+        year = year.to_i
+        response = Tmdb::Api.search_movies(q)
+        if response
+          record = nil
+          [year, year-1, year+1].each do |y|
+            record = response['results'].find { |data| data['release_date'].present? && Date.parse(data['release_date']).year == y }
+            break if record
+          end
+          record['id'] if record
+        end
+      end
+
       def search_series(q)
         response = get("/3/search/tv", query: q)
+      end
+
+      def locate_series(q, year)
+        year = year.to_i
+        response = Tmdb::Api.search_series(q)
+        if response
+          record = nil
+          [year, year-1, year+1].each do |y|
+            record = response['results'].find { |data| data['first_air_date'].present? && Date.parse(data['first_air_date']).year == y }
+            break if record
+          end
+          record['id'] if record
+        end
       end
 
       def movie(id)

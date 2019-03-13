@@ -12,8 +12,9 @@ module Omdb
         get("/", i: imdb_id)
       end
 
-      def search()
-
+      # http://www.omdbapi.com/?t=avengers&y=2018
+      def search(query, year = nil)
+        get("/", {t: query, y: year}.compact)
       end
 
       private

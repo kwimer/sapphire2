@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_134912) do
+ActiveRecord::Schema.define(version: 2019_02_11_102330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,41 @@ ActiveRecord::Schema.define(version: 2019_02_10_134912) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["external_ids"], name: "index_people_on_external_ids", using: :gin
+  end
+
+  create_table "provider_logs", force: :cascade do |t|
+    t.bigint "provider_id"
+    t.string "action_type", null: false
+    t.string "key", null: false
+    t.jsonb "data"
+    t.string "tmdb_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider_id", "action_type", "key"], name: "index_provider_logs_on_unique", unique: true
+    t.index ["provider_id"], name: "index_provider_logs_on_provider_id"
+  end
+
+  create_table "provider_media", force: :cascade do |t|
+    t.bigint "provider_id"
+    t.string "media_type"
+    t.bigint "media_id"
+    t.string "country_code"
+    t.integer "season_number"
+    t.string "external_id"
+    t.jsonb "prices"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.index ["media_type", "media_id"], name: "index_provider_media_on_media_type_and_media_id"
+    t.index ["provider_id", "media_type", "media_id", "season_number", "country_code"], name: "index_provider_media_on_unique", unique: true
+    t.index ["provider_id"], name: "index_provider_media_on_provider_id"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.string "code"
+    t.jsonb "extra_fields"
   end
 
   create_table "seasons", force: :cascade do |t|
