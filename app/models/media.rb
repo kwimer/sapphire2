@@ -9,6 +9,7 @@ class Media < ApplicationRecord
   include ExternalScores
   include Importer
   include PgSearch
+  include Selection
 
   alias_attribute :name, :title
   translates :title, :summary, :detail, :tmdb_summary, :tagline

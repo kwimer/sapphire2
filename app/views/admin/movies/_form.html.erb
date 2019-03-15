@@ -13,6 +13,7 @@
         <li class="list-group-item p-3">
           <%= f.input :summary, as: :text, placeholder: resource.tmdb_summary %>
           <%= f.input :detail, as: :text %>
+          <%= f.input :selection, as: :boolean %>
         </li>
         <%= render 'admin/categories/categories_form', f: f %>
       </ul>

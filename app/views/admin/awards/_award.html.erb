@@ -3,9 +3,9 @@
     <%= award.year %>
   </td>
   <td>
-    <%= tmdb_image_tag(award.movie, :poster, class: 'poster mr-2 float-left') %>
-    <%= award.movie.name %>
-    <div class="small text-muted"><%= award.movie.details %></div>
+    <%= tmdb_image_tag(award.media, :poster, class: 'poster mr-2 float-left') %>
+    <%= award.media.name %>
+    <div class="small text-muted"><%= award.media.details %></div>
   </td>
   <td>
     <% if award.award_type %>

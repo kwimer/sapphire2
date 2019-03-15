@@ -1,6 +1,6 @@
 class Award < ApplicationRecord
 
-  belongs_to :movie
+  belongs_to :media
   belongs_to :festival
 
   attr_accessor :tmdb_import_id
@@ -15,11 +15,11 @@ class Award < ApplicationRecord
   end
 
   def tmdb_import_id
-    @tmdb_import_id || movie.try(:tmdb_import_id)
+    @tmdb_import_id || media.try(:tmdb_import_id)
   end
 
   def import_media
-    self.movie = Movie.import(tmdb_import_id)
+    self.media = Media.import(tmdb_import_id)
   end
 
 end

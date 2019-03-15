@@ -11,6 +11,10 @@ class ListItem < ApplicationRecord
   validates :tmdb_import_id, presence: true, on: :create
   before_validation :import_media, on: :create
 
+  def tmdb_import_id
+    @tmdb_import_id || media.try(:tmdb_import_id)
+  end
+
   def import_media
     self.media = Media.import(tmdb_import_id)
   end

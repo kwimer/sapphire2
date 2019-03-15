@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_102330) do
+ActiveRecord::Schema.define(version: 2019_03_15_172956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "awards", force: :cascade do |t|
-    t.bigint "movie_id"
+    t.bigint "media_id"
     t.bigint "festival_id"
     t.integer "year"
     t.string "award_type"
     t.string "award_name"
     t.index ["festival_id"], name: "index_awards_on_festival_id"
-    t.index ["movie_id"], name: "index_awards_on_movie_id"
+    t.index ["media_id"], name: "index_awards_on_media_id"
   end
 
   create_table "categories", force: :cascade do |t|
