@@ -54,7 +54,7 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
     arel (9.0.0)
-    autoprefixer-rails (9.4.10.2)
+    autoprefixer-rails (9.5.0)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -227,7 +227,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oj (3.7.9)
+    oj (3.7.10)
     orm_adapter (0.5.0)
     pg (1.1.4)
     pg_search (2.1.4)
