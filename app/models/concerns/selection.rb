@@ -7,10 +7,11 @@ module Selection
   end
 
   def selection
-    @selection.present? ? @selection : selection_scope.exists?
+    @selection.nil? ? selection_scope.exists? : @selection
   end
 
   def selection=(value)
+    value = ActiveModel::Type::Boolean.new.cast(value)
     attribute_will_change!('selection') if selection != value
     @selection = value
   end
