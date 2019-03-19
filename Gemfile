@@ -49,6 +49,8 @@ gem 'uglifier'
 gem 'sprockets-rails'
 gem 'bootstrap', '4.1.3'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap-slider-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'

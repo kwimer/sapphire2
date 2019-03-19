@@ -1,0 +1,113 @@
+@media (max-width: 1600px) {
+	html {
+		font-size: 14px;
+	}
+	header {
+		nav {
+			.navbar-brand {
+				width: 64px;
+				overflow: hidden;
+			}
+			.form-inline {
+				display: none;
+			}
+			.nav-right {
+				.nav-item {
+					display: none;
+				}
+				.nav-hamburger {
+					display: list-item;
+				}
+			}
+		}
+	}
+	.carousel {
+		margin-left: 0;
+		margin-right: 0;
+		.carousel-slide {
+			padding: 0 20px;
+			h3,
+			.synopsis {
+				display: none;
+			}
+			.row {
+				padding: 100px 0;
+			}
+		}
+	}
+	.featuredmovies {
+		.featuredmovie {
+			width: 200px;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	html {
+		font-size: 12px;
+	}
+	div.hero {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.carousel {
+		.carousel-slide {
+			.row {
+				padding: 50px 0;
+				.col {
+					display: block;
+					text-align: left !important;
+					max-width: 100%;
+					flex: none;
+					margin-bottom: 2rem;
+				}
+			}
+		}
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 40px;
+		}
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+	.movie_promo {
+		.row {
+			.col {
+				flex: none;
+				max-width: 100%;
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	html {
+		font-size: 12px;
+	}
+	header {
+		nav {
+			.navbar-nav {
+				.nav-item {
+					display: none;
+				}
+			}
+			.navbar-brand {
+				width: 64px;
+				overflow: hidden;
+			}
+			.form-inline {
+				display: none;
+			}
+			.nav-right {
+				.nav-item {
+					display: none;
+				}
+				.nav-hamburger {
+					display: list-item;
+				}
+			}
+		}
+	}
+}

@@ -28,4 +28,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  get '/static/show', to: 'static#show'
+  get '/static/search', to: 'static#search'
+  get '/static/profile', to: 'static#profile'
 end

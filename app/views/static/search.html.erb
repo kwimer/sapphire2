@@ -1,0 +1,54 @@
+<div class="container-fluid">
+	<%= render :partial => 'header' %>
+	<div class="hero">
+	</div>
+	<div class="contentwrap search_results">
+		<div class="row align-items-center search_results_head">
+			<div class="col">
+				<h3>iGEMS Search Action "<span class="highlight">night movie</span>"</h3>
+				<p>
+					<a href="#" class="mr-2">All Movies (15)</a>
+					<a href="#" class="mr-2">TV Series (5)</a>
+					<a href="#" class="mr-2">Celebrities (3)</a>
+					<a href="#" class="mr-2">Characters (7)</a>
+				</p>
+			</div>
+			<div class="col">
+				<ul class="search_results_filter">
+					<li class="mr-1"><a href="#"><%= fa_icon 'tv' %></a></li>
+					<li class="mr-1"><a href="#" class="active"><%= fa_icon 'film' %></a></li>
+					<li class="mr-1"><a href="#"><%= fa_icon 'list' %></a></li>
+					<li class="mr-1"><a href="#" class="active"><%= fa_icon 'th-large' %></a></li>
+					<li><a href="#"><%= fa_icon 'sliders' %></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row search_results_content">
+			<% results = ['Spider-Man: Into the Spider Verse','Bumblebee','Mortal Engines','Fantastic Beasts: The Crimes of Grindlewald','Peppermint','Mission Impossible: Fallout','A Star is Born','Ocean\'s 8','Johnny English','Night School','The Nun','Deadpool 2'] %>
+	    <% results.each_with_index do |title,i| %>
+	    	<% n = i+1 %>
+	    	<div class="col col-md-auto">
+	    		<%= image_tag("static/search#{n.to_s.rjust(2, "0")}.png") %>
+	    		<div class="search_results_content_details">
+	    			<h4><%= title %></h4>
+	    		</div>
+	    	</div>
+	    <% end %>
+	    <% results.take(3).each_with_index do |title,i| %>
+	    	<% n = i+1 %>
+	    	<div class="col col-md-auto">
+	    		<%= image_tag("static/search#{n.to_s.rjust(2, "0")}.png") %>
+	    		<div class="search_results_content_details">
+	    			<h4><%= title %></h4>
+	    		</div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-white"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<%= render :partial => 'footer' %>
+</div>
