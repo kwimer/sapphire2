@@ -21,7 +21,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="collapse" data-target=".advsearch" aria-expanded="<%=  @show_adv_search ? 'true' : 'false' %>">
             <%= fa_icon 'sliders', :class => 'mr-1' %> Advanced Search
           </button>
-          <div class="collapse advsearch advsearch-caret <%= 'show' if @show_adv_search %>"><%= fa_icon 'caret-up' %></div>
+          <div class="collapse advsearch advsearch-caret <%= 'show' if @show_adv_search %>"></div>
         </div>
         <input class="form-control" type="search" placeholder="Search here for your category..." aria-label="Search">
         <div class="input-group-append">
@@ -34,7 +34,24 @@
         <a class="nav-link" href="#">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <div class="dropdown">
+          <a class="nav-link" role="button" href="#" id="loginLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+          <div class="dropdown-menu dropdown-menu-right p-4 nav_dropdown" aria-labelledby="loginLink">
+            <div class="form-group">
+              <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+            </div>
+            <div class="dropdown_links">
+              <span><a href="#">Forgot password?</a></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <div class="dropdown_links">
+              <span><a href="#">Don't have an account? Sign up</a></span>
+            </div>
+          </div>
+        </div>
       </li>
       <li class="nav-item nav-hamburger">
         <a class="nav-link"><%= fa_icon 'bars' %></a>
@@ -403,4 +420,5 @@ $(function () {
 $('.advsearch .btn-blue').on('click', function() {
   window.location.href = '<%= static_search_path %>';
 });
+$('[data-toggle="dropdown"]').dropdown();
 </script>
