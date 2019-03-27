@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_15_172956) do
+ActiveRecord::Schema.define(version: 2019_03_27_000159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "actionable_type", null: false
+    t.bigint "actionable_id", null: false
+    t.string "scope"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actionable_id", "actionable_type", "scope"], name: "index_actions_on_actionable_id_and_actionable_type_and_scope"
+    t.index ["actionable_type", "actionable_id"], name: "index_actions_on_actionable_type_and_actionable_id"
+    t.index ["user_id", "scope"], name: "index_actions_on_user_id_and_scope"
+    t.index ["user_id"], name: "index_actions_on_user_id"
+  end
 
   create_table "awards", force: :cascade do |t|
     t.bigint "media_id"

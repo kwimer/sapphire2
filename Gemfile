@@ -29,6 +29,7 @@ gem 'normalizr'
 gem 'pg_search'
 gem 'request_store'
 gem 'virtus'
+gem 'where_exists'
 
 # Controller
 gem 'inherited_resources'

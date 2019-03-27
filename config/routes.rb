@@ -21,6 +21,15 @@ Rails.application.routes.draw do
     root to: "movies#index"
   end
 
+  resources :users, only: :show do
+    resource :follow
+  end
+  resources :series, only: :show do
+    resource :favorite
+  end
+  resources :movies, only: :show do
+    resource :favorite
+  end
   root to: 'pages#index'
 
   require 'sidekiq/web'
