@@ -1,0 +1,176 @@
+@media (max-width: 1600px) {
+	html {
+		font-size: 14px;
+	}
+	header {
+		nav {
+			.navbar-brand {
+				width: 64px;
+				overflow: hidden;
+			}
+			.form-inline {
+				display: none;
+			}
+			.nav-right {
+				.nav-item {
+					display: none;
+				}
+				.nav-hamburger {
+					display: list-item;
+				}
+			}
+		}
+	}
+	.carousel {
+		margin-left: 0;
+		margin-right: 0;
+		.carousel-slide {
+			padding: 0 20px;
+			h3,
+			.synopsis {
+				display: none;
+			}
+			.row {
+				padding: 100px 0;
+			}
+		}
+	}
+	.featuredmovies {
+		.featuredmovie {
+			max-width: 200px;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	html {
+		font-size: 12px;
+	}
+	div.hero {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.carousel {
+		.carousel-slide {
+			.row {
+				padding: 50px 0;
+				.col {
+					display: block;
+					text-align: left !important;
+					max-width: 100%;
+					flex: none;
+					margin-bottom: 2rem;
+				}
+			}
+		}
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 40px;
+		}
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+	.movie_promo {
+		.row {
+			.col {
+				flex: none;
+				max-width: 100%;
+			}
+		}
+	}
+}
+@media (max-width: 816px) {
+	.trending {
+		.col:nth-of-type(1n+3) {
+			display: none;
+		}
+	}
+	.contentwrap,
+	.featuredtv,
+	.newep,
+	.featuredmovies {
+		padding: 2rem 2rem;
+		h2.section_title {
+			color: #030000;
+			background-size: 24px 24px;
+			padding-left: 34px;
+			margin-bottom: 1rem;
+			margin-left: 0;
+			&.section_tv {
+				background-image: asset-url("static/icon_tv_dark.png");
+			}
+			&.section_movie {
+				background-image: asset-url("static/icon_movie_dark.png");
+			}
+		}
+	}
+	.newep,
+	.featuredtv {
+		background: #f1f2f2;
+		.poster_main, .poster_list {
+			max-height: 468px;
+		}
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+			.col {
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+	.featuredmovies {
+		background: #f1f2f2;
+		.col:nth-of-type(1n+4) {
+			display: none;
+		}
+		.col {
+			margin: 0 5px;
+			flex: 0 0 auto;
+			width: auto;
+		}
+	}
+}
+@media (max-width: 695px) {
+	.featuredmovies {
+		.col:nth-of-type(1n+3) {
+			display: none;
+		}
+	}
+}
+@media (max-width: 600px) {
+	html {
+		font-size: 12px;
+	}
+	header {
+		nav {
+			.navbar-nav {
+				.nav-item {
+					display: none;
+				}
+			}
+			.navbar-brand {
+				width: 64px;
+				overflow: hidden;
+			}
+			.form-inline {
+				display: none;
+			}
+			.nav-right {
+				.nav-item {
+					display: none;
+				}
+				.nav-hamburger {
+					display: list-item;
+				}
+			}
+		}
+	}
+	.carousel {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}

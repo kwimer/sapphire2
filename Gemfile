@@ -50,6 +50,8 @@ gem 'uglifier'
 gem 'sprockets-rails'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap-slider-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'

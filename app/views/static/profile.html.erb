@@ -1,0 +1,398 @@
+<div class="container-fluid">
+	<%= render :partial => 'header' %>
+	<div class="hero hero_profile">
+		<div class="row justify-content-center profile_header_list">
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>My Favorites</strong>
+					<span><%= fa_icon 'heart', :class => 'mr-2' %>778</span>
+				</div>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>Watch List</strong>
+					<span><%= fa_icon 'youtube-play', :class => 'mr-2' %>1,024</span>
+				</div>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>Ratings &amp; Reviews</strong>
+					<span><%= fa_icon 'star-half-o', :class => 'mr-2' %>9,697</span>
+				</div>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>My Lists</strong>
+					<span><%= fa_icon 'file-text-o', :class => 'mr-2' %>778</span>
+				</div>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>Following</strong>
+					<span><%= fa_icon 'user-plus', :class => 'mr-2' %>3,870</span>
+				</div>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_item">
+					<strong>Fans</strong>
+					<span><%= fa_icon 'flag', :class => 'mr-2' %>3,248</span>
+				</div>
+			</div>
+		</div>
+		<div class="row align-items-center profile_header_details">
+			<div class="col col-md-auto col-profile-photo">
+				<%= image_tag("static/profile_photo.png") %>
+			</div>
+			<div class="col col-md-auto">
+				<div class="profile_header_details_content">
+					<h2>Adriana <strong>Ugarte</strong></h2>
+					<h3>IT / Joined iGEMS 2009</h3>
+					<p>On my list Adriana Ugarte’s: the Big 1000 you can find my 1000 favourite films and my oawn favourite lists.</p>
+				</div>
+			</div>
+			<div class="col align-self-end">
+				<a href="#" class="btn btn-lg btn-dark btn-opac"><%= fa_icon 'flag', :class => 'mr-2' %>Follow</a>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">My Favorites</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-2"><a href="#">Series</a></li>
+						<li class="ml-2"><a href="#">TV</a></li>
+						<li class="ml-2"><a href="#" class="active">Movies</a></li>
+						<li class="ml-2"><a href="#">Actor</a></li>
+						<li class="ml-2"><a href="#">Director</a></li>
+						<li class="ml-2"><a href="#">Musician</a></li>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center profile_content_grid">
+			<% favs = [
+				{title:'Springsteen on Broadway'},
+				{title:'You were never really here'},
+				{title:'Castle Rock'},
+				{title:'The Americans'},
+				{title:'Mortal Engines'},
+				{title:'Bumblebee'}
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col col-md-auto">
+	    		<div class="grid_content">
+		    		<%= image_tag("static/profile_fav#{i+1}.png") %>
+		        <div class="poster_overlay">
+		          <div class="thumbs">
+		            <span class="thumb thumbs-up active"><%= fa_icon "thumbs-o-up" %></span>
+		            <span class="thumb thumbs-down"><%= fa_icon "thumbs-o-down" %></span>
+		            <span class="thumb thumbs-plus"><%= fa_icon "plus" %></span>
+		          </div>
+		          <div class="poster_meta">
+		            <h4><%= fav[:title] %></h4>
+		            <div class="meta">
+		              <ul>
+		                <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+		                <li><%= fa_icon "tags", class: "mr-1" %> Horror, Family, Fantasy</li>
+		                <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+		              </ul>
+		              <p>
+		                <a class="mr-3"><%= fa_icon "play-circle-o", class: "mr-1" %> Where to watch</a>
+		              </p>
+		            </div>
+		          </div>
+	          </div>
+	        </div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">Watch List</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-2"><a href="#">Comedy</a></li>
+						<li class="ml-2"><a href="#">Drama</a></li>
+						<li class="ml-2"><a href="#">Sci-Fi</a></li>
+						<li class="ml-2"><a href="#">Action</a></li>
+						<li class="ml-2"><a href="#">Thriller</a></li>
+						<li class="ml-2"><a href="#">Horror</a></li>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center profile_content_grid">
+			<% favs = [
+				{title:'Celebrating a masterpiece: kind of blue', subtext:'Chris Lenz, 2008'},
+				{title:'Billy The Kid and the Green Baize Vampire', subtext:'Alan Clarke, 1987'},
+				{title:'My Life As A Courgette', subtext:'Claude Barras, 2016'},
+				{title:'La Tia Tula', subtext:'Miguel Picazo, 1964'},
+				{title:'Atraco A Las Tres', subtext:'Jose Maria Forque, 1962'},
+				{title:'Easy Living', subtext:'Mitchell Leisen, 1937'}
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col col-md-auto">
+	    		<div class="grid_content show_overlay">
+		    		<%= image_tag("static/profile_watch#{i+1}.png") %>
+		        <div class="poster_overlay">
+		          <div class="thumbs thumbs-big">
+		            <span class="thumb"><%= fa_icon "play" %></span>
+		          </div>
+		          <div class="poster_meta">
+		            <h4><%= fav[:title] %></h4>
+		            <div class="meta">
+		              <p>
+		              	<%= fav[:subtext] %>
+		              </p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">Ratings &amp; Reviews</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-2"><a href="#">Comedy</a></li>
+						<li class="ml-2"><a href="#">Drama</a></li>
+						<li class="ml-2"><a href="#">Sci-Fi</a></li>
+						<li class="ml-2"><a href="#">Action</a></li>
+						<li class="ml-2"><a href="#">Thriller</a></li>
+						<li class="ml-2"><a href="#">Horror</a></li>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center profile_content_grid">
+			<% favs = [
+				{title:'Swallows and amazons', subtext:'Philippa lowthorpe, 2016', date:'15, December 2018'},
+				{title:'Cheyenne autumn', subtext:'John ford, 1964', date:'15, December 2018'},
+				{title:'the abc murders', subtext:'Alex Gabassi, 2018', date:'15, December 2018'},
+				{title:'Endless love', subtext:'Franco Zeffirelli, 1981', date:'15, December 2018'},
+				{title:'Hudspm Hawk', subtext:'Michael Lehmann, 1991', date:'15, December 2018'},
+				{title:'sparkling cyanide', subtext:'Robert Michael Lewis, 1983', date:'15, December 2018'}
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col col-md-auto">
+	    		<div class="grid_content show_overlay">
+		    		<%= image_tag("static/profile_rate#{i+1}.png") %>
+		        <div class="poster_overlay">
+		        	<div class="poster_date">
+		        		<%= fa_icon 'calendar', :class => 'mr-2' %><%= fav[:date] %>
+		        	</div>
+		          <div class="poster_meta">
+		          	<div class="row">
+		          		<div class="col">
+				            <h4><%= fav[:title] %></h4>
+				            <div class="meta">
+				              <p>
+				              	<%= fav[:subtext] %>
+				              </p>
+				            </div>
+		          		</div>
+		          		<div class="col align-self-end">
+		          			<div class="profile_rate_details">
+					            <%= fa_icon 'star' %>
+					            <%= fa_icon 'star' %>
+					            <%= fa_icon 'star' %>
+					            <%= fa_icon 'star-o' %>
+					            <%= fa_icon 'star-o' %>
+					            <div>
+					            	<a href="#"><%= fa_icon 'heart-o', :class => 'mr-2' %></a>
+					            	<a href="#"><%= fa_icon 'comment-o' %></a>
+					            </div>
+		          			</div>
+		          		</div>
+		          	</div>
+		          </div>
+	          </div>
+	        </div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">My Lists</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-2"><a href="#" class="active">Lists</a></li>
+						<li class="ml-2"><a href="#">Followed Lists</a></li>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center profile_content_grid">
+			<% favs = [
+				{title:'2010-19 TV SERIES E PISODES'},
+				{title:'100 DIRECTORS ESSENTIAL FILMS'},
+				{title:'a palme D\'or checklist'},
+				{title:'666 opinions of an asshole'},
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col col-6 col-list">
+	    		<div class="grid_content show_overlay">
+		    		<div class="profile_list">
+		    			<%= image_tag("static/profile_list#{i+1}.png") %>
+		    			<div class="profile_list_details">
+		    				<div class="row align-items-center">
+		    					<div class="col">
+				    				<h3><%= fav[:title] %></h3>
+				    				<p>by Adriana Ugarte</p>
+				    				<p>
+				    					<%= fa_icon 'film', :class => 'mr-1' %><a href="#" class="mr-3">349</a>
+				    					<%= fa_icon 'flag', :class => 'mr-1' %><a href="#">32</a>
+				    				</p>
+				    			</div>
+				    			<div class="col col-btns">
+				    				<div><a href="#" class="btn btn-light btn-white"><%= fa_icon 'flag-o', :class => 'mr-2' %>Follow List</a></div>
+				    				<div><a href="#" class="btn btn-light btn-white"><%= fa_icon 'youtube-play', :class => 'mr-2' %>Watch List</a></div>
+				    			</div>
+			    			</div>
+		    			</div>
+		    		</div>
+	    		</div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">I Follow</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<% favs = [
+				{title:'Person 1'},
+				{title:'Person 2'},
+				{title:'Person 3'},
+				{title:'Person 4'},
+				{title:'Person 5'},
+				{title:'Person 6'},
+				{title:'Person 7'},
+				{title:'Person 8'}
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col">
+	    		<div class="profile_follow">
+	    			<%= image_tag("static/profile_follow#{i+1}.png") %>
+	    			<div class="profile_follow_overlay">
+	    				<h4><%= fav[:title] %></h4>
+	    				<div>
+		    				<a href="#" class="mr-3"><%= fa_icon 'star' %></a>
+		    				<a href="#"><%= fa_icon 'flag' %></a>
+		    			</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap profile_content">
+		<div class="profile_content_head">
+			<div class="row align-items-center">
+				<div class="col">
+				  <h2 class="section_title">My Fans</h2>
+				</div>
+				<div class="col">
+					<ul>
+						<li class="ml-4"><a href="#" class="head-icon"><%= fa_icon 'sliders' %></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<% favs = [
+				{title:'Person 1'},
+				{title:'Person 2'},
+				{title:'Person 3'},
+				{title:'Person 4'},
+				{title:'Person 5'},
+				{title:'Person 6'},
+				{title:'Person 7'},
+				{title:'Person 8'}
+			]
+			%>
+	    <% favs.each_with_index do |fav,i| %>
+	    	<div class="col">
+	    		<div class="profile_follow">
+	    			<%= image_tag("static/profile_followed#{i+1}.png") %>
+	    			<div class="profile_follow_overlay">
+	    				<h4><%= fav[:title] %></h4>
+	    				<div>
+		    				<a href="#" class="mr-3"><%= fa_icon 'star' %></a>
+		    				<a href="#"><%= fa_icon 'flag' %></a>
+		    			</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    <% end %>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="loadmore"><a href="#" class="btn btn-light btn-clear"><%= fa_icon 'refresh', :class => 'mr-2' %>Load more</a></div>
+			</div>
+		</div>
+	</div>
+	<%= render :partial => 'footer' %>
+</div>

@@ -14,4 +14,8 @@
 //= require jquery3
 // require activestorage
 // require turbolinks
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require bootstrap-slider
 //= require_tree .

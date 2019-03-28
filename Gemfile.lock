@@ -65,8 +65,11 @@ GEM
       msgpack (~> 1.0)
     bootstrap (4.3.1)
       autoprefixer-rails (>= 9.1.0)
+      bootstrap-slider-rails (= 9.8.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-slider-rails (9.8.0)
+      railties (>= 3.2, < 6.0)
     bootstrap4-kaminari-views (1.0.1)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -111,6 +114,8 @@ GEM
     execjs (2.7.0)
     ffi (1.10.0)
     filterrific (5.1.0)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
@@ -379,6 +384,7 @@ DEPENDENCIES
   acts_as_list
   bootsnap
   bootstrap
+  bootstrap-slider-rails
   bootstrap4-kaminari-views
   cocoon
   coffee-rails
@@ -386,6 +392,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   filterrific
+  font-awesome-rails
   friendly_id
   guard
   guard-bundler

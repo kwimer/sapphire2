@@ -1,0 +1,421 @@
+<div class="container-fluid">
+  <%= render :partial => 'header' %>
+  <div class="hero">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-slide">
+            <div class="row align-items-center">
+              <div class="col col-7">
+                <h2>iGEMSelection:</h2>
+                <h3>THE BALLAD OF BUSTER SCRUGGS</h3>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Comedy, Drama, Musical</li>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li>R</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                    <li>iGEMScore:</li>
+                  </ul>
+                </div>
+                <p class="synopsis"><strong>Synopsis:</strong> Six tales of life and violence in the Old West, following a singing gunslinger, a bank robber, a traveling impresario...</p>
+                <p><a href="#">Learn more...</a></p>
+                <p>
+                  <a class="btn btn-lg btn-dark mr-2"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                  <a class="btn btn-lg btn-dark"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                </p>
+                <p>
+                  <%= image_tag('static/logo_netflix.png', class: "mr-4") %>
+                  <a class="btn btn-lg btn-dark lighter">more services...</a>
+                </p>
+              </div>
+              <div class="col col-5 text-right">
+                <%= image_tag('static/hero_name.png') %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-slide">
+            <div class="row align-items-center">
+              <div class="col col-7">
+                <h2>iGEMSelection:</h2>
+                <h3>THE BALLAD OF BUSTER SCRUGGS</h3>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Comedy, Drama, Musical</li>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li>R</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                    <li>iGEMScore:</li>
+                </div>
+                <p class="synopsis"><strong>Synopsis:</strong> Six tales of life and violence in the Old West, following a singing gunslinger, a bank robber, a traveling impresario...</p>
+                <p><a href="#">Learn more...</a></p>
+                <p>
+                  <a class="btn btn-lg btn-dark mr-2"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                  <a class="btn btn-lg btn-dark"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                </p>
+                <p>
+                  <%= image_tag('static/logo_netflix.png', class: "mr-4") %>
+                  <a class="btn btn-lg btn-dark lighter">more services...</a>
+                </p>
+              </div>
+              <div class="col col-5 text-right">
+                <%= image_tag('static/hero_name.png') %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-slide">
+            <div class="row align-items-center">
+              <div class="col col-7">
+                <h2>iGEMSelection:</h2>
+                <h3>THE BALLAD OF BUSTER SCRUGGS</h3>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Comedy, Drama, Musical</li>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li>R</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                    <li>iGEMScore:</li>
+                </div>
+                <p class="synopsis"><strong>Synopsis:</strong> Six tales of life and violence in the Old West, following a singing gunslinger, a bank robber, a traveling impresario...</p>
+                <p><a href="#">Learn more...</a></p>
+                <p>
+                  <a class="btn btn-lg btn-dark mr-2"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                  <a class="btn btn-lg btn-dark"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                </p>
+                <p>
+                  <%= image_tag('static/logo_netflix.png', class: "mr-4") %>
+                  <a class="btn btn-lg btn-dark lighter">more services...</a>
+                </p>
+              </div>
+              <div class="col col-5 text-right">
+                <%= image_tag('static/hero_name.png') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"><%= fa_icon "angle-left" %></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"><%= fa_icon "angle-right" %></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="trending">
+      <h2>TRENDING ON iGEMS</h2>
+      <div class="row justify-content-md-center align-items-center no-gutters">
+        <div class="col col-md-auto">
+          <div class="trending_movie">
+            <%= image_tag('static/poster_1.png', class: "") %>
+            <span class="poster-icon poster-icon-tv"></span>
+            <div class="poster_overlay">
+              <div class="thumbs">
+                <span class="thumb thumbs-up"><%= fa_icon "thumbs-o-up" %></span>
+                <span class="thumb thumbs-down"><%= fa_icon "thumbs-o-down" %></span>
+              </div>
+              <div class="poster_meta">
+                <h4>Springsteen on Broadway</h4>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Horror, Family, Fantasy</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                  </ul>
+                  <p>
+                    <a class="mr-3"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                    <a class="mr-3"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                    <a class="">Learn more...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-auto">
+          <div class="trending_movie">
+            <%= image_tag('static/poster_2.png', class: "") %>
+            <span class="poster-icon poster-icon-movie"></span>
+            <div class="poster_overlay">
+              <div class="thumbs">
+                <span class="thumb thumbs-up"><%= fa_icon "thumbs-o-up" %></span>
+                <span class="thumb thumbs-down"><%= fa_icon "thumbs-o-down" %></span>
+              </div>
+              <div class="poster_meta">
+                <h4>You were never really here</h4>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Horror, Family, Fantasy</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                  </ul>
+                  <p>
+                    <a class="mr-3"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                    <a class="mr-3"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                    <a class="">Learn more...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-auto">
+          <div class="trending_movie">
+            <%= image_tag('static/poster_3.png', class: "") %>
+            <span class="poster-icon poster-icon-tv"></span>
+            <div class="poster_overlay">
+              <div class="thumbs">
+                <span class="thumb thumbs-up active"><%= fa_icon "thumbs-o-up" %></span>
+                <span class="thumb thumbs-down"><%= fa_icon "thumbs-o-down" %></span>
+              </div>
+              <div class="poster_meta">
+                <h4>Castle Rock</h4>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Horror, Family, Fantasy</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                  </ul>
+                  <p>
+                    <a class="mr-3"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                    <a class="mr-3"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                    <a class="">Learn more...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-auto">
+          <div class="trending_movie">
+            <%= image_tag('static/poster_4.png', class: "") %>
+            <span class="poster-icon poster-icon-tv"></span>
+            <div class="poster_overlay">
+              <div class="thumbs">
+                <span class="thumb thumbs-up"><%= fa_icon "thumbs-o-up" %></span>
+                <span class="thumb thumbs-down"><%= fa_icon "thumbs-o-down" %></span>
+              </div>
+              <div class="poster_meta">
+                <h4>The Americans</h4>
+                <div class="meta">
+                  <ul>
+                    <li><%= fa_icon "clock-o", class: "mr-1" %> 120 mins.</li>
+                    <li><%= fa_icon "tags", class: "mr-1" %> Horror, Family, Fantasy</li>
+                    <li><%= fa_icon "bookmark", class: "mr-1" %> 16+</li>
+                  </ul>
+                  <p>
+                    <a class="mr-3"><%= fa_icon "play-circle-o", class: "mr-1" %> Watch Trailer</a>
+                    <a class="mr-3"><%= fa_icon "plus-square-o", class: "mr-1" %> Add to Watch List</a>
+                    <a class="">Learn more...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="movie_promo">
+    <div class="row align-items-center no-gutters">
+      <div class="col col-5">
+        <div class="movie_promo_details">
+          <h3>Bow to no one</h3>
+          <p>Mary Stuart's attempt to overthrow her cousin Elizabeth I, Queen of England, finds her condemned to years of imprisonment before facing execution.</p>
+          <p class="buttons">
+            <a class="btn btn-lg btn-primary mr-2">Where to Watch</a>
+            <a class="btn btn-lg btn-dark">Add to Play List</a>
+          </p>
+        </div>
+      </div>
+      <div class="col col-7">
+        <div class="poster">
+          <%= image_tag('static/big_poster.png') %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="newep">
+    <h2 class="section_title section_tv">New Episodes <a href="#">Explore All <%= fa_icon 'angle-right' %></a></h2>
+    <div class="row align-items-center">
+      <div class="col col-6">
+        <div class="poster_main">
+          <%= image_tag('static/poster_newep_main.png') %>
+          <div class="poster_details">
+            <div class="poster_score">
+              iGEMS Score:
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star-o' %>
+              <%= fa_icon 'star-o' %>
+            </div>
+            <h4>Legacies: Season 1</h4>
+            <p>Oct 25, 2018</p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-6">
+        <div class="row toprow">
+          <div class="col col-6">
+            <div class="poster_list">
+              <%= image_tag('static/poster_newep_1.png') %>
+              <div class="poster_details">
+                <h4>S03E09</h4>
+                <p>Brooklyn Nine-Nine: Season 6</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-6">
+            <div class="poster_list">
+              <%= image_tag('static/poster_newep_2.png') %>
+              <div class="poster_details">
+                <h4>S03E09</h4>
+                <p>Brooklyn Nine-Nine: Season 6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-6">
+            <div class="poster_list">
+              <%= image_tag('static/poster_newep_3.png') %>
+              <div class="poster_details">
+                <h4>S03E09</h4>
+                <p>Brooklyn Nine-Nine: Season 6</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-6">
+            <div class="poster_list">
+              <%= image_tag('static/poster_newep_4.png') %>
+              <div class="poster_details">
+                <h4>S03E09</h4>
+                <p>Brooklyn Nine-Nine: Season 6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="featuredtv">
+    <h2 class="section_title section_tv">Featured Episodes <a href="#">Explore All <%= fa_icon 'angle-right' %></a></h2>
+    <div class="row align-items-center">
+      <div class="col col-6">
+        <div class="poster_main">
+          <%= image_tag('static/poster_featuredtv_1.png') %>
+          <div class="poster_details">
+            <div class="poster_score">
+              iGEMS Score:
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star-o' %>
+              <%= fa_icon 'star-o' %>
+            </div>
+            <h4>Game of Thrones: Season 8</h4>
+            <p>Oct 25, 2018</p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-6">
+        <div class="poster_main">
+          <%= image_tag('static/poster_featuredtv_2.png') %>
+          <div class="poster_details">
+            <div class="poster_score">
+              iGEMS Score:
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star' %>
+              <%= fa_icon 'star-o' %>
+              <%= fa_icon 'star-o' %>
+            </div>
+            <h4>Evil Lies Here: Season 2</h4>
+            <p>Oct 25, 2018</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prime">
+    <div class="row align-items-center justify-content-end no-gutters">
+      <div class="col-6">
+        <div class="prime_details">
+          <h3>You Were Never Really Here</h3>
+          <p>A traumatized veteran, unafraid of violence, tracks down missing girls for a living. When a job spins out of control, Joe's nightmares overtake him as a conspiracy is uncovered leading to what may be his death trip or his awakening.</p>
+          <p class="buttons">
+            <a class="btn btn-lg btn-primary mr-2">Where to Watch</a>
+            <a class="btn btn-lg btn-dark"><%= fa_icon 'plus', class: "mr-1" %> Add to Play List</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="featuredmovies">
+    <h2 class="section_title section_movie">Featured Movies <a href="#">Explore All <%= fa_icon 'angle-right' %></a></h2>
+    <div class="row justify-content-md-center align-items-center no-gutters">
+      <div class="col col-md-auto">
+        <div class="featuredmovie">
+          <%= image_tag('static/poster_featuredmovie_1.png') %>
+          <div class="featuredmovie_details">
+            <p>Comedy (2018)</p>
+            <h4>Just Friends</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-auto">
+        <div class="featuredmovie">
+          <%= image_tag('static/poster_featuredmovie_2.png') %>
+          <div class="featuredmovie_details">
+            <p>Animation (2018)</p>
+            <h4>The Curse of the Were Rabbit</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-auto">
+        <div class="featuredmovie">
+          <%= image_tag('static/poster_featuredmovie_3.png') %>
+          <div class="featuredmovie_details">
+            <p>Drama (2018)</p>
+            <h4>About Alex</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-auto">
+        <div class="featuredmovie">
+          <%= image_tag('static/poster_featuredmovie_4.png') %>
+          <div class="featuredmovie_details">
+            <p>Horror (2018)</p>
+            <h4>Dusk</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-auto">
+        <div class="featuredmovie">
+          <%= image_tag('static/poster_featuredmovie_5.png') %>
+          <div class="featuredmovie_details">
+            <p>Romance (2018)</p>
+            <h4>Bachelor of Night</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render :partial => 'footer' %>
+</div>
+<script>
+$('.carousel').carousel({
+  interval: 10000
+});
+</script>
