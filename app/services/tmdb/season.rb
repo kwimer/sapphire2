@@ -51,9 +51,9 @@ module Tmdb
       # end
 
       # Credits Import
-      data['credits'].each do |type, credits|
-        credits.each { |data| Credit.add(series, season, type, data) }
-      end
+      # data['credits'].each do |type, credits|
+      #   credits.each { |data| Credit.add(series, season, type, data) }
+      # end
 
       # Episodes Import
       data['episodes'].each do |episode|
