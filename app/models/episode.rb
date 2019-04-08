@@ -1,5 +1,7 @@
 class Episode < ApplicationRecord
 
+  alias_attribute :name, :title
+
   extend FriendlyId
   extend Mobility
 

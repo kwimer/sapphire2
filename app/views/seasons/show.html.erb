@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4"><%= @season.title %></h1>
+    <p class="lead"></p>
+    <%#= link_to_favorite(@season) %>
+    <%#= link_to_watchlist(@season) %>
+  </div>
+</div>
+
+<%= render @season.episodes %>

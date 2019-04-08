@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     resource :reviews
   end
   resources :series, only: :show do
+    resources :seasons do
+      resources :episodes
+    end
     resource :favorite
     resources :reviews
   end
