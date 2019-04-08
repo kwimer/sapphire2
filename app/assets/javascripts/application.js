@@ -17,5 +17,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require bootstrap-rating
 //= require bootstrap-slider
-//= require_tree .
+//= require_tree ./site
+

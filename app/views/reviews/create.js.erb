@@ -1,0 +1,7 @@
+//$('#comment_body').val("");
+<% if resource.errors.any? %>
+$('#new_review').replaceWith('<%= j render('reviews/form') %>');
+setupReviews();
+<% else %>
+$('#review_content').after('<%= j render('reviews/review', review: resource) %>');
+<% end %>

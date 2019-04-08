@@ -10,7 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
   </head>
 
-  <body class="c_<%= controller_name %>">
-    <%= yield %>
+  <body>
+    <%= render 'nav' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

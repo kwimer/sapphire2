@@ -20,4 +20,19 @@ module ApplicationHelper
     content_tag(:i, icon, options)
   end
 
+  def errors_for(object)
+    if object.errors.any?
+      message = "#{pluralize(object.errors.count, "error")} prohibited this #{object.class.model_name.human.downcase} from being saved"
+      message = "Please fix the errors below"
+      content_tag(:div, class: "alert alert-danger", role: "alert") do
+        concat(content_tag(:h4, message, class: "alert-heading"))
+        concat(content_tag(:ul) do
+          object.errors.full_messages.each do |msg|
+            concat content_tag(:li, msg)
+          end
+        end)
+      end
+    end
+  end
+
 end

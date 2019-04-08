@@ -1,5 +1,40 @@
-<div class="jumbotron text-center">
-  <h1 class="display-4"><%= @movie.title %></h1>
-  <p class="lead"></p>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4"><%= @movie.title %></h1>
+    <p class="lead"></p>
+    <%= link_to_favorite(@movie) %>
+    <%= link_to_watchlist(@movie) %>
+  </div>
 </div>
-<%= link_to_favorite(@movie) %>
+
+<div class="container">
+  <h4>Awards</h4>
+  <div class="d-flex justify-content-between">
+    <% @movie.awards.each do |award| %>
+    <div class="award">
+      <%= link_to award.festival.name %>
+      <div><%= award.name %></div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="container ">
+  <h4>Cast</h4>
+  <div class="row bg-grey">
+    <div class="col-12" style="background:#ddd">huhuh</div>
+    <% @movie.cast_credits.limit(6).each do |credit| %>
+      <div class="ml-3 card float-left" style="width: 175px;">
+        <%= tmdb_image_tag credit.person, 'profile', class: "card-img-top" %>
+        <%= link_to_favorite(credit.person) %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to credit.person.name, credit.person %></h5>
+          <p class="card-text"><%= credit.character %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'reviews/reviews' %>

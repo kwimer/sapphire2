@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_000159) do
+ActiveRecord::Schema.define(version: 2019_04_04_022023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -200,6 +200,18 @@ ActiveRecord::Schema.define(version: 2019_03_27_000159) do
     t.string "slug"
     t.string "code"
     t.jsonb "extra_fields"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "user_id"
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id"], name: "index_reviews_on_record_type_and_record_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "seasons", force: :cascade do |t|

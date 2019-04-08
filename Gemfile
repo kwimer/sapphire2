@@ -55,6 +55,7 @@ gem 'bootstrap-slider-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'
+  gem 'rails-assets-bootstrap-rating'
   gem 'rails-assets-selectize'
 end
 

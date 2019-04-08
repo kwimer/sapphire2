@@ -3,12 +3,14 @@ class Media < ApplicationRecord
   extend FriendlyId
   extend Mobility
 
+  include Awards
   include Categories
   include Credits
   include ExternalIds
   include ExternalScores
   include Importer
   include PgSearch
+  include Reviews
   include Selection
 
   alias_attribute :name, :title

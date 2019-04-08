@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 @import 'bootstrap';
+@import 'bootstrap-rating';
 @import 'bootstrap-slider';
 @import "font-awesome";
-@import "mixins";
-@import "custom/*";
+//@import "mixins";
+//////@import "custom/*";
+
+.bg-grey {
+  background-color: #e9ecef;
+}
+
+.card-media {
+  //border: none;
+  //border-radius: 0;
+  .card-img-top {
+    //border-radius: 0;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    background-position: 50% 50%;
+    height: 200px;
+  }
+}

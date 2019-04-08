@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  ## Login
   devise_for :users
   namespace :api do
     get :search, to: 'search#index'
   end
 
+  ## Admin
   namespace :admin do
     resources :movies
     resources :series
@@ -21,15 +23,22 @@ Rails.application.routes.draw do
     root to: "movies#index"
   end
 
-  resources :users, only: :show do
-    resource :follow
-  end
-  resources :series, only: :show do
+  ## Site
+  resources :people, only: :show do
     resource :favorite
   end
   resources :movies, only: :show do
     resource :favorite
+    resource :reviews
   end
+  resources :series, only: :show do
+    resource :favorite
+    resources :reviews
+  end
+  resources :users, only: :show do
+    resource :follow
+  end
+
   root to: 'pages#index'
 
   require 'sidekiq/web'

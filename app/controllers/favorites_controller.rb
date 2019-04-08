@@ -1,18 +1,25 @@
 class FavoritesController < ApplicationController
 
   inherit_resources
-  belongs_to :movie, :series, optional: true
+  respond_to :js
+  belongs_to :movie, :person, :series, optional: true
   defaults singleton: true
   actions :all, except: :show
 
   def create
     current_user.favorite(parent)
-    redirect_to parent
+    parent.reload
+    respond_to do |format|
+      format.js { render '/favorites/update' }
+    end
   end
 
   def destroy
     current_user.unfavorite(parent)
-    redirect_to parent
+    parent.reload
+    respond_to do |format|
+      format.js { render '/favorites/update' }
+    end
   end
 
 end

@@ -7,18 +7,18 @@ class FollowsController < ApplicationController
   actions :all, except: :show
 
   def create
-    current_user.follow(parent)
+    current_user.watchlist(parent)
     parent.reload
     respond_to do |format|
-      format.js { render '/favorites/update' }
+      format.js { render '/watchlists/update' }
     end
   end
 
   def destroy
-    current_user.unfollow(parent)
+    current_user.unwatchlist(parent)
     parent.reload
     respond_to do |format|
-      format.js { render '/favorites/update' }
+      format.js { render '/watchlists/update' }
     end
   end
 

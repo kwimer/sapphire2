@@ -1,0 +1,2 @@
+<%= render resource.reviews.order(:created_at).page(params[:page]) %>
+<%= render 'reviews/form', parent: resource %>
