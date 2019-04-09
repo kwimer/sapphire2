@@ -2,9 +2,10 @@
 @import 'bootstrap';
 @import 'bootstrap-rating';
 @import 'bootstrap-slider';
-@import "font-awesome";
 //@import "mixins";
-//////@import "custom/*";
+@import "site/*";
+
+
 
 .bg-grey {
   background-color: #e9ecef;
@@ -24,3 +25,5 @@
     height: 200px;
   }
 }
+
+

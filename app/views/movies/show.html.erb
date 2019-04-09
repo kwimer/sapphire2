@@ -1,11 +1,4 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-4"><%= @movie.title %></h1>
-    <p class="lead"></p>
-    <%= link_to_favorite(@movie) %>
-    <%= link_to_watchlist(@movie) %>
-  </div>
-</div>
+<%= render 'media/masthead', media: @movie %>
 
 <div class="container">
   <h4>Awards</h4>

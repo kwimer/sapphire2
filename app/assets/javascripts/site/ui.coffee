@@ -2,9 +2,10 @@ $ ->
   setupReviews()
 
 window.setupReviews = ->
-  $('input[data-rating]').rating
-    filled: 'fas fa-star',
-    filledSelected: 'fa-star',
-    empty: 'far fa-star'
+  $('#review_rating').rating
+    filled: 'fas fa-gem text-primary',
+    filledSelected: 'fas fa-gem text-primary',
+    empty: 'far fa-gem',
+    #fractions: 2
 
 

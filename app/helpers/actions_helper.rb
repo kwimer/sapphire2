@@ -12,9 +12,9 @@ module ActionsHelper
 
   def link_to_favorite(actionable)
     if current_user && current_user.favorite?(actionable)
-      link_to 'UnFavorite', [actionable, :favorite], method: :delete, remote: true, id: dom_id(actionable, :favorite)
+      link_to icon_tag('heart', class: 'fas'), [actionable, :favorite], method: :delete, remote: true, id: dom_id(actionable, :favorite)
     else
-      link_to 'Favorite', [actionable, :favorite], method: :post, remote: true, id: dom_id(actionable, :favorite)
+      link_to icon_tag('heart', class: 'far'), [actionable, :favorite], method: :post, remote: true, id: dom_id(actionable, :favorite)
     end
   end
 

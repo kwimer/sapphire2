@@ -15,9 +15,13 @@ module ApplicationHelper
     active_link_to content, path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
   end
 
+  def nav_item(text, path, options = {})
+    active_link_to text, path, {class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'}.merge(options)
+  end
+
   def icon_tag(icon, options = {})
-    options[:class] = ['material-icons', options[:class]].compact
-    content_tag(:i, icon, options)
+    options[:class] = ["fa-#{icon}", options[:class]].compact
+    content_tag(:i, '', options)
   end
 
   def errors_for(object)

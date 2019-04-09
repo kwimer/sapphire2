@@ -1,0 +1,58 @@
+.masthead {
+  background: #000;
+  height: 50vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+
+  .masthead-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-position: 50% 10%;
+    //opacity: 0;
+    transition: all 1s;
+  }
+  .masthead-shadow {
+    position: absolute;
+    bottom: 56px;
+    width: 100%;
+    height: 120px;
+    background-image: -webkit-linear-gradient(top,transparent 0%,rgba(0,0,0,0.6) 100%);
+    background-image: -o-linear-gradient(top,transparent 0%,rgba(0,0,0,0.6) 100%);
+    background-image: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.6) 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#99000000',GradientType=0);
+  }
+  .masthead-title {
+    position: absolute;
+    bottom: 56px;
+    width: 100%;
+    color: #fff;
+    h1 {
+      font-size: 32px;
+      .year {
+        font-weight: 300;
+        font-size: 22px;
+        color: #ccc;
+      }
+    }
+  }
+  .masthead-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background: rgba(0,0,0,0.75);
+    font-size: 14px;
+  }
+
+}
+

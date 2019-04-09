@@ -1,11 +1,4 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-4"><%= @series.title %></h1>
-    <p class="lead"></p>
-    <%= link_to_favorite(@series) %>
-    <%= link_to_watchlist(@series) %>
-  </div>
-</div>
+<%= render 'media/masthead', media: @series %>
 
 
 <%= render @series.seasons %>

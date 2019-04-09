@@ -1,6 +1,5 @@
 <%= simple_form_for [parent, Review.new], remote: true do |f| %>
-  <%= errors_for(resource) %>
-  <%= f.hidden_field :rating, data: {rating: true} %>
+  <%= f.hidden_field :rating %>
   <%= f.input :content %>
   <%= f.button :submit, class: 'btn-outline btn-default btn-sm' %>
 <% end %>

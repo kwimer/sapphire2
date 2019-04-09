@@ -27,11 +27,11 @@ Rails.application.routes.draw do
   resources :people, only: :show do
     resource :favorite
   end
-  resources :movies, only: :show do
+  resources :movies do
     resource :favorite
     resource :reviews
   end
-  resources :series, only: :show do
+  resources :series do
     resources :seasons do
       resources :episodes
     end
