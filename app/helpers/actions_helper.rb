@@ -20,9 +20,9 @@ module ActionsHelper
 
   def link_to_watchlist(actionable)
     if current_user && current_user.favorite?(actionable)
-      link_to 'Add to Watchlist', [actionable, :favorite], method: :delete, remote: true
+      link_to icon_tag('plus-square', class: 'fas'), [actionable, :favorite], method: :delete, remote: true
     else
-      link_to 'Remove from Watchlist', [actionable, :favorite], method: :post, remote: true
+      link_to icon_tag('plus-square', class: 'far'), [actionable, :favorite], method: :post, remote: true
     end
   end
 
