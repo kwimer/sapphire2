@@ -12,14 +12,24 @@ $container-max-widths: (
     lg: 1100px,
     xl: 1460px
 );
+//$grid-breakpoints: (
+//        xs: 0,
+//        sm: 388px,
+//        md: 768px,
+//        lg: 1148px,
+//        xl: 1528px
+//);
+//$container-max-widths: (
+//        sm: 360px,
+//        md: 720px,
+//        lg: 1080px,
+//        xl: 1440px
+//);
 
 //1200/1140
 //992/960
 //768/720
 //576/540
-
-
-
 
 @import 'bootstrap';
 @import 'bootstrap-rating';
@@ -28,9 +38,5 @@ $container-max-widths: (
 @import 'slick.js/slick-theme.scss';
 //@import "mixins";
 @import "site/*";
-
-.bg-grey {
-  background-color: #e9ecef;
-}
 
 
