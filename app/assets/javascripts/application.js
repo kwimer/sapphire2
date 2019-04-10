@@ -19,5 +19,6 @@
 //= require bootstrap
 //= require bootstrap-rating
 //= require bootstrap-slider
+//= require slick.js/slick.js
 //= require_tree ./site
 

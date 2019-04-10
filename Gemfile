@@ -57,6 +57,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-autosize'
   gem 'rails-assets-bootstrap-rating'
   gem 'rails-assets-selectize'
+  gem 'rails-assets-slick.js'
 end
 
 # Jobs

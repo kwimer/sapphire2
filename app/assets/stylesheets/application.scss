@@ -7,15 +7,25 @@ $grid-breakpoints: (
     xl: 1528px
 );
 $container-max-widths: (
-    sm: 388px,
-    md: 768px,
-    lg: 1148px,
-    xl: 1510px
+    sm: 380px,
+    md: 740px,
+    lg: 1100px,
+    xl: 1460px
 );
+
+//1200/1140
+//992/960
+//768/720
+//576/540
+
+
+
 
 @import 'bootstrap';
 @import 'bootstrap-rating';
 @import 'bootstrap-slider';
+@import 'slick.js/slick.scss';
+@import 'slick.js/slick-theme.scss';
 //@import "mixins";
 @import "site/*";
 

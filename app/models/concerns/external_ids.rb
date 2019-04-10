@@ -22,7 +22,7 @@ module ExternalIds
     return ActionController::Base.helpers.image_path("defaults/#{self.class.name.underscore}_#{type}.jpg") unless image_path
     size = case type.to_sym
            when :profile
-             'w138_and_h175_face'
+             'w276_and_h350_face'
            when :poster
              'w370_and_h556_bestv2'
            when :still

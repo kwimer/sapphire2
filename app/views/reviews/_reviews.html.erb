@@ -1,2 +1,4 @@
-<%= render resource.reviews.order(:created_at).page(params[:page]) %>
-<%= render 'reviews/form', parent: resource %>
+<div class="container">
+  <%= render media.reviews.order(:created_at).page(params[:page]) %>
+  <%= render 'reviews/form', parent: media %>
+</div>
