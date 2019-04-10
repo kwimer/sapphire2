@@ -1,0 +1,17 @@
+<section class="cast bg-grey">
+  <div class="container">
+    <h4>Cast</h4>
+    <div class="row">
+      <% @movie.cast_credits.limit(8).each do |credit| %>
+        <div class="card">
+          <%= tmdb_image_tag credit.person, 'profile', class: "card-img-top" %>
+          <%= link_to_favorite(credit.person) %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to credit.person.name, credit.person %></h5>
+            <p class="card-text"><%= credit.character %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
