@@ -32,7 +32,7 @@ class Series < Media
     end
   }
 
-  has_many :seasons, -> { order(:number) }
+  has_many :seasons#, -> { order(:number) }
   has_many :episodes, through: :seasons
 
   def details
