@@ -3,37 +3,52 @@
 }
 .bg-grey {
   background: #f5f6f8;
+  background: #eaeaea;
+}
+.card {
+  border:none;
+  border-radius: 0;
 }
 
+.card-header {
+  border:none;
+}
+
+.review {
+  font-size: 14px;
+
+  .card-header {
+    padding: 0 1.25rem;
+    .heading {font-size:13px;display:inline-block;vertical-align:top;margin-top:8px;}
+
+  }
+}
+
+.tiles {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+//100
+//25
+//150
 .avatar {
   display: inline-block;
-  width: 32px;
-  height: 32px;
-  margin: 8px;
+  width: 36px;
+  height: 36px;
+  margin: 9px;
   overflow:hidden;
   transform:rotate(45deg);
   img {
-    width: 48px;
-    height: 48px;
-    margin: -8px;
+    width: 54px;
+    height: 54px;
+    margin: -9px;
     display: block;
     transform:rotate(-45deg);
     //transform-origin:left center;
   }
 }
 
-.tile {
-  background: #fff;
-  margin: 0;
-  margin-bottom: 20px;
-  box-shadow: 0.125rem 0.125rem 0.125rem rgba(90, 97, 105, 0.2);
-}
-.tile-head {
-  min-height: 320px;
-}
-.tile-body {
-  //width: 380px;
-}
 .overlay {
   background-position: 50% 20%;
   background-size: cover;

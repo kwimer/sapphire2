@@ -40,9 +40,9 @@ $ ->
 
 window.setupReviews = ->
   $('#review_rating').rating
-    filled: 'fas fa-gem text-primary',
-    filledSelected: 'fas fa-gem text-primary',
-    empty: 'far fa-gem',
+    filled: 'fas fa-star text-primary',
+    filledSelected: 'fas fa-star text-primary',
+    empty: 'far fa-star',
     #fractions: 2
 
 

@@ -24,6 +24,10 @@ module ApplicationHelper
     content_tag(:i, '', options)
   end
 
+  def avatar_tag(user, options = {})
+    content_tag(:span, image_tag('defaults/user.jpg', alt: user.name), class: 'avatar')
+  end
+
   def errors_for(object)
     if object.errors.any?
       message = "#{pluralize(object.errors.count, "error")} prohibited this #{object.class.model_name.human.downcase} from being saved"

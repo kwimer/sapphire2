@@ -1,4 +1,9 @@
-<div class="container">
-  <%= render media.reviews.order(:created_at).page(params[:page]) %>
-  <%= render 'reviews/form', parent: media %>
-</div>
+<section id="reviews" class="bg-grey">
+  <div class="container">
+    <h4>Reviews</h4>
+    <div class="tiles">
+      <%= render media.reviews.order(:created_at).page(params[:page]) %>
+    </div>
+    <%= render 'reviews/form', parent: media %>
+  </div>
+</section>

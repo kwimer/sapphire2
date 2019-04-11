@@ -1,4 +1,12 @@
-<div>
-  <%= review.rating %>
-  <%= review.content %>
+<div class="card review">
+  <div class="card-header">
+    <%= avatar_tag(review.user) %>
+    <div class="heading">
+    <div>Review by <%= review.user.name %></div>
+    <div><%= l(review.created_at, format: :date) %> <%= l(review.created_at, format: :time) %></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= simple_format(review.content) %>
+  </div>
 </div>
