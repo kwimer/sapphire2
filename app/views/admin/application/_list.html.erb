@@ -4,4 +4,4 @@
 <div class="row clearfix">
   <%= render collection %>
 </div>
-<%= paginate collection, theme: 'twitter-bootstrap-4' if collection.respond_to?(:total_pages) %>
+<%= paginate collection, theme: 'twitter-bootstrap-4', param_name: "#{collection_name}[page]" if collection.respond_to?(:total_pages) %>

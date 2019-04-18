@@ -18,7 +18,7 @@ class Admin::SeriesController < Admin::ApplicationController
         select_options: {
         },
         ) or return
-    @series ||= @series_filter.find.page(params[:page]).per(24)
+    @series ||= @series_filter.find.order(created_at: :desc).page(@series_filter.page).per(24)
   end
 
   private

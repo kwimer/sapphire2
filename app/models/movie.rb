@@ -12,9 +12,10 @@ class Movie < Media
 
 
   filterrific(
-      default_filter_params: { sorted_by: 'created_at_desc' },
+      #default_filter_params: { sorted_by: 'created_at_desc' },
       available_filters: [
-          :sorted_by,
+          :page,
+          #:sorted_by,
           :search_query
       ]
   )

@@ -20,8 +20,8 @@ module ApplicationHelper
   end
 
   def icon_tag(icon, options = {})
-    options[:class] = ["fa-#{icon}", options[:class]].compact
-    content_tag(:i, '', options)
+    options[:class] = ['material-icons', options[:class]].compact
+    content_tag(:i, icon, options)
   end
 
   def avatar_tag(user, options = {})

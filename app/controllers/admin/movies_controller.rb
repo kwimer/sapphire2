@@ -20,10 +20,8 @@ class Admin::MoviesController < Admin::ApplicationController
     @movies_filter ||= initialize_filterrific(
         scope,
         params[:movies],
-        select_options: {
-        },
         ) or return
-    @movies ||= @movies_filter.find.page(params[:page]).per(24)
+    @movies ||= @movies_filter.find.order(created_at: :desc).page(@movies_filter.page).per(24)
   end
 
   private
