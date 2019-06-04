@@ -1,9 +1,7 @@
-<div class="jumbotron text-center">
-  <h1 class="display-4">Welcome to iGems!</h1>
-  <p class="lead">The search is over.</p>
-</div>
-<div class="container">
-  <div class="row">
-    <%= render Media.all.limit(10) %>
-  </div>
-</div>
+<%= render 'hero_slider' %>
+<%= render 'trending' %>
+<%= render 'movies' %>
+<%= render 'series' %>
+<%= render 'collections' %>
+<%= render 'black_diamonds' %>
+<%= render 'fans' %>

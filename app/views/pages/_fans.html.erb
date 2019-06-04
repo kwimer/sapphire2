@@ -1,0 +1,17 @@
+<% @users = User.last(5) %>
+<!--Fans-->
+<section class="fans">
+  <div class="container">
+    <div class="heading_inner">
+      <h2>Fans</h2>
+      <p>Checkout our Top Fans of the Week, View their Profiles, Follow them, Become a Fan.</p>
+    </div>
+    <div class="row">
+      <%= render @users %>
+    </div>
+    <div class="view-all-fans">
+      <a href="#">View All Fans <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+<!--Fans End-->

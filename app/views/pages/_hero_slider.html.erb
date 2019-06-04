@@ -1,0 +1,72 @@
+<% @media = Media.first(3) %>
+<!--Hero Slider-->
+<section class="hero-slider">
+  <div class="slider">
+    <div id="hero_slider_inner" class="owl-carousel owl-theme">
+      <% @media.each do |media| %>
+        <div class="item">
+          <div class="slider-img">
+            <%= tmdb_image_tag media, :backdrop %>
+          </div>
+          <div class="container">
+            <div class="slider-content">
+              <h5 class="small-heading">iGEMSelection</h5>
+              <h1><%= media.title %> <span><%= media.year %></span></h1>
+              <div class="row banner-colm">
+                <div class="col-md-4">
+                  <div class="colum-content">
+                    <h5><%= number_with_precision(media.igems_score, precision: 1) %>/<span>5</span></h5>
+                    <h6>iGEMScore</h6>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="colum-content">
+                    <h5><%= media.runtime %> Mins.</h5>
+                    <h6>Running Time</h6>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="colum-content">
+                    <h5><%= media.genre_names %></h5>
+                    <h6>Genre(s)</h6>
+                  </div>
+                </div>
+              </div>
+              <p><%= media.synopsis %></p>
+              <div class="slider-btn">
+                <a href="#" class="trailer">WATCH TRAILER</a>
+                <a href="#" class="movies">WATCH MOVIE</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider-bottom">
+            <div class="container">
+              <ul class="slider-social">
+                <li class="plus-icon"><a href="#"></a></li>
+                <li class="view-icon"><a href="#"></a></li>
+                <li class="heart-icon"><a href="#"></a></li>
+                <li class="logo-icon"><a href="#"></a></li>
+                <li class="chat-icon"><a href="#"></a></li>
+              </ul>
+              <div class="social-profile">
+                <div class="nick-collection">
+                  <img src="images/fans.png" alt="">
+                </div>
+                <p>Reviewed by <a href="#">Nick Pearson</a> and 900 others</p>
+              </div>
+            </div>
+          </div>
+          <div class="slider-bottom-last">
+            <div class="container">
+              <div class="last-content">
+                <img src="images/net2.png" alt="">
+                <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Other Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--Hero Slider End-->

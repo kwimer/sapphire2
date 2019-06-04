@@ -1,0 +1,436 @@
+section.step-heading {
+    text-align: center;
+    border-top: 1px solid #efefef;
+    padding: 50px 0px;
+}
+.step-heading h6 {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #41c6ef;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.step-heading h2 {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 0;
+}
+.your-preferred-heading h3 {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+.your-preferred-heading p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #6f6f6f;
+    margin-bottom: 0;
+}
+.your-preferred-heading {
+    text-align: center;
+}
+section.your-preferred {
+    background: #f4f4f4;
+    padding: 80px 0px;
+}
+/* Hiding the checkbox, but allowing it to be focused */
+.your-preferred .badgebox
+{
+    opacity: 0;
+}
+
+.your-preferred .badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+	width: 27px;
+}
+
+.your-preferred .badgebox:focus + .badge
+{
+    /* Set something to make the badge looks focused */
+    /* This really depends on the application, in my case it was: */
+    
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+}
+
+.your-preferred .badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+	text-indent: 0;
+}
+.your-preferred label {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #909090;
+    background: #fff;
+    border-color: #dfdfdf;
+    padding: 11px 10px;
+    text-align: center !important;
+    display: block !important;
+    margin-right: 17px;
+    border-radius: 4px;
+    width: 170px;
+    margin-bottom: 17px;
+}
+.your-preferred .row.text-center {
+    max-width: 1132px;
+    margin: 0 auto;
+    justify-content: center;
+}
+#search {
+    width:90%;
+}
+
+.searchicon {
+    color:#5CB85C;
+}
+
+.items-collection{
+    margin:20px 0 0 0;
+}
+.items-collection .btn-default.active {
+    background-color: #41bfed;
+    border-color: #41bfed;
+}
+.items-collection .btn-default.active h5 {
+    color: #fff;
+    padding-left: 19px;
+}
+.items-collection .row {
+    justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 45px;
+}
+.items-collection .items {
+    padding: 0px 10px;
+}
+.items-collection .btn-default {
+    box-shadow: none !important;
+}
+.items-collection .btn-default {
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    margin: 0px 0px 20px;
+    border-radius: 6px;
+    color: #305891;
+    padding: 18px 0px;
+    cursor: pointer;
+    background: #fff;
+    line-height: 0;
+}
+
+.items-collection  .itemcontent{
+    width:100%;
+}
+.items-collection .btn-group {
+    width: 100%;
+}
+.itemcontent input {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+.itemcontent h5 {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #909090;
+    display: inline-block;
+}
+.items-collection .btn-default.active h5::before {
+    content: "";
+    background: url(../images/step/check.svg);
+    width: 16px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    left: 0;
+}
+.favriout-movie-content h4 {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 0;
+}
+.favriout-movie-content h3 {
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+.favriout-movie-content h3 img {
+    margin-right: 10px;
+}
+.movie-seclect-name h3 {
+    font-size: 16px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    margin-top: 12px;
+}
+.favriout-movie .row {
+    align-items: center;
+}
+section.favriout-movie {
+    padding: 80px 0px 0px;
+}
+.favriout-movie-slider .owl-nav {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    margin-top:0px !important; 
+}
+.favriout-movie-slider .owl-nav button:focus {
+    outline: none;
+}
+.favriout-movie-slider .owl-nav button.owl-prev {
+    display: none;
+}
+.favriout-movie-slider button.owl-next {
+    float: right;
+    margin: 0 !important;
+    width: 30px;
+    background: #34b1e5 !important;
+    height: 30px;
+    border-radius: 50% !important;
+        position: relative;
+    right: -40px;
+}
+.favriout-movie-slider button.owl-next span {
+    display: none;
+}
+.favriout-movie-slider button.owl-next::before {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    right: -2px;
+    top: 1px;
+}
+.favriout-movie-slider .item {
+    cursor: pointer;
+}
+#favriout-slider .owl-stage-outer {
+    z-index: 99999;
+}
+
+section.favriout-movie.series-slider {
+    padding-bottom: 80px;
+}
+.continue-btn {
+    width: 100%;
+    text-align: center;
+    padding-top: 70px;
+}
+.continue-btn a {
+    background: #3bb8e8;
+    padding: 15px 46px;
+    border-radius: 90px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    align-items: center;
+    font-size: 16px;
+    display: block;
+    width: 240px;
+    margin: 0 auto;
+}
+.continue-btn a::after {
+    content: "\f105";
+    font-family: FontAwesome;
+    position: relative;
+    margin-left: 9px;
+}
+.continue-btn a:hover {
+    background: #2b90b7;
+}
+.favriout-movie-slider {
+    padding-right: 20px;
+}
+.favriout-movie-one{
+	position: relative;
+}
+.favriout-movie-one::before {
+    content: "";
+    background: url(../images/step/bg.png);
+    width: 470px;
+    height: 720px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media(max-width: 1200px){
+	.items-collection .btn-default{
+		padding: 16px 0px;
+	}
+}
+@media(max-width: 1139px){
+	.step-heading h2{
+		font-size: 25px;
+	}
+	.items-collection .items {
+    padding: 0px 7px;
+}
+.items-collection .btn-default {
+    padding: 14px 0px;
+    margin: 0px 0px 14px;
+}
+.favriout-movie-content h4{
+	font-size: 20px;
+}
+.favriout-movie-content h3{
+	font-size: 32px;
+}
+.movie-seclect-name h3{
+	font-size: 14px;
+}
+.items-collection .row{
+	max-width: 100%;
+}
+}
+@media(max-width: 991px){
+	.step-heading h2 {
+    font-size: 20px;
+}
+section.step-heading{
+	padding: 40px 0px;
+}
+.your-preferred-heading h3 {
+    font-size: 24px;
+}
+.itemcontent h5{
+	font-size: 13px;
+}
+section.your-preferred {
+    padding: 50px 0px 30px;
+}
+.items-collection .row{
+	padding-top: 30px;
+}
+.favriout-movie-slider {
+    padding-right: 35px;
+}
+.favriout-movie-content h4 {
+    font-size: 18px;
+}
+.favriout-movie-content h3 {
+    font-size: 26px;
+}
+section.favriout-movie {
+    padding: 50px 0px 0px;
+}
+section.favriout-movie.series-slider {
+    padding-bottom: 50px;
+}
+}
+@media(max-width: 767px){
+	.items-collection .row {
+    padding-top: 25px;
+}
+.itemcontent h5 {
+    font-size: 14px;
+}
+.favriout-movie-content h4 {
+    font-size: 24px;
+}
+.favriout-movie-content h3 {
+    font-size: 36px;
+}
+.favriout-movie .col-md-3.col-lg-3.col-xs-12 {
+    margin-bottom: 30px;
+}
+.items-collection .items {
+    padding: 0px 7px;
+    flex: 0 0 33%;
+    max-width: 33.33%;
+}
+}
+@media(max-width: 575px){
+.items-collection .items {
+    padding: 0px 7px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+@media(max-width: 499px){
+	.step-heading h2 {
+    font-size: 18px;
+}
+section.step-heading {
+    padding: 30px 0px;
+}
+section.your-preferred {
+    padding: 40px 0px 20px;
+}
+.your-preferred-heading h3 {
+    font-size: 20px;
+}
+.your-preferred-heading p{
+	font-size: 14px;
+}
+.items-collection .row {
+    padding-top: 15px;
+}
+section.favriout-movie {
+    padding: 40px 0px 0px;
+}
+.favriout-movie-content h4 {
+    font-size: 20px;
+}
+.favriout-movie-content h3 {
+    font-size: 26px;
+}
+.favriout-movie .col-md-3.col-lg-3.col-xs-12 {
+    margin-bottom: 40px;
+}
+.continue-btn a {
+    padding: 12px 46px;
+    width: 190px;
+    font-size: 14px;
+}
+.favriout-movie-slider button.owl-next::before{
+	    right: -1px;
+    top: 0px;
+}
+.favriout-movie-one::before{
+    background-size: 100%;
+    width: 320px;
+}
+.favriout-movie-slider .owl-nav{
+    top: -63px;
+}
+.favriout-movie-slider {
+    padding-right: 0;
+}
+.favriout-movie-slider button.owl-next{
+    right: 0px;
+}
+.continue-btn{
+    padding-top: 50px;
+}
+}

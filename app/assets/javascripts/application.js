@@ -12,13 +12,10 @@
 //
 //= require rails-ujs
 //= require jquery3
-// require activestorage
-// require turbolinks
-//= require jquery3
 //= require popper
 //= require bootstrap
 //= require bootstrap-rating
-//= require bootstrap-slider
-//= require slick.js/slick.js
-//= require_tree ./site
+//= require site/slider-jquery.min
+//= require site/slider
+//= require site/custom
 

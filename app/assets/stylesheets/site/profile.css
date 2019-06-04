@@ -1,0 +1,1356 @@
+.rating_left_img img {
+      height: 155px;
+    object-fit: cover;
+   width: 140px;
+}
+
+.Reating_right_bx ul {
+    padding-left: 0;
+        margin-bottom: 0;
+}
+.Reating_right_bx ul li{
+	list-style: none;
+	display: inline-block;
+}
+
+.rating_inner figure.rating_left_img {
+    margin-bottom: 0;
+}
+.Reating_right_bx h4{
+	margin-bottom: 5px;
+	    line-height: 1;
+}
+.Reating_right_bx h4 b {
+    font-size: 18px;
+    color: #000;
+    font-weight: 900;
+}
+.Reating_right_bx p{
+	margin-bottom: 10px;
+}
+.Reating_right_bx li.rating_text {
+    font-size: 14px;
+    color: #3979c6;
+    font-weight: bold;
+}
+.Reating_right_bx li.Edit_r {
+    padding-left: 5px;
+    font-size: 14px;
+    color: #909090;
+    font-weight: 600;
+}
+li.Edit_r span {
+    padding-right: 5px;
+}
+h3.rat_heading {
+    font-size: 26px;
+    color: #346eb2;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+ul.rating_left {
+    padding-left: 0;
+ 
+}
+
+ul.rating_left li{
+	list-style: none;
+}
+section.rating_section{
+	display: inline-block;
+	width: 100%;
+	background-color: #f2f2f2;
+	 padding: 30px 0 55px; 
+    margin-top: 40px;
+}
+.rating_section .row {
+    align-items: center;
+}
+section.reviews {
+    background-color: #fff;
+    padding-bottom: 40px;
+        padding-top: 0;
+    margin-top: 19px;
+}
+section.my_seen {
+    background-color: #3873b9;
+    background-image: none;
+}
+.my_seen .see-more a {
+    background: #5cc6f1;
+ }
+ section.my_fans {
+    padding: 39px 0 50px;
+}
+.my_fans .row {
+    padding-top: 40px;
+}
+
+.my_fans .fan-content p {
+    font-weight: 600;
+}
+.my_fans a.view-profile {
+    font-size: 13px;
+    font-weight: 600;
+    color: #5fcbf3;
+}
+.my_fans a.view-profile:hover{
+	text-decoration: none;
+}
+.banner_left a.Edit_btn {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 11px 25px 9px 43px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 19px;
+    display: inline-block;
+}
+.banner_left a.Edit_btn::before{
+	content: "\f044";
+	font-family: FontAwesome;
+	position: absolute;
+    top: 11px;
+    left: 22px;
+}
+.share{
+    padding-top: 15px;
+}
+.profile_banner{
+	background-image: url(../images/profile/profile-5.png);
+	background-size: cover;
+	 padding: 53px 0 87px;
+}
+.banner_mid h3 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.banner_mid h5 {
+    font-size: 16px;
+    color: #fff;
+        margin-bottom: 23px;
+            font-family: 'Poppins', sans-serif;
+}
+.banner_mid p {
+    color: #fff;
+    margin-bottom: 0;
+      padding-right: 100px;
+}
+.banner_right h4 {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+        margin-bottom: 15px;
+}
+.share h2 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 14px;
+}
+.share ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.share ul li{
+	display: inline-block;
+	list-style: none;
+	 margin-right: 15px;
+}
+.share ul li a{
+	color: #fff;
+	font-size: 20px;
+}
+.banner_right ul.action {
+    padding-left: 0;
+    padding-right: 50px;
+}
+.banner_right ul.action li {
+    display: inline-block;
+    list-style: none;
+}
+.banner_right ul.action li a{
+	color: #fff;
+	text-decoration: none;
+}
+section.new_collection {
+    background-color: #59bef1;
+   padding: 15px 0;
+       margin-bottom: 31px;
+}
+.new_left ul {
+    padding-left: 0;
+    margin-bottom: 0;
+        line-height: 1;
+}
+.new_left ul li {
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+     border-right: 1px solid #3a92c5;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.wtch_list{
+      height: 40px;
+    width: 40px;
+    background-size: 100%;  
+    background-repeat: no-repeat;
+}
+.wtch_lists{
+    background-image: url(../images/profile/profileplus.png);
+}
+.wtch_liked{
+    background-image: url(../images/profile/profileheart.png);
+}
+.wtch_rating{
+    background-image: url(../images/profile/profilerating.png);
+}
+.wtch_review{
+    background-image: url(../images/profile/profilereviews.png);
+}
+.wtch_seen{
+    background-image: url(../images/profile/profileseen.png);
+}
+.wtch_fans{
+    background-image: url(../images/profile/profilefan.png);
+}
+.wtch_following{
+    background-image: url(../images/profile/profilefollow.png);
+}
+.wtch_collection{
+    background-image: url(../images/profile/profilecollection.png);
+}
+
+.watch_text {
+    padding-left: 12px;
+}
+.watch_text h5 {
+    margin-bottom: 0;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+.watch_text h3 {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+        line-height: 1;
+}
+.hole_new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_right a {
+    color: #fff;
+    background-color: #3873b9;
+    padding: 16px 46px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: .3s;
+    display: inline-block;
+}
+.new_right a:hover{
+        box-shadow: 0px 5px 10px rgba(37, 116, 178, 0.42);
+    background: #1d6298;
+}
+section.my_follow {
+    background-color: #fff;
+}
+.Followed a.Followed_btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #2fd77a;
+    padding: 7px 30px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.Followed {
+    padding: 28px 0px 20px;
+}
+.Followed a.Followed_btn:hover {
+    background-color: #37b16d;
+}
+.my_seen .see-more a:hover {
+    background: #4cadd4;
+ }
+.new_left ul li:last{
+	padding-right: 0;
+}
+.rbody_contant h4{
+    line-height: 1;
+}
+.rbody_contant h4 a {
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 900;
+}
+.reviews .rbody_contant p {
+    line-height: 1.25;
+     margin-bottom: 0 !important;
+   position: relative;
+    text-indent: 20px;
+}
+.reviews .rbody_contant p.card-text::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/profile/left-quote-mark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 15px;
+    left: 0;
+    width: 15px;
+}
+.rbody_contant .rating-footer strong {
+    color: #416db7;
+    font-size: 14px;
+}
+.rbody_contant .rating-footer ul{
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding-top: 5px;
+    margin:0 8px;
+
+}
+.rbody_contant .rating-footer ul li{
+    list-style: none;
+    display: inline-block;
+        margin-right: 3px;
+}
+.rbody_contant .rating-footer ul li i.icon-gen-star {
+    background-image: url(../images/unrate.png);
+    height: 25px;
+    width: 25px;
+    background-size: 100%;
+    display: block;
+    background-repeat: no-repeat;
+}
+.rbody_contant .rating-footer ul li i.icon-gen-star.active{
+    background-image: url(../images/icon112.png); 
+}
+.rbody_contant .rating-footer {
+    display: flex;
+    align-items: center;
+        padding-top: 5px;
+}
+.rbody_contant .rating-footer a.edit-rating {
+    font-size: 14px;
+    color: #3773b7;
+    font-weight: 600;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+.rbody_contant .rating-footer a.edit-rating:hover{
+    text-decoration: none;
+}
+.rbody_contant .rating-footer .d-line{
+    color: #909090;
+    font-weight: 600;
+}
+.profile_collection a.new_c {
+    font-size: 15px;
+    background-color: #3773b7;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 9px 34px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+.profile_collection a.new_c:hover{
+        box-shadow: 0px 5px 10px rgba(37, 116, 178, 0.42);
+    background: #1d6298;
+}
+.profile_collection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile_edit_img {
+    position: relative;
+}
+.profile_edit_img .green_dot {
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    left: 86px;
+    margin: 0 auto;
+    background-color: #1ea244;
+    border-radius: 50px;
+    border: 3px solid #fff;
+}
+.review_left .card-body.rbody_contant {
+    background-color: #fafafa;
+}
+.new_left ul li:first-child{
+    padding-left: 0;
+
+}
+
+.profile_collection a.new_c i{
+    display: none;
+}
+.new_left ul li:last-child{
+    border-right: none;
+    padding-right: 0;
+}
+
+.on_rating p {
+    margin-bottom: 0 !important;
+}
+/*seriesdetsil*/
+.episods_header h3{
+        font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    position: relative;
+        margin-bottom: 15px;
+}
+.episod_card h3.card-title {
+    font-size: 18px;
+    color: #000;
+}
+.episod_card .card-body p.card-text {
+    font-size: 14px;
+}
+body .episod_card {
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+        margin-bottom: 30px;
+}
+.episod_card a.inner_card,.episod_card a.inner_card img {
+    height: 233px;
+    max-height: 100%;
+    object-fit: cover;
+    position: relative;
+        border-radius:inherit;
+}
+.episod_card a.inner_card:hover span.overlay{
+    opacity: 1;
+        transition: .3s;
+}
+.episod_card a.inner_card span.overlay {
+    background-color: #00000024;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.episods_header p {
+    margin-bottom: 0;
+}
+.episods_header {
+    padding-bottom: 41px;
+}
+section.collections-page .series_detail_contant{
+    background: #f2f2f2;
+        padding-bottom: 60px;
+}
+.episod_card .card-body{
+    padding: 23px 30px;
+}
+.sesionpage {
+    padding-top: 13px;
+}
+section.Series_banner{
+    background-image: url(../images/profile/seriesbanner.jpg);
+}
+section.series_review {
+    padding-top: 51px;
+}
+.Series_banner .viking .wathc-triler {
+    padding-top: 0;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: auto;
+    float: left;
+    margin-bottom: 0;
+}
+.Series_banner .viking .wathc-triler a{
+     display: inline-block;
+    width: auto;
+    padding: 14px 30px;
+    border-radius: 5px;
+}
+
+.Series_banner .viking h2 {
+    margin-bottom: 0;
+    width: auto;
+    padding: 0;
+}
+.Series_banner .viking{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    padding: 0 35px;
+}
+
+/*seriesdetsil end*/
+/*register*/
+.register_section .reg_inner {
+    padding: 60px 276px 0;
+}
+.regester_step1{
+    padding-top: 65px;
+}
+.registerinner_left,.registerinner_right {
+    padding-top: 38px;
+}
+.registerinner_left{
+    padding-right: 15px;
+}
+.registerinner_right{
+    padding-left: 15px;
+}
+
+.regester_step1 h5 {
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #68cef2;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+body .text-center h3 {
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+.registerinner_left label {
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+        margin-bottom: 0;
+}
+.registerinner_left label sup {
+    color: #ff0000;
+    font-size: 14px;
+     right: -5px;
+    top: 0;
+}
+select.form-control::before {
+    position: absolute;
+    content: "\f0d7";
+    top: 0;
+    right: 0;
+    font-family: FontAwesome;
+display: block;
+}
+.registerinner_left .form-group input,.registerinner_left select {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: inherit;
+    height: 45px;
+    padding-left: 0;
+}
+.registerinner_left .form-group input.form-control:focus,.registerinner_left select:focus  {
+    background-color: #fff;
+    border-color: #54bce8;
+    outline: 0; 
+    box-shadow: none;
+    color: #3672b7;
+}
+.registerinner_left .form-group input.form-control:focus::placeholder{
+    color: #3672b7;
+
+}
+.check_content {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.check_content input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+}
+
+.check_content:hover input ~ .checkmark {
+  background-color: #fff;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check_content input:checked ~ .checkmark:after {
+  display: block;
+}
+.check_content .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #222;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.registerinner_left label.check_content.using {
+    color: #333;
+}
+.registerinner_left label.check_content.using a{
+    color: #3975bc;
+}
+.registerinner_left button {
+    width: 100%;
+}
+.registerinner_left button {
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #5ac0f1;
+    border: none;
+    margin-top: 43px;
+    padding: 13px;
+}
+.registerinner_left button:hover,.registerinner_left button:focus,.registerinner_left button:active{
+    background-color: #5ac0f1 !important;
+    box-shadow: none !important; 
+}
+.inner_row {
+    padding-top: 17px;
+        padding-bottom: 17px;
+}
+section.register_section {
+    padding-bottom: 158px;
+}
+.registerinner_right h3 {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 38px;
+}
+.registerinner_right a.rester_fb {
+    width: 100%;
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+}
+.registerinner_right a {
+    width: 100%;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+}
+.registerinner_right a.rester_fb{
+    background-color: #42579e;
+     color: #fff;  
+    margin-bottom: 23px;
+}
+.registerinner_right a.rester_fb::before {
+    content: "\f082";
+    position: absolute;
+    top: 11px;
+    left: -198px;
+    right: 0;
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+.registerinner_right a.rester_google{
+    border:1px solid #c9c9c9;
+    color: #333;
+}
+.registerinner_right a.rester_google::before {
+    content: "";
+    height: 25px;
+    width: 25px;
+    background-image: url(../images/profile/search.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 14px;
+    left: -190px;
+    font-size: 20px;
+    right: 0;
+    margin: 0 auto;
+}
+.or_box {
+    text-align: center;
+    position: relative;
+    background-image: url(../images/profile/Registration.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top 0px;
+    padding: 4px 8px 11px;
+}
+.mid_line::before{
+    content: "";
+    background-color: #ccc;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.mid_line{
+    position: relative;
+}
+
+/*register end */
+
+
+ @media (max-width: 1599px){
+    .new_right a {
+    padding: 16px 16px;
+ }
+ .wtch_list {
+    height: 36px;
+    width: 36px;
+}
+.on_rating .rating_left_img img {
+    height: 180px;
+}
+body .Series_banner .banner-age {
+    flex: 0 0 21.666667%;
+    max-width: 21.666667%;
+}
+}
+
+ @media (max-width: 1536px){
+
+.new_left ul li {
+    padding-left: 7px;
+    padding-right: 12px;
+}
+body .Series_banner .banner-documentary {
+    flex: 0 0 31% !important;
+    max-width: 31% !important;
+}
+body .Series_banner .banner-documentary {
+    flex: 0 0 30% !important;
+    max-width: 30% !important;
+}
+body .Series_banner .banner-colm .col-md-4:nth-child(3) {
+    padding-left: 15px;
+}
+.register_section .reg_inner {
+    padding: 60px 260px 0;
+}
+}
+
+ @media (max-width: 1439px){
+ 	.new_right a {
+    background-color: #3873b9;
+    padding: 16px 15px;
+    font-size: 16px;
+ }
+ .watch_text {
+    padding-left: 5px;
+}
+body .Series_banner .banner-age {
+    padding-left: 10px;
+}
+.col-md-3.banner-mins {
+    flex: 0 0 22%;
+    max-width: 22%;
+}
+body .Series_banner .banner-documentary {
+    flex: 0 0 32% !important;
+    max-width: 32% !important;
+}
+body .Series_banner .banner-colm .col-md-4:nth-child(3) {
+    padding-left: 12px;
+}
+.register_section .reg_inner {
+    padding: 60px 190px 0;
+}
+.banner-igems {
+    max-width: 98px;
+}
+}
+@media (max-width: 1365px){
+	.banner_mid p {
+    padding-right: 48px;
+}
+.wtch_list img {
+    height: 34px;
+}
+.watch_text h3 {
+    font-size: 20px;
+}
+.profile_banner {
+    padding: 53px 0 65px;
+}
+.Reating_right_bx {
+    padding: 15px;
+}
+
+.new_right a {
+    padding: 13px 13px;
+        font-size: 15px;
+}
+.new_left ul li {
+    padding-left: 4px;
+    padding-right: 8px;
+}
+a.follow {
+    padding: 7px 25px;
+
+}
+}
+@media (max-width: 1279px){
+.wtch_list {
+    height: 30px;
+    width: 30px;
+}
+.new_right a {
+    padding: 13px 8px;
+    font-size: 14px;
+}
+.my_fans .fans-img img {
+    width: 120px;
+    height: 120px;
+}
+.my_fans .fans-img {
+background-size: contain;
+}
+.rbody_contant .rating-footer ul li i.icon-gen-star {
+    height: 18px;
+    width: 18px;
+}
+.rbody_contant .rating-footer strong {
+    font-size: 12px;
+}
+.rbody_contant .rating-footer a.edit-rating {
+    font-size: 12px;
+}
+.card-body.rbody_contant {
+    padding: 10px;
+}
+.register_section .reg_inner {
+    padding: 60px 150px 0;
+}
+.banner_right ul.action {
+    padding-right: 0px;
+}
+}
+@media (max-width: 1199px){
+	.watch_text h3 {
+    font-size: 18px;
+}
+.watch_text {
+    padding-left: 5px;
+}
+
+.wtch_list img {
+    height: 30px;
+}
+
+.rating_inner .card {
+    align-items: center;
+}
+.rating_inner figure.rating_left_img {
+    padding: 15px 0px 15px 15px;
+}
+
+.new_left ul li {
+    padding-left: 7px;
+    padding-right: 9px;
+}
+
+
+.new_right a {
+    padding: 16px 36px;
+    font-size: 15px;
+}
+.wtch_list {
+    height: 25px;
+    width: 25px;
+}
+.watch_text h5 {
+    font-size: 12px;
+}
+.watch_text h3 {
+    font-size: 16px;
+}
+.new_right a {
+    padding: 16px 22px;
+    font-size: 14px;
+}
+.rbody_contant .rating-footer ul li i.icon-gen-star {
+    height: 18px;
+    width: 18px;
+}
+.hole_left .card-body.rbody_contant {
+    padding: 10px;
+}
+.rating_left_img img {
+    width: 130px;
+    height: 166px;
+}
+.my_fans .fans-img img {
+    width: 100px;
+    height: 100px;
+}
+a.follow {
+    padding: 6px 10px;
+}
+.col-md-4.banner-documentary {
+    margin-top: 17px !important;
+}
+.register_section .reg_inner {
+    padding: 60px 50px 0;
+}
+
+}
+@media (max-width: 1100px){
+
+.watch_text {
+    padding-left: 5px;
+}
+.new_left ul li {
+    padding-left: 4px;
+    padding-right: 5px;
+}
+.wtch_list img {
+    height: 30px;
+}
+.new_right a {
+    padding: 12px 10px;
+    font-size: 14px;
+}	
+}
+@media (max-width: 1023px){
+.wtch_list {
+    height: 20px;
+    width: 20px;
+}
+
+.banner_mid p {
+    padding-right: 0;
+}
+.rating_inner .card {
+  flex-direction: column !important;
+}
+.rating_inner figure.rating_left_img {
+    padding-top: 15px;
+    padding-left: 0;
+        padding-bottom: 0;
+}
+.Reating_right_bx ul,.Reating_right_bx h4 {
+   
+    width: 100%;
+}
+.Reating_right_bx{
+	text-align: center;
+}
+.watch_text {
+    text-align: left;
+}
+.new_right a {
+    font-size: 13px;
+}
+.rbody_contant .rating-footer strong {
+    font-size: 12px;
+}
+.rbody_contant .rating-footer a.edit-rating {
+    font-size: 12px;
+}
+.episod_card .card-body {
+    padding: 20px 25px;
+}
+section.register_section {
+    padding-bottom: 70px;
+}
+}
+@media (max-width: 991px){
+	.fans-img {
+    background-size: cover;
+}
+.fans-img img {
+    width: 100px;
+    height: 100px;
+}
+
+section.new_collection {
+    padding: 20px 0 15px
+}
+.hole_new {
+    display: block;
+    justify-content: inherit;
+}
+.new_left ul li {
+    padding-left: 2px;
+    padding-right: 6px;
+}
+.new_left ul {
+    margin-bottom: 15px;
+}
+.wtch_list {
+    display: block;
+}
+.new_left ul li {
+    padding-left: 9px;
+    padding-right: 11px;
+}
+.watch_text h5 {
+    font-size: 13px;
+}
+.watch_text h3 {
+    font-size: 18px;
+}
+.hole_left .card-body.rbody_contant {
+    padding: 15px;
+}
+.rating_left_img img {
+    height: 136px;
+}
+.registerinner_left {
+    padding-right: 0;
+}
+.registerinner_right {
+    padding-left: 0;
+}
+}
+@media (max-width: 900px){
+.new_left ul li {
+    padding-left: 5px;
+    padding-right: 9px;
+}
+.register_section .reg_inner {
+    padding: 40px 30px 0;
+}
+.mid_line{
+	flex: 0 0 11%;
+    max-width: 11%;
+}
+.rig_left,.rig_right{
+	flex: 0 0 44%;
+    max-width: 44%;
+}
+.or_box {
+    font-size: 15px;
+}
+}
+@media (max-width: 850px){
+.watch_text h3 {
+    font-size: 16px;
+}
+.watch_text h5 {
+    font-size: 12px;
+}
+.new_left ul li {
+    padding-left: 3px;
+    padding-right: 4px;
+}
+.inner_row .col-md-6 {
+    padding-right: 6px;
+}
+.registerinner_left label.check_content.using br{
+    display: none;
+}
+}
+
+@media (max-width: 767px){
+	.fans-img {
+    background-size: contain;
+}
+.banner_mid{
+	padding-bottom: 25px;
+    padding-top: 41px;
+}
+.fans-img img {
+    width: 144px;
+     height: 144px; 
+}
+.new_left ul li {
+    width: 32.33%;
+    padding: 0;
+    margin-bottom: 25px;
+        border: none;
+}
+section.new_collection {
+    padding: 30px 0;
+        margin-bottom: 0;
+}
+.hole_left {
+    float: none;
+    width: 100%;
+        padding-top: 20px;
+    padding-left: 0 !important;
+}
+.rating_inner .card {
+    margin-bottom: 20px !important;
+}
+.rating_section .heading_inner {
+    padding-bottom: 10px;
+        padding-top: 20px;
+
+}
+section.reviews {
+    margin-top: 0;
+
+}
+.watch_text h5 {
+    font-size: 14px;
+}
+.watch_text h3 {
+    font-size: 18px;
+}
+.wtch_list {
+    height: 25px;
+    width: 25px;
+}
+.watch_text {
+    padding-left: 8px;
+}
+.new_left ul {
+    margin-bottom: 0;
+}
+.hole_left .card.flex-sm-row {
+    flex-direction: row;
+}
+.rating_left_img img {
+    height: 155px;
+}
+.rbody_contant p {
+    font-size: 14px;
+}
+.hole_left .card-body.rbody_contant {
+    padding: 10px;
+}
+section.reviews{
+    padding-top: 40px;
+}
+.Series_banner .viking {
+    padding: 0 25px;
+}
+.episods_header p{
+    font-size: 14px;
+}
+.episods_header h3 {
+    font-size: 20px;
+}
+.register_section .reg_inner {
+    padding: 0px 70px 0;
+}
+.registerinner_left, .registerinner_right {
+    padding-top: 25px;
+}
+.or_box {
+    margin-top: 30px;
+}
+.mid_line::before{
+    display: none;
+}
+.registerinner_right h3 {
+    margin-bottom: 25px;
+}
+.mid_line{
+	flex: 0 0 100%;
+    max-width: 100%;
+}
+.rig_left,.rig_right{
+	flex: 0 0 100%;
+    max-width: 100%;
+}
+.banner_mid p {
+    font-size: 14px;
+}
+.banner_right ul.action li a {
+    font-size: 14px;
+}
+
+}
+@media (max-width:575px){
+.series_detail_contant .col-12{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+
+
+@media (max-width:499px){
+	.profile_banner {
+    padding: 53px 0 50px;
+}
+.new_left ul li {
+        width: 50%;
+    float: left;
+
+}
+.wtch_list img {
+    height: auto;
+}
+.watch_text h3 {
+    font-size: 24px;
+}
+.watch_text {
+    padding-top: 10px;
+}
+.watch_text h5 {
+    padding-bottom: 7px;
+}
+.new_right {
+    display: inline-block;
+    width: 100%;
+}
+.rating_section .col-md-6.col-sm-8.col {
+    max-width: 80%;
+  }
+ .rating_section .col-md-6.col-sm-4.col{
+ 	max-width:  20%;
+ }
+ .hole_left {
+    padding-top: 20px;
+}
+.rating_section .see-more {
+    display: inherit;
+}
+
+section.rating_section {
+    padding: 30px 0 50px;
+}
+.hole_left .card.flex-sm-row {
+    flex-direction: column;
+}
+.rbody_contant p {
+    font-size: 14px;
+}
+h3.rat_heading {
+    font-size: 24px;
+}
+.my_fans .fans-img {
+    background-size: contain;
+}
+.profile_collection a.new_c i {
+    display: block !important;
+    font-size: 14px;
+}
+.profile_collection a.new_c {
+    font-size: 0;
+    padding: 4px 9px;
+    border-radius: 0;
+    transition: .3s;
+}
+.new_right a {
+    width: 100%;
+    text-align: center;
+}
+.rating_left_img img {
+    height: 200px;
+    width: 100%;
+}
+.my_seen .see-more {
+    text-align: right;
+    display: inherit;
+}
+.my_seen .see-more i.fa.fa-caret-right {
+    color: #ffffff;
+    background: #5cc6f1;
+
+}
+section.my_follow {
+    padding-bottom: 0;
+}
+section.new_collection {
+    padding: 30px 0 40px;
+}
+.Series_banner .viking .wathc-triler a {
+    padding: 10px 10px;
+}
+.series_detail_contant .col-12{
+        flex: 0 0 100%;
+    max-width: 100%;
+}
+body .Series_banner .banner-colm .col-md-4:nth-child(3) {
+    padding-left: 0;
+}
+.register_section .reg_inner {
+    padding: 0px 25px 0;
+}
+.regester_step1 {
+    padding-top: 40px;
+}
+section.collections-page .series_detail_contant {
+    padding-bottom: 36px;
+}
+section.series_review {
+    padding-top: 30px;
+}
+
+}
+
+
+
+@media (max-width:375px){
+    .rbody_contant .rating-footer ul li i.icon-gen-star {
+    height: 16px;
+    width: 16px;
+}
+.register_section .reg_inner {
+    padding: 0px;
+}
+body .text-center h3 {
+    font-size: 24px;
+}
+section.register_section {
+    padding-bottom: 50px;
+}
+.watch_text h5 {
+    font-size: 13px;
+}
+.rbody_contant .rating-footer a.edit-rating {
+    padding-left: 4px;
+}
+h3.rat_heading {
+    font-size: 20px;
+}
+}

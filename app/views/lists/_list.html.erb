@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-6 col-lg-5 col-xs-12">
+    <div class="collection-image">
+      <%= tmdb_image_tag(list.media.first, :poster) %>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-7 col-xs-12">
+    <div class="collection-content">
+      <h3><%= list.name %></h3>
+      <ul class="score-ul">
+        <li>
+          <div class="imgs-score">
+<!--            <h5><%#= number_with_precision(list.igems_score, precision: 1) %><b>5</b></h5>-->
+<!--            <h6>iGEMScore</h6>-->
+          </div>
+        </li>
+        <li>
+<!--                        <div class="imgs-score mask">-->
+<!--                          <h5><%#= list.genre_names %></h5>-->
+<!--                          <h6>Genre(s)</h6>-->
+<!--                        </div>-->
+        </li>
+      </ul>
+      <p>
+        <%= list.description %>
+      </p>
+      <div class="visit-collection">
+        <a href="#">Visit Collection</a>
+      </div>
+      <div class="row collection-bottom">
+        <div class="col-md-3">
+          <ul class="trending-social">
+            <li class="col-plus"><a href="#"></a></li>
+            <li class="col-view"><a href="#"></a></li>
+            <li class="col-heart"><a href="#"></a></li>
+            <li class="col-logo"><a href="#"></a></li>
+            <li class="col-chat"><a href="#"></a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="person-review">
+            <div class="nick-collection">
+              <img src="images/fans.png" alt="">
+            </div>
+            <p>Reviewed by<br>
+              <a href="#">Nick Pearson</a> &amp; 900 others</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

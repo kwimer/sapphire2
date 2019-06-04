@@ -28,6 +28,11 @@ module ExternalScores
       save
     end
 
+    def igems_score
+      return unless imdb_rating.present? && rt_rating.present? && metacritic_rating.present?
+      ((((imdb_rating*10) + rt_rating + metacritic_rating) / 3) * 5)/100.00
+    end
+
   end
 
 end

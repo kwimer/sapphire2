@@ -1,0 +1,24 @@
+<% @media = Media.last(6) %>
+<!--Trending-->
+<section class="trending main-trending">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-xs-8">
+        <div class="heading_inner">
+          <h2>Trending on iGEMS</h2>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-4 col-xs-4">
+        <div class="see-more">
+          <a href="#">See More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="trending-slider">
+      <div id="trending-slider" class="owl-carousel owl-theme">
+        <%= render @media %>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Trending End-->

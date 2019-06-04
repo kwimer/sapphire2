@@ -1,0 +1,24 @@
+<% @movies = Movie.last(6) %>
+<!--Movies-->
+<section class="trending">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8">
+        <div class="heading_inner">
+          <h2>Movies</h2>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-4">
+        <div class="see-more">
+          <a href="#">See More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="trending-slider">
+      <div id="movie-slider" class="owl-carousel owl-theme">
+        <%= render @movies %>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Movies End-->

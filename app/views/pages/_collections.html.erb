@@ -1,0 +1,13 @@
+<!--Collection-->
+<section class="collection">
+  <div class="container">
+    <div class="heading_inner">
+      <h2>Collections</h2>
+    </div>
+    <%= render List.where_exists(:list_items).last(3) %>
+    <div class="more-collection-btn">
+      <a href="#">More Collections <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+<!--Collection End-->

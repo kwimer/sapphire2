@@ -1,18 +1,56 @@
-<div class="col-md-4">
-  <div class="card card-media">
-    <div class="card-img-top" style="height: 200px;background-image: url('<%= media.tmdb_image_path(:backdrop) %>');">
-
-    </div>
-    <div class="card-body">
-      <div class="card-title"><%= link_to media.title, media %></div>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to_favorite(media) %></button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+<div class="item">
+  <div class="trending-box bosch shazam" style="background-image: url(<%= media.tmdb_image_path(:poster) %>)">
+    <div class="row detail-open">
+      <div class="col-md-6 col-lg-6 col-xs-12">
+        <div class="imgs-score">
+          <h5><%= number_with_precision(media.igems_score, precision: 1) %><b>5</b></h5>
+          <h6>iGEMScore</h6>
         </div>
-        <small class="text-muted">9 mins</small>
       </div>
+      <div class="col-md-6 col-lg-6 col-xs-12">
+        <ul class="trending-social">
+          <li class="trend-plus"><a href="#"></a></li>
+          <li class="trend-view"><a href="#"></a></li>
+          <li class="trend-heart"><a href="#"></a></li>
+          <li class="trend-logo"><a href="#"></a></li>
+          <li class="trend-chat"><a href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="movie-detail">
+      <h4><%= media.title %> <b>(<%= media.year %>)</b></h4>
+      <ul class="trending-movie-details">
+        <li class="movie-min">
+          <% if media.type == 'Movie' %>
+            <%= media.runtime %> min.
+          <% else %>
+          <% end %>
+        </li>
+        <li class="movie-action">
+          <%= media.genre_names %>
+        </li>
+      </ul>
+      <p><%= truncate media.synopsis, length: 100, separator: ' ' %>. <a href="#">[Read More]</a></p>
+      <div class="row detail-bottom">
+        <div class="col-md-6">
+          <div class="detail-b-left">
+            <img src="images/net2.png" alt="">
+            <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i> Other Services</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="person-review">
+            <div class="nick-collection blue-bg">
+              <img src="images/fans.png" alt="">
+            </div>
+            <p>Reviewed by<br>
+              <a href="#">Nick Pearson</a> & 900 others</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="movie-name">
+      <h6><%= media.title %> <span>(<%= media.year %>)</span></h6>
     </div>
   </div>
 </div>

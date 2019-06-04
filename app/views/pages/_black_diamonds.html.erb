@@ -1,0 +1,24 @@
+<% @movies = Movie.last(6) %>
+<!--Black Diamonds-->
+<section class="trending black-slider-full">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8">
+        <div class="heading_inner">
+          <h2>Black Diamonds</h2>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-4">
+        <div class="see-more">
+          <a href="#">See More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="trending-slider">
+      <div id="black-slider" class="owl-carousel owl-theme">
+        <%= render @movies %>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Black Diamonds End-->

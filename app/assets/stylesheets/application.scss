@@ -1,42 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-$grid-breakpoints: (
-    xs: 0,
-    sm: 388px,
-    md: 768px,
-    lg: 1148px,
-    xl: 1528px
-);
-$container-max-widths: (
-    sm: 380px,
-    md: 740px,
-    lg: 1100px,
-    xl: 1460px
-);
-//$grid-breakpoints: (
-//        xs: 0,
-//        sm: 388px,
-//        md: 768px,
-//        lg: 1148px,
-//        xl: 1528px
-//);
-//$container-max-widths: (
-//        sm: 360px,
-//        md: 720px,
-//        lg: 1080px,
-//        xl: 1440px
-//);
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
-//1200/1140
-//992/960
-//768/720
-//576/540
-
-@import 'bootstrap';
-@import 'bootstrap-rating';
-@import 'bootstrap-slider';
-@import 'slick.js/slick.scss';
-@import 'slick.js/slick-theme.scss';
-//@import "mixins";
-@import "site/*";
+@import 'site/bootstrap.min.css';
+@import 'site/style.css';
+@import 'site/slider.min.css';
+@import 'site/slider.default.min.css';
 
 

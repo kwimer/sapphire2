@@ -1,0 +1,317 @@
+jQuery('#hero_slider_inner').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:false,
+    margin:0,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1,
+        }
+    }
+});
+jQuery('#trending-slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    margin:30,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        768:{
+            items:2,
+            margin:20
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3,
+        }
+    }
+});
+jQuery('#movie-slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    margin:30,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        768:{
+            items:2,
+            margin:20
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3,
+        }
+    }
+});
+jQuery('#series-slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    margin:30,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        768:{
+            items:2,
+            margin:20
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3,
+        }
+    }
+});
+jQuery('#black-slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    margin:35,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1,
+            margin:0
+        },
+        768:{
+            items:2,
+            margin:25
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3,
+        }
+    }
+});
+jQuery('#trending-collection-slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    margin:35,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1,
+            margin:0
+        },
+        768:{
+            items:2,
+            margin:25
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3,
+        }
+    }
+});
+
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+jQuery('#carosul1').owlCarousel({
+   // rtl:true,
+    loop:true,
+    //margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+jQuery('#carosul2').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        992:{
+            items:3
+        },
+        1280:{
+            items:4,
+            margin:15
+        },
+        1400:{
+            items:4,
+
+        },
+        1500:{
+            items:5
+        },
+    }
+})
+jQuery("#carosul2").trigger("to.owl.carousel", [2, 1])
+
+ jQuery(".item").click(function () {
+   var result = jQuery(this).attr('id').split('-');
+    jQuery("#carosul1").trigger("to.owl.carousel", [result[1]])
+
+
+ })
+jQuery('#cast-slider').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        400:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        800:{
+          items:4
+        },
+        1200:{
+            items:6
+        },
+        1500:{
+            items:6
+        },
+    }
+})
+jQuery('#trending-collection-fan').owlCarousel({
+    loop:true,
+    margin:24,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        1000:{
+            items:2
+        },
+        1200:{
+            items:3
+        },
+        1400:{
+            items:3
+        },
+        1500:{
+            items:3
+        },
+    }
+})
+jQuery('#favriout-slider').owlCarousel({
+   // rtl:true,
+    loop:true,
+    margin:20,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:2
+        },
+        600:{
+            items:2
+        },
+        500:{
+            items:2
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+jQuery('#favriout-series-slider').owlCarousel({
+   // rtl:true,
+    loop:true,
+    margin:20,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:2
+        },
+        600:{
+            items:2
+        },
+        500:{
+            items:2
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+
+//   jQuery("#carosul2").trigger("to.owl.carousel", [2, 1])
+
+//  jQuery(".item").click(function () {
+//    var result = jQuery(this).attr('id').split('-');
+//     jQuery("#carosul1").trigger("to.owl.carousel", [result[1]])
+// });
+
+jQuery('.trend-chat a').click( function() {
+    if (jQuery('.review').hasClass('show')) {
+    jQuery('.review').removeClass('show');
+   }
+});
+ jQuery('.rate-heading h3 b i').click(function(){
+      jQuery(this).parent().parent().parent().parent().removeClass('show')
+      ;
+   })
+
+   jQuery(document).ready(function() {
+jQuery(".pagination .page-item").click(function () {
+    jQuery(".pagination .page-item").removeClass("active");
+    jQuery(this).addClass("active");   
+});
+});
+
+   
