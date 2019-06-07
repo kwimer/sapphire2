@@ -1,0 +1,17 @@
+<% #TODO: replace with user collections query
+   @lists = List.where_exists(:list_items).last(3)
+%>
+<!--Collection-->
+<section class="collection">
+  <div class="container">
+    <div class="heading_inner profile_collection">
+      <h2>Collections</h2>
+      <a class="new_c" href="#">Creat new collection <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+    </div>
+    <%= render @lists %>
+    <div class="more-collection-btn">
+      <a href="#">More Collections <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+<!--Collection End-->

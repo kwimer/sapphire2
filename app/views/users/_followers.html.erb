@@ -1,0 +1,16 @@
+<% @followers = @user.followers.limit(5) %>
+<!--Fans-->
+<section class="fans my_follow">
+    <div class="container">
+        <div class="heading_inner pb-0">
+            <h2>Followers</h2>
+        </div>
+        <div class="row">
+            <%= render @following %>
+        </div>
+        <div class="view-all-fans">
+            <a href="#">Load More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+<!--Fans End-->
