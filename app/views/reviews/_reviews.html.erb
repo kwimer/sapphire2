@@ -1,9 +1,12 @@
-<section id="reviews" class="bg-grey">
+<!--Fan Reviews-->
+<section class="fan-review">
   <div class="container">
-    <h4>Reviews</h4>
-    <div class="tiles">
+    <div class="heading_inner">
+      <h2>Fan Reviews</h2>
+    </div>
+    <div class="row">
       <%= render media.reviews.order(:created_at).page(params[:page]) %>
     </div>
-    <%= render 'reviews/form', parent: media %>
   </div>
 </section>
+<!--Fan Reviews End-->

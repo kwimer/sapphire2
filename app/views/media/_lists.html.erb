@@ -1,0 +1,15 @@
+<% #TODO: replace with media collections query
+   @lists = List.where_exists(:list_items).last(3)
+%>
+<!--In These Collections-->
+<section class="in-these-collection">
+  <div class="container">
+    <div class="heading_inner">
+      <h2>In These Collections</h2>
+    </div>
+    <div class="row">
+      <%= render collection: @lists, partial: 'lists/card', as: :list %>
+    </div>
+  </div>
+</section>
+<!--In These Collections End-->

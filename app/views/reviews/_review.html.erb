@@ -1,12 +1,32 @@
-<div class="card review">
-  <div class="card-header">
-    <%= avatar_tag(review.user) %>
-    <div class="heading">
-    <div>Review by <%= review.user.name %></div>
-    <div><%= l(review.created_at, format: :date) %> <%= l(review.created_at, format: :time) %></div>
+<div class="col-md-4 col-lg-4 col-xs-12">
+  <div class="fan-review-box">
+    <div class="review-box-content">
+      <%= simple_format(review.content) %>
     </div>
-  </div>
-  <div class="card-body">
-    <%= simple_format(review.content) %>
+    <div class="fan-review-reting">
+      <div class="left-side">
+        <div class="social-profile">
+          <div class="nick-collection">
+            <%= avatar_tag(review.user) %>
+          </div>
+          <div class="fan-review-name">
+            <h5><%= review.user.name %></h5>
+            <ul>
+              <!-- TODO: Bootstrap Rating Widget here -->
+              <li><a href="#"><%= image_tag('rate.png') %></a></li>
+              <li><a href="#"><%= image_tag('rate.png') %></a></li>
+              <li><a href="#"><%= image_tag('rate.png') %></a></li>
+              <li><a href="#"><%= image_tag('rate.png') %></a></li>
+              <li><a href="#"><%= image_tag('unrate.png') %></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="fan-follow-btn">
+          <a href="#">Follow</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

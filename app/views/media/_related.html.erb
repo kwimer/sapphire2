@@ -1,0 +1,17 @@
+<% #TODO: replace with related media query
+   @media = Media.last(6)
+%>
+<!--Related Movies-->
+<section class="trending related-movies">
+  <div class="container">
+    <div class="heading_inner">
+      <h2>Related</h2>
+    </div>
+    <div class="trending-slider">
+      <div id="movie-slider" class="owl-carousel owl-theme">
+        <%= render @media %>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Related Movies End-->

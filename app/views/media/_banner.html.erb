@@ -1,0 +1,124 @@
+<!--Hero Banner-->
+<section class="movie-detail-banner Series_banner" style="background-image: url(<%= media.tmdb_image_path(:poster) %>)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-lg-5 col-xs-12">
+        <div class="movie-details">
+          <div class="viking">
+            <h2><%= media.title %></h2>
+            <div class="wathc-triler">
+              <a href="#">WATCH TRAILER</a>
+            </div>
+          </div>
+          <p class="direct"><strong>Directors :</strong> Clive Standen, Gustaf Skarsgard,George Blagden</p>
+          <div class="row banner-colm">
+            <div class="col-md-3 banner-igems">
+              <div class="colum-content">
+                <h5><%= number_with_precision(media.igems_score, precision: 1) %>/<span>5</span></h5>
+                <h6>iGEMScore</h6>
+              </div>
+            </div>
+            <div class="col-md-3 banner-mins">
+              <div class="colum-content">
+                <% if media.type == 'Movie' %>
+                  <h5>120 Mins.</h5>
+                  <h6>Running Time</h6>
+                <% else %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-4 banner-documentary">
+              <div class="colum-content">
+                <h5><%= media.genre_names %></h5>
+                <h6>Genre(s)</h6>
+              </div>
+            </div>
+<!--            <div class="col-md-2 banner-age">-->
+<!--              <div class="colum-content">-->
+<!--                <h5>age 16+</h5>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+          <div class="movie-banner-conttent">
+            <h4>Synopsis :</h4>
+            <p><%= media.synopsis %></p>
+          </div>
+
+          <div class="movie-banner-conttent">
+            <h4>Our View :</h4>
+            <p><%= media.detail %></p>
+          </div>
+          <div class="movie-detail-social-box">
+            <div class="row">
+              <div class="col-md-5 col-xs-12">
+                <ul class="slider-social">
+                  <li class="plus-icon"><a href="#"></a></li>
+                  <li class="view-icon"><a href="#"></a></li>
+                  <li class="heart-icon"><a href="#"></a></li>
+                  <li class="logo-icon"><a href="#"></a></li>
+                  <li class="chat-icon"><a href="#"></a></li>
+                </ul>
+              </div>
+              <div class="col-md-7 col-xs-12">
+                <div class="social-profile">
+                  <div class="nick-collection">
+                    <img src="images/fans.png" alt="">
+                  </div>
+                  <p>Reviewed by <a href="#">Nick Pearson</a> and 900 others</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="where-to-watch">
+          <h5>Where To Watch</h5>
+          <div class="form-group">
+            <div class="d-flex ">
+              <div class="dropdown">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                  Subscription
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                  <a class="dropdown-item" href="#"><span><img src="images/hulu_plus.svg" alt=""></span>Hulu</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/netflix.svg" alt=""></span>Netflix</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/amazon_prime.svg" alt=""></span>Prime Video</a>
+                </div>
+              </div>
+              <div class="dropdown mr-0 ml-0 ml-md-3 mr-md-3 ml-sm-3 mr-sm-3 ">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                  Rental
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset2">
+                  <a class="dropdown-item" href="#"><span><img src="images/hulu_plus.svg" alt=""></span>Hulu</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/netflix.svg" alt=""></span>Netflix</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/amazon_prime.svg" alt=""></span>Prime Video</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                  Free
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset3">
+                  <a class="dropdown-item" href="#"><span><img src="images/hulu_plus.svg" alt=""></span>Hulu</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/netflix.svg" alt=""></span>Netflix</a>
+                  <a class="dropdown-item" href="#"><span><img src="images/amazon_prime.svg" alt=""></span>Prime Video</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-share">
+      <div class="banner-share">Share:
+        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      </div>
+    </div><!--row-->
+  </div>
+</section>
+<!--Hero Banner End-->

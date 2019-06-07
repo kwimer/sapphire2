@@ -1,3 +1,12 @@
-<div>
-  <%= link_to episode.name, series_season_episode_path(@series, @season.number, episode.number) %>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+  <div class="card episod_card shadow-sm">
+    <a class="inner_card" href="#">
+      <%= tmdb_image_tag(episode, :still, class: "card-img-top") %>
+      <span class="overlay"></span>
+    </a>
+    <div class="card-body">
+      <h3 class="card-title"><%= episode.name %></h3>
+      <p class="card-text"><%= episode.tmdb_summary %></p>
+    </div>
+  </div>
 </div>

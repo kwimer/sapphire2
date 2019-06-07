@@ -1,0 +1,36 @@
+<div class="col-md-4 col-lg-4 col-xs-12">
+  <div class="these-collection-box these-collection-one" style="background-image: url(<%= list.media.first.tmdb_image_path(:poster) %>)">
+    <div class="these-image-top">
+      <div class="these-social-icon">
+        <ul class="slider-social">
+          <li class="plus-icon"><a href="#"></a></li>
+          <li class="view-icon"><a href="#"></a></li>
+          <li class="heart-icon"><a href="#"></a></li>
+          <li class="logo-icon"><a href="#"></a></li>
+          <li class="chat-icon"><a href="#"></a></li>
+        </ul>
+      </div>
+      <div class="these-iamge-btn">
+        <a href="#">IGEMS collection</a>
+      </div>
+    </div>
+    <div class="these-content-bottom">
+      <h3><%= list.name %></h3>
+<!--      <ul class="score-ul">-->
+<!--        <li>-->
+<!--          <div class="imgs-score rating">-->
+<!--            <h5>4.5<b>5</b></h5>-->
+<!--            <h6>iGEMScore</h6>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="sec-img">-->
+<!--          <div class="imgs-score mask">-->
+<!--            <h5>Action, Adventure, Thriller</h5>-->
+<!--            <h6>Genre(s)</h6>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--      </ul>-->
+      <p><%= list.description %></p>
+    </div>
+  </div>
+</div>

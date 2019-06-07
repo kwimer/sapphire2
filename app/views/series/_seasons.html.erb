@@ -1,16 +1,37 @@
-<section id="seasons" class="cards">
+<!--Seasons-->
+<section class="collections-page sesionpage">
   <div class="container">
-    <h4>Seasons</h4>
-    <div class="row">
+    <div class="heading_inner">
+      <h2>Seasons</h2>
+    </div>
+  </div>
+  <!--Tabs -->
+  <div class="container">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab2" role="tablist">
+        <% media.seasons.order(number: :desc).each do |season| %>
+          <a class="nav-item nav-link active" id="nav-season<%= season.number %>-tab" data-toggle="tab" href="#nav-season<%= season.number %>" role="tab" aria-controls="nav-season<%= season.number %>" aria-selected="true"><%= season.name %></a>
+        <% end %>
+      </div>
+    </nav>
+  </div>
+  <div class="tab-content series_detail_contant" id="nav-seasons">
+    <div class="container">
       <% media.seasons.order(number: :desc).each do |season| %>
-        <div class="card text-center">
-          <%= tmdb_image_tag season, 'poster', class: "card-img-top" %>
-          <div class="card-body">
-            <div class="card-title text-truncate"><%= link_to season.name %></div>
-            <div class="card-subtitle text-truncate"><%= pluralize(season.episodes_count, 'episode') %></div>
+        <div class="tab-pane fade show active" id="nav-season<%= season.number %>" role="tabpanel" aria-labelledby="nav-season<%= season.number %>-tab">
+          <div class="seson_detail">
+            <div class="episods_header">
+              <h3><%= pluralize(season.episodes_count, 'Episode') %></h3>
+<!--              <p><%#= season.synopsis %></p>-->
+            </div>
+            <div class="row">
+              <%= render season.episodes.order(:number) %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
+  <!---Tabs End-->
 </section>
+<!--Seasons End-->
