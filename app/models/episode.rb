@@ -22,6 +22,10 @@ class Episode < ApplicationRecord
   belongs_to :series
   belongs_to :season
 
+  def synopsis
+    summary || tmdb_summary
+  end
+
   def episode_code
     "S#{'%02i' % season_number}E#{'%02i' % number} #{title}"
   end
