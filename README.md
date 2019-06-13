@@ -54,7 +54,7 @@ From repo, by run 'guard'
 11. Optional - download and import db from heroku to get seed data:
 https://devcenter.heroku.com/articles/heroku-postgres-import-export#export
 
-
+// end Aaron's notes.   
 
 This the above generally right for a new local env.
 I had to do a a few extra things to get going.  Also note that when i did the git "pull" i loaded everything into a "sapphire" directory, and thus everything locally is tested on http://sapphire.test instead of igems.test.  
